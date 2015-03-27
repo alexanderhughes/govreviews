@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'public_entities/index'
+  resources :public_entity
+  root 'public_entities#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

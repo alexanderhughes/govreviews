@@ -1,0 +1,5 @@
+<%= yield %>
+<p><% @public_entity.each do |entity| %>
+	<div><%=entity[:name]%></div>
+	<%end%>
+</p>
