@@ -1,5 +1,16 @@
 <%= yield %>
-<p><% @public_entity.each do |entity| %>
-	<div><%=entity[:name]%></div>
+<h1>City Agencies</h1>
+<p><% @public_entity.where(authority_level: 'city').each do |entity| %>
+	<a href="<%=entity[:website]%>"><strong><%=entity[:name]%></strong></a>
+	<div><%=entity[:description]%></div>
+	<p></p>
+	<%end%>
+</p>
+
+<h1>State Agencies</h1>
+<p><% @public_entity.where(authority_level: 'state').each do |entity| %>
+	<a href="<%=entity[:website]%>"><strong><%=entity[:name]%></strong></a>
+	<div><%=entity[:description]%></div>
+	<p></p>
 	<%end%>
 </p>

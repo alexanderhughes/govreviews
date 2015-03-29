@@ -27,8 +27,35 @@ namespace :govreviews do
     all_results.each do |entity|
       PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level])
     end
-    
   end
+  
+  desc "Crawl NYC agencies and load them into PublicEntity table"
+  task crawl_city: :environment do
+    require 'rubygems'
+    require 'nokogiri'
+    
+    file = File.read('/Users/awhughes/Desktop/nyc.html')
+    
+    giri_file = Nokogiri::HTML(file)
+
+    agency_section = giri_file.css("ul[class=alpha-list]").css('li')
+
+    all_results = []
+
+    agency_section.each do |agency|
+      name = agency.text
+        name = name[1..-2]
+      description = agency["data-desc"]
+      website = agency["data-social-email"]
+      results = { name: name, description: description, website: website, authority_level: 'city' }
+      all_results.push(results)
+    end
+    
+    all_results.each do |entity|
+      PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level])
+    end
+  end
+  
 end
 
 #first_page = Nokogiri::HTML(parsed_file['data'][99]['markup'])
