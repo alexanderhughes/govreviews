@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'posts/new'
+
   get 'public_entities/index'
   resources :public_entity
   root 'public_entities#index'
