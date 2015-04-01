@@ -19,8 +19,9 @@ namespace :govreviews do
           period_position = description.index('.')
           description = description[3..period_position]
         website = markup.css('p').css("a")[0].text
+        entity_subgroup = markup.css("div[class='category]").text
         results = {}
-        results = { name: agency_name, description: description, website: website, authority_level: 'state' }
+        results = { name: agency_name, description: description, website: website, authority_level: 'state', entity_type: 'agency', entity_subgroup: entity_subgroup }
         all_results.push(results)
     end
     

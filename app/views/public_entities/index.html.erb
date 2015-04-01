@@ -1,16 +1,13 @@
-<%= yield %>
+<% provide(:title, "Index") %>
+
 <h1>City Agencies</h1>
-<p><% @public_entity.where(authority_level: 'city').each do |entity| %>
-	<a href="<%=entity[:website]%>"><strong><%=entity[:name]%></strong></a>
-	<div><%=entity[:description]%></div>
-	<p></p>
+<p><% @public_entities.where(authority_level: 'city').each do |entity| %>
+	<div><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>
 
 <h1>State Agencies</h1>
-<p><% @public_entity.where(authority_level: 'state').each do |entity| %>
-	<a href="<%=entity[:website]%>"><strong><%=entity[:name]%></strong></a>
-	<div><%=entity[:description]%></div>
-	<p></p>
+<p><% @public_entities.where(authority_level: 'state').each do |entity| %>
+	<div><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>

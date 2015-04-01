@@ -1,8 +1,8 @@
 Rails.application.routes.draw do
   get 'posts/new'
+  resources :posts
 
-  get 'public_entities/index'
-  resources :public_entity
+  resources :public_entities
   root 'public_entities#index'
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,0 +1,33 @@
+<% provide(:title, "Show") %>
+<body>
+	<h3><%= link_to @public_entity.name, @public_entity.website %></h3>
+		<div><%= @public_entity.description %></div>
+		<p></p>
+		<div>There are <strong><%= @posts.count %></strong> reviews.</div><br>
+		<p></p>
+		<div><% @posts.each do |info| %>
+			<div><strong><%= info.title %></strong></div>
+			<div><%= info.rating %></div>
+			<div><%= info.review %></div>
+			<p></p>
+		<% end %>
+		</div>
+		
+	<h4>Write a review!</h4>
+	<div>
+		<%= form_for @post do |f| %>
+		<%= f.hidden_field :public_entity_id, value: @public_entity.id %>
+		<%= f.label :title, "Title:" %>
+		<%= f.text_field :title, class: "form-control" %><br>
+	
+		<%= f.label :rating, "Please give a rating on a scale from 1-5" %>
+		<%= f.text_field :rating, class: "form-control" %><br>
+	
+		<%= f.label :review, "Enter your review here:" %>
+		<%= f.text_field :review, class: "form-control" %><br>
+	
+		<%= f.submit "Submit your view", class: "btn btn-default"%>
+		<% end %>
+	</div>
+
+</body>

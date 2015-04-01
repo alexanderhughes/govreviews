@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150330171353) do
+ActiveRecord::Schema.define(version: 20150401172323) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
     t.integer  "rating"
     t.string   "review"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.integer  "public_entity_id"
   end
 
   create_table "public_entities", force: :cascade do |t|
@@ -29,6 +30,8 @@ ActiveRecord::Schema.define(version: 20150330171353) do
     t.string   "website"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "entity_type"
+    t.string   "entity_subgroup"
   end
 
 end
