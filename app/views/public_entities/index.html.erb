@@ -7,7 +7,13 @@
 </p>
 
 <h1>State Agencies</h1>
-<p><% @public_entities.where(authority_level: 'state').each do |entity| %>
+<p><% @public_entities.where(authority_level: 'state', entity_type: 'agency').each do |entity| %>
+	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<%end%>
+</p>
+
+<h1>State Parks</h1>
+<p><% @public_entities.where(authority_level: 'state', entity_type: 'park').each do |entity| %>
 	<div><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>

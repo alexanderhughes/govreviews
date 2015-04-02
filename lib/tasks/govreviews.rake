@@ -7,7 +7,6 @@ namespace :govreviews do
     
     file = File.read('/Users/awhughes/Desktop/nys.json')
     parsed_file = JSON.parse(file)
-
     page = parsed_file['data']
     
     all_results = []
@@ -19,14 +18,14 @@ namespace :govreviews do
           period_position = description.index('.')
           description = description[3..period_position]
         website = markup.css('p').css("a")[0].text
-        entity_subgroup = markup.css("div[class='category]").text
+        entity_subgroup = markup.css("div[class='category']").text
         results = {}
         results = { name: agency_name, description: description, website: website, authority_level: 'state', entity_type: 'agency', entity_subgroup: entity_subgroup }
         all_results.push(results)
     end
     
     all_results.each do |entity|
-      PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level])
+      PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], entity_subgroup: entity[:entity_subgroup])
     end
   end
   
@@ -36,9 +35,7 @@ namespace :govreviews do
     require 'nokogiri'
     
     file = File.read('/Users/awhughes/Desktop/nyc.html')
-    
     giri_file = Nokogiri::HTML(file)
-
     agency_section = giri_file.css("ul[class=alpha-list]").css('li')
 
     all_results = []
@@ -54,6 +51,29 @@ namespace :govreviews do
     
     all_results.each do |entity|
       PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level])
+    end
+  end
+  
+  desc "Crawl NY State Parks and load them into PublicEntity table"
+  task crawl_parks: :environment do
+    require 'rubygems'
+    require 'JSON'
+    
+    file = File.read('/Users/awhughes/Desktop/NYS Parks.json')
+    output = JSON.parse(file)
+    page = output['data']
+    all_results = []
+
+    page.each do |park|
+      name = park[8] + ' ' + park[9]
+      description = park[9]
+      website = park[17][0]
+      results = { name: name, description: description, website: website, authority_level: 'state', entity_type: 'park' }
+      all_results.push(results)
+    end
+    
+    all_results.each do |entity|
+      PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type])
     end
   end
   
