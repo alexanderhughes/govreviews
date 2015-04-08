@@ -1,6 +1,6 @@
 namespace :govreviews do
-  desc "Crawl NYS agencies and load them into PublicEntity table"
-  task crawl_entities: :environment do
+  desc "Crawl NY State agencies and load them into PublicEntity table"
+  task crawl_state_agencies: :environment do
     require 'rubygems'
     require 'nokogiri'
     require 'json'
@@ -18,18 +18,24 @@ namespace :govreviews do
           period_position = description.index('.')
           description = description[3..period_position]
         website = markup.css('p').css("a")[0].text
-        entity_subgroup = markup.css("div[class='category']").text
-        results = {}
-        results = { name: agency_name, description: description, website: website, authority_level: 'state', entity_type: 'agency', entity_subgroup: entity_subgroup }
+        category = []
+        category.push(markup.css("div[class='category']").text)
+        results = { }
+        results = { name: agency_name, description: description, website: website, authority_level: 'state', entity_type: 'agency', category: category }
         all_results.push(results)
     end
     
     all_results.each do |entity|
-      PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], entity_subgroup: entity[:entity_subgroup])
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type])
+      entity[:category].each do |catg|
+        c = Category.find_or_create_by(name: catg)
+        pe.categories.push(c)
+      end
     end
+
   end
   
-  desc "Crawl NYC agencies and load them into PublicEntity table"
+  desc "Crawl NY City agencies and load them into PublicEntity table"
   task crawl_city: :environment do
     require 'rubygems'
     require 'nokogiri'

@@ -11,7 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150401172323) do
+ActiveRecord::Schema.define(version: 20150402222913) do
+
+  create_table "categories", force: :cascade do |t|
+    t.string "name"
+  end
+
+  create_table "categories_public_entities", id: false, force: :cascade do |t|
+    t.integer "category_id"
+    t.integer "public_entity_id"
+  end
+
+  add_index "categories_public_entities", ["category_id"], name: "index_categories_public_entities_on_category_id"
+  add_index "categories_public_entities", ["public_entity_id"], name: "index_categories_public_entities_on_public_entity_id"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
