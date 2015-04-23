@@ -4,8 +4,10 @@ namespace :govreviews do
     require 'rubygems'
     require 'nokogiri'
     require 'json'
+    require 'open-uri'
     
-    file = File.read('/Users/awhughes/code/govreviews/lib/assets/nys.json')
+    url = 'http://www.ny.gov/services/nygov/search?draw=2&columns%5B0%5D%5Bdata%5D=markup&columns%5B0%5D%5Bname%5D=&columns%5B0%5D%5Bsearchable%5D=true&columns%5B0%5D%5Borderable%5D=false&columns%5B0%5D%5Bsearch%5D%5Bvalue%5D=&columns%5B0%5D%5Bsearch%5D%5Bregex%5D=false&order%5B0%5D%5Bcolumn%5D=0&order%5B0%5D%5Bdir%5D=asc&start=0&length=10&search%5Bvalue%5D=&search%5Bregex%5D=false&entity_types%5B0%5D=taxonomy_term&bundles%5B0%5D=agency&keywords=&searchgroup_id=agency&searcher_id=agency'
+    file = open(url) { |f| f.read }
     parsed_file = JSON.parse(file)
     page = parsed_file['data']
     
@@ -39,8 +41,10 @@ namespace :govreviews do
     require 'rubygems'
     require 'nokogiri'
     require 'json'
+    require 'open-uri'
     
-    file = File.read('/Users/awhughes/code/govreviews/lib/assets/nyc.html')
+    url = 'http://www1.nyc.gov/nyc-resources/agencies.page'
+    file = open(url) { |f| f.read }
     giri_file = Nokogiri::HTML(file)
     agency_section = giri_file.css("ul[class=alpha-list]").css('li')
 
@@ -70,8 +74,10 @@ namespace :govreviews do
   task crawl_parks: :environment do
     require 'rubygems'
     require 'JSON'
+    require 'open-uri'
     
-    file = File.read('/Users/awhughes/code/govreviews/lib/assets/NYS Parks.json')
+    url = 'https://data.ny.gov/api/views/9uuk-x7vh/rows.json?accessType=DOWNLOAD'
+    file = open(url) { |f| f.read }
     output = JSON.parse(file)
     page = output['data']
     all_results = []
