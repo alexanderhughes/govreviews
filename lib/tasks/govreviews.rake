@@ -38,7 +38,7 @@ namespace :govreviews do
   task crawl_city: :environment do
     require 'rubygems'
     require 'nokogiri'
-    require 'JSON'
+    require 'json'
     
     file = File.read('/Users/awhughes/Desktop/nyc.html')
     giri_file = Nokogiri::HTML(file)
