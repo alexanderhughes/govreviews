@@ -1,0 +1,1246 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "9uuk-x7vh",
+      "name" : "State Park Facility Points",
+      "attribution" : "New York State Office of Parks, Recreation and Historic Preservation",
+      "attributionLink" : "http://nysparks.com/",
+      "averageRating" : 0,
+      "category" : "Recreation",
+      "createdAt" : 1360950884,
+      "description" : "The New York State Office of Parks, Recreation and Historic Preservation (OPRHP) oversees more than 214 state parks and historic sites, encompassing nearly 335,000 acres, that are visited by 60 million people annually. These facilities contribute to the economic vitality and quality of life of local communities and directly support New York’s tourism industry. Parks also provide a place for families and children to be active and exercise, promoting healthy lifestyles. The agency is responsible for the operation and stewardship of the state park system as well as advancing a statewide parks, historic preservation, and open space mission.",
+      "displayType" : "table",
+      "downloadCount" : 52,
+      "indexUpdatedAt" : 1421253648,
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 9916936,
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1421253607,
+      "publicationGroup" : 679663,
+      "publicationStage" : "published",
+      "rowsUpdatedAt" : 1421253329,
+      "rowsUpdatedBy" : "795e-enqb",
+      "tableId" : 2104685,
+      "totalTimesRated" : 0,
+      "viewCount" : 1837,
+      "viewLastModified" : 1421253607,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : {
+        }
+      }, {
+        "id" : 184522187,
+        "name" : "Name",
+        "dataTypeName" : "text",
+        "description" : "Name of State Park Facility",
+        "fieldName" : "name",
+        "position" : 1,
+        "renderTypeName" : "text",
+        "tableColumnId" : 7883788,
+        "width" : 221,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : "Alfred E. Smith/Sunken Meadow",
+          "null" : 0,
+          "largest" : "Woodlawn Beach",
+          "top" : [ {
+            "count" : 20,
+            "item" : "Riverbank"
+          }, {
+            "count" : 19,
+            "item" : "Roberto Clemente"
+          }, {
+            "count" : 18,
+            "item" : "Buffalo Harbor"
+          } ]
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 184522188,
+        "name" : "Category",
+        "dataTypeName" : "text",
+        "description" : "Classification of state park facility",
+        "fieldName" : "category",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 7883789,
+        "width" : 196,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : "Marine Facility",
+          "null" : 0,
+          "largest" : "State Park Preserve",
+          "top" : [ {
+            "count" : 20,
+            "item" : "State Park"
+          }, {
+            "count" : 19,
+            "item" : "Marine Facility"
+          }, {
+            "count" : 18,
+            "item" : "State Historic Site"
+          }, {
+            "count" : 17,
+            "item" : "Other"
+          }, {
+            "count" : 16,
+            "item" : "State Historic Park"
+          }, {
+            "count" : 15,
+            "item" : "State Park Preserve"
+          } ]
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 184522189,
+        "name" : "Region",
+        "dataTypeName" : "number",
+        "description" : "State Park Region",
+        "fieldName" : "region",
+        "position" : 3,
+        "renderTypeName" : "number",
+        "tableColumnId" : 7883790,
+        "width" : 120,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : "1",
+          "sum" : "1750",
+          "null" : 0,
+          "average" : "7.028112449799197",
+          "largest" : "12",
+          "top" : [ {
+            "count" : 20,
+            "item" : "1"
+          }, {
+            "count" : 19,
+            "item" : "2"
+          }, {
+            "count" : 18,
+            "item" : "3"
+          }, {
+            "count" : 17,
+            "item" : "4"
+          }, {
+            "count" : 16,
+            "item" : "5"
+          }, {
+            "count" : 15,
+            "item" : "7"
+          }, {
+            "count" : 14,
+            "item" : "8"
+          }, {
+            "count" : 13,
+            "item" : "9"
+          }, {
+            "count" : 12,
+            "item" : "10"
+          }, {
+            "count" : 11,
+            "item" : "11"
+          }, {
+            "count" : 10,
+            "item" : "12"
+          } ]
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "center"
+        }
+      }, {
+        "id" : 184522190,
+        "name" : "County",
+        "dataTypeName" : "text",
+        "description" : "Name of County",
+        "fieldName" : "county",
+        "position" : 4,
+        "renderTypeName" : "text",
+        "tableColumnId" : 7883791,
+        "width" : 172,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : "Alb/Rens",
+          "null" : 0,
+          "largest" : "Yates",
+          "top" : [ {
+            "count" : 20,
+            "item" : "Erie"
+          }, {
+            "count" : 19,
+            "item" : "Niagara"
+          }, {
+            "count" : 18,
+            "item" : "Chautauqua"
+          }, {
+            "count" : 17,
+            "item" : "Monroe"
+          }, {
+            "count" : 16,
+            "item" : "Tompkins"
+          }, {
+            "count" : 15,
+            "item" : "Seneca"
+          }, {
+            "count" : 14,
+            "item" : "Ontario"
+          }, {
+            "count" : 13,
+            "item" : "Cayuga"
+          }, {
+            "count" : 12,
+            "item" : "Steuben"
+          }, {
+            "count" : 11,
+            "item" : "Oswego"
+          }, {
+            "count" : 10,
+            "item" : "Otsego"
+          }, {
+            "count" : 9,
+            "item" : "Madison"
+          }, {
+            "count" : 8,
+            "item" : "Onondaga"
+          }, {
+            "count" : 7,
+            "item" : "Oneida"
+          }, {
+            "count" : 6,
+            "item" : "Dutchess"
+          }, {
+            "count" : 5,
+            "item" : "Westchester"
+          }, {
+            "count" : 4,
+            "item" : "Rockland"
+          }, {
+            "count" : 3,
+            "item" : "Orange"
+          }, {
+            "count" : 2,
+            "item" : "Ulster"
+          }, {
+            "count" : 1,
+            "item" : "Suffolk"
+          } ]
+        },
+        "format" : {
+          "align" : "left"
+        }
+      }, {
+        "id" : 184522191,
+        "name" : "Golf",
+        "dataTypeName" : "text",
+        "description" : "Y/N value, indicates if the facility has golf available",
+        "fieldName" : "golf",
+        "position" : 5,
+        "renderTypeName" : "text",
+        "tableColumnId" : 7883792,
+        "width" : 105,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : "N",
+          "null" : 0,
+          "largest" : "Y",
+          "top" : [ {
+            "count" : 20,
+            "item" : "N"
+          }, {
+            "count" : 19,
+            "item" : "Y"
+          } ]
+        },
+        "format" : {
+          "align" : "center"
+        }
+      }, {
+        "id" : 184522192,
+        "name" : "Camp",
+        "dataTypeName" : "text",
+        "description" : "Y/N value, indicates if the facility has camping available",
+        "fieldName" : "camp",
+        "position" : 6,
+        "renderTypeName" : "text",
+        "tableColumnId" : 7883793,
+        "width" : 116,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : "N",
+          "null" : 0,
+          "largest" : "Y",
+          "top" : [ {
+            "count" : 20,
+            "item" : "N"
+          }, {
+            "count" : 19,
+            "item" : "Y"
+          } ]
+        },
+        "format" : {
+          "align" : "center"
+        }
+      }, {
+        "id" : 184522193,
+        "name" : "Playground",
+        "dataTypeName" : "text",
+        "description" : "Y/N value, indicates if the facility has a playground(s) available",
+        "fieldName" : "play",
+        "position" : 7,
+        "renderTypeName" : "text",
+        "tableColumnId" : 7883794,
+        "width" : 152,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : "N",
+          "null" : 0,
+          "largest" : "Y",
+          "top" : [ {
+            "count" : 20,
+            "item" : "N"
+          }, {
+            "count" : 19,
+            "item" : "Y"
+          } ]
+        },
+        "format" : {
+          "align" : "center"
+        }
+      }, {
+        "id" : 184522194,
+        "name" : "Nature Center",
+        "dataTypeName" : "text",
+        "description" : "Y/N value, indicates if the facility has a nature center available, Y-A value indicates that the\nnature center is open year-round",
+        "fieldName" : "nature_center",
+        "position" : 8,
+        "renderTypeName" : "text",
+        "tableColumnId" : 7883795,
+        "width" : 164,
+        "cachedContents" : {
+          "non_null" : 25,
+          "smallest" : "N",
+          "null" : 224,
+          "largest" : "Y-A",
+          "top" : [ {
+            "count" : 20,
+            "item" : "Y"
+          }, {
+            "count" : 19,
+            "item" : "Y-A"
+          }, {
+            "count" : 18,
+            "item" : "N"
+          } ]
+        },
+        "format" : {
+          "align" : "center"
+        }
+      }, {
+        "id" : 184522195,
+        "name" : "Beach",
+        "dataTypeName" : "text",
+        "description" : "Y/N value, indicates if the facility has a beach(s) available, Y-M value indicates the facility has multiple beaches",
+        "fieldName" : "beach",
+        "position" : 9,
+        "renderTypeName" : "text",
+        "tableColumnId" : 7883796,
+        "width" : 116,
+        "cachedContents" : {
+          "non_null" : 63,
+          "smallest" : "N",
+          "null" : 186,
+          "largest" : "Y-M",
+          "top" : [ {
+            "count" : 20,
+            "item" : "Y"
+          }, {
+            "count" : 19,
+            "item" : "Y-M"
+          }, {
+            "count" : 18,
+            "item" : "N"
+          } ]
+        },
+        "format" : {
+          "align" : "center"
+        }
+      }, {
+        "id" : 184522196,
+        "name" : "Facility URL",
+        "dataTypeName" : "url",
+        "description" : "URL of facility",
+        "fieldName" : "facility_url",
+        "position" : 10,
+        "renderTypeName" : "url",
+        "tableColumnId" : 7883797,
+        "width" : 278,
+        "cachedContents" : {
+          "non_null" : 203,
+          "smallest" : {
+            "url" : "http://nysparks.com/historic-sites/1/details.aspx"
+          },
+          "null" : 46,
+          "largest" : {
+            "url" : "http://nysparks.com/parks/99/details.aspx"
+          },
+          "top" : [ {
+            "count" : 20,
+            "item" : {
+              "url" : "http://nysparks.com/parks/40/details.aspx"
+            }
+          }, {
+            "count" : 19,
+            "item" : {
+              "url" : "http://nysparks.com/parks/30/details.aspx"
+            }
+          }, {
+            "count" : 18,
+            "item" : {
+              "url" : "http://nysparks.com/parks/51/details.aspx"
+            }
+          }, {
+            "count" : 17,
+            "item" : {
+              "url" : "http://nysparks.com/parks/137/details.aspx"
+            }
+          }, {
+            "count" : 16,
+            "item" : {
+              "url" : "http://nysparks.com/historic-sites/7/details.aspx"
+            }
+          }, {
+            "count" : 15,
+            "item" : {
+              "url" : "http://nysparks.com/parks/36/details.aspx"
+            }
+          }, {
+            "count" : 14,
+            "item" : {
+              "url" : "http://nysparks.com/parks/70/details.aspx"
+            }
+          }, {
+            "count" : 13,
+            "item" : {
+              "url" : "http://nysparks.com/parks/48/details.aspx"
+            }
+          }, {
+            "count" : 12,
+            "item" : {
+              "url" : "http://nysparks.com/parks/52/details.aspx"
+            }
+          }, {
+            "count" : 11,
+            "item" : {
+              "url" : "http://nysparks.com/parks/90/details.aspx"
+            }
+          }, {
+            "count" : 10,
+            "item" : {
+              "url" : "http://nysparks.com/parks/92/details.aspx"
+            }
+          }, {
+            "count" : 9,
+            "item" : {
+              "url" : "http://nysparks.com/historic-sites/12/details.aspx"
+            }
+          }, {
+            "count" : 8,
+            "item" : {
+              "url" : "http://nysparks.com/parks/173/details.aspx"
+            }
+          }, {
+            "count" : 7,
+            "item" : {
+              "url" : "http://nysparks.com/historic-sites/30/details.aspx"
+            }
+          }, {
+            "count" : 6,
+            "item" : {
+              "url" : "http://nysparks.com/historic-sites/34/details.aspx"
+            }
+          }, {
+            "count" : 5,
+            "item" : {
+              "url" : "http://nysparks.com/parks/53/details.aspx"
+            }
+          }, {
+            "count" : 4,
+            "item" : {
+              "url" : "http://nysparks.com/historic-sites/9/details.aspx"
+            }
+          }, {
+            "count" : 3,
+            "item" : {
+              "url" : "http://nysparks.com/parks/98/details.aspx"
+            }
+          }, {
+            "count" : 2,
+            "item" : {
+              "url" : "http://nysparks.com/parks/128/details.aspx"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "url" : "http://nysparks.com/historic-sites/29/details.aspx"
+            }
+          } ]
+        },
+        "format" : {
+          "align" : "left"
+        },
+        "subColumnTypes" : [ "url", "description" ]
+      }, {
+        "id" : 184522197,
+        "name" : "Golf URL",
+        "dataTypeName" : "url",
+        "description" : "URL of golf course",
+        "fieldName" : "golf_url",
+        "position" : 11,
+        "renderTypeName" : "url",
+        "tableColumnId" : 7883798,
+        "width" : 310,
+        "cachedContents" : {
+          "non_null" : 21,
+          "smallest" : {
+            "url" : "http://nysparks.com/golf-courses/1/details.aspx"
+          },
+          "null" : 228,
+          "largest" : {
+            "url" : "http://nysparks.com/golf-courses/9/details.aspx"
+          },
+          "top" : [ {
+            "count" : 20,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/4/details.aspx"
+            }
+          }, {
+            "count" : 19,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/10/details.aspx"
+            }
+          }, {
+            "count" : 18,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/9/details.aspx"
+            }
+          }, {
+            "count" : 17,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/19/details.aspx"
+            }
+          }, {
+            "count" : 16,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/3/details.aspx"
+            }
+          }, {
+            "count" : 15,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/16/details.aspx"
+            }
+          }, {
+            "count" : 14,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/5/details.aspx"
+            }
+          }, {
+            "count" : 13,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/20/details.aspx"
+            }
+          }, {
+            "count" : 12,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/14/details.aspx"
+            }
+          }, {
+            "count" : 11,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/1/details.aspx"
+            }
+          }, {
+            "count" : 10,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/21/details.aspx"
+            }
+          }, {
+            "count" : 9,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/6/details.aspx"
+            }
+          }, {
+            "count" : 8,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/13/details.aspx"
+            }
+          }, {
+            "count" : 7,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/11/details.aspx"
+            }
+          }, {
+            "count" : 6,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/18/details.aspx"
+            }
+          }, {
+            "count" : 5,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/8/details.aspx"
+            }
+          }, {
+            "count" : 4,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/12/details.aspx"
+            }
+          }, {
+            "count" : 3,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/17/details.aspx"
+            }
+          }, {
+            "count" : 2,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/2/details.aspx"
+            }
+          }, {
+            "count" : 1,
+            "item" : {
+              "url" : "http://nysparks.com/golf-courses/7/details.aspx"
+            }
+          } ]
+        },
+        "format" : {
+          "align" : "left"
+        },
+        "subColumnTypes" : [ "url", "description" ]
+      }, {
+        "id" : 184522198,
+        "name" : "Nature Center URL",
+        "dataTypeName" : "url",
+        "description" : "URL of Nature Center",
+        "fieldName" : "naturecenter_url",
+        "position" : 12,
+        "renderTypeName" : "url",
+        "tableColumnId" : 7883799,
+        "width" : 385,
+        "cachedContents" : {
+          "non_null" : 13,
+          "smallest" : {
+            "url" : "http://www.nysparks.com/environment/nature-centers/1/details.aspx"
+          },
+          "null" : 236,
+          "largest" : {
+            "url" : "http://www.nysparks.com/environment/nature-centers/9/details.aspx"
+          },
+          "top" : [ {
+            "count" : 20,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/11/details.aspx"
+            }
+          }, {
+            "count" : 19,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/10/details.aspx"
+            }
+          }, {
+            "count" : 18,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/12/details.aspx"
+            }
+          }, {
+            "count" : 17,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/3/details.aspx"
+            }
+          }, {
+            "count" : 16,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/9/details.aspx"
+            }
+          }, {
+            "count" : 15,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/6/details.aspx"
+            }
+          }, {
+            "count" : 14,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/4/details.aspx"
+            }
+          }, {
+            "count" : 13,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/5/details.aspx"
+            }
+          }, {
+            "count" : 12,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/2/details.aspx"
+            }
+          }, {
+            "count" : 11,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/1/details.aspx"
+            }
+          }, {
+            "count" : 10,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/8/details.aspx"
+            }
+          }, {
+            "count" : 9,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/7/details.aspx"
+            }
+          }, {
+            "count" : 8,
+            "item" : {
+              "url" : "http://www.nysparks.com/environment/nature-centers/14/details.aspx"
+            }
+          } ]
+        },
+        "format" : {
+          "align" : "left"
+        },
+        "subColumnTypes" : [ "url", "description" ]
+      }, {
+        "id" : 184522199,
+        "name" : "Longitude",
+        "dataTypeName" : "number",
+        "description" : "X coordinate of facility",
+        "fieldName" : "x",
+        "position" : 13,
+        "renderTypeName" : "number",
+        "tableColumnId" : 7883800,
+        "width" : 146,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : "-79.43141787300",
+          "sum" : "-18736.93190362170",
+          "null" : 0,
+          "average" : "-75.24872250450482",
+          "largest" : "-71.87778729950",
+          "top" : [ {
+            "count" : 20,
+            "item" : "-73.95685416970"
+          }, {
+            "count" : 19,
+            "item" : "-73.92004273640"
+          }, {
+            "count" : 18,
+            "item" : "-78.86468299030"
+          } ]
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 184522200,
+        "name" : "Latitude",
+        "dataTypeName" : "number",
+        "description" : "Y coordinate of facility",
+        "fieldName" : "y",
+        "position" : 14,
+        "renderTypeName" : "number",
+        "tableColumnId" : 7883801,
+        "width" : 150,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : "40.54056354560",
+          "sum" : "10576.84380593820",
+          "null" : 0,
+          "average" : "42.47728436119759",
+          "largest" : "45.00064012250",
+          "top" : [ {
+            "count" : 20,
+            "item" : "40.82553482490"
+          }, {
+            "count" : 19,
+            "item" : "40.85536366550"
+          }, {
+            "count" : 18,
+            "item" : "42.84638725520"
+          } ]
+        },
+        "format" : {
+          "precisionStyle" : "standard",
+          "noCommas" : "false",
+          "align" : "right"
+        }
+      }, {
+        "id" : 184522201,
+        "name" : "Location",
+        "dataTypeName" : "location",
+        "fieldName" : "location",
+        "position" : 15,
+        "renderTypeName" : "location",
+        "tableColumnId" : 7883802,
+        "width" : 219,
+        "cachedContents" : {
+          "non_null" : 249,
+          "smallest" : {
+            "longitude" : "-78.7480881839",
+            "latitude" : "42.971000873"
+          },
+          "null" : 0,
+          "largest" : {
+            "longitude" : "-78.8646829903",
+            "latitude" : "42.8463872552"
+          },
+          "top" : [ {
+            "count" : 20,
+            "item" : {
+              "longitude" : "-73.9568541697",
+              "latitude" : "40.8255348249"
+            }
+          }, {
+            "count" : 19,
+            "item" : {
+              "longitude" : "-73.9200427364",
+              "latitude" : "40.8553636655"
+            }
+          }, {
+            "count" : 18,
+            "item" : {
+              "longitude" : "-78.8646829903",
+              "latitude" : "42.8463872552"
+            }
+          } ]
+        },
+        "format" : {
+        },
+        "subColumnTypes" : [ "human_address", "latitude", "longitude", "machine_address", "needs_recoding" ]
+      } ],
+      "grants" : [ {
+        "inherited" : false,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "custom_fields" : {
+          "Dataset Summary" : {
+            "Granularity" : "Facility",
+            "Coverage" : "Statewide",
+            "Posting Frequency" : "Annually",
+            "Data Frequency" : "Quarterly",
+            "Units" : "State Parks and Historic Sites",
+            "Dataset Owner" : "GIS Bureau",
+            "Organization" : "GIS Bureau",
+            "Time Period" : "Present",
+            "Contact Information" : "Notes@parks.ny.gov"
+          },
+          "Disclaimers" : {
+            "Limitations" : "Some attribute information such as availability of a playground or swimmable beach is incomplete. Unless noted, it should be assumed that there is not a playground or beach at the facility. The agency is currently working to update and complete that information. "
+          },
+          "Dataset Information" : {
+            "Agency" : "Parks, Recreation and Historic Preservation, Office of"
+          },
+          "Local Data" : {
+            "County Filter" : "Yes",
+            "County_Column" : "county"
+          }
+        },
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        },
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ],
+        "jsonQuery" : {
+          "order" : [ {
+            "ascending" : true,
+            "columnFieldName" : "county"
+          }, {
+            "ascending" : true,
+            "columnFieldName" : "name"
+          } ]
+        },
+        "rdfSubject" : "0",
+        "attachments" : [ {
+          "blobId" : "",
+          "assetId" : "s9u4YEC7894dPSE5y9vcNGbeYjA_urFSKHz02GJ8wJo",
+          "name" : "New York State Parks Facility Overview.pdf",
+          "filename" : "New York State Parks Facility Overview.pdf"
+        }, {
+          "assetId" : "GS9p_knphp36ll9X5FkvpGbWBzKV_vhLiBevaVuuksg",
+          "name" : "OPRHP_StateParkFacilities_DataDictionary.pdf",
+          "filename" : "OPRHP_StateParkFacilities_DataDictionary.pdf"
+        } ]
+      },
+      "owner" : {
+        "id" : "xzik-pf59",
+        "displayName" : "NY Open Data",
+        "profileImageUrlLarge" : "/images/profile/5700/9521/image_large.jpg",
+        "profileImageUrlMedium" : "/images/profile/5700/9521/image_thumb.jpg",
+        "profileImageUrlSmall" : "/images/profile/5700/9521/image_tiny.jpg",
+        "roleName" : "publisher",
+        "screenName" : "NY Open Data",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_nominations", "approve_nominations", "moderate_comments", "manage_stories", "feature_items", "change_configurations", "view_domain", "view_others_datasets", "create_pages", "edit_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards" ]
+      },
+      "query" : {
+        "orderBys" : [ {
+          "ascending" : true,
+          "expression" : {
+            "columnId" : 184522190,
+            "type" : "column"
+          }
+        }, {
+          "ascending" : true,
+          "expression" : {
+            "columnId" : 184522187,
+            "type" : "column"
+          }
+        } ]
+      },
+      "rights" : [ "read" ],
+      "sortBys" : [ {
+        "id" : 0,
+        "viewColumnId" : 184522190,
+        "flags" : [ "asc" ]
+      }, {
+        "id" : 0,
+        "viewColumnId" : 184522187,
+        "flags" : [ "asc" ]
+      } ],
+      "tableAuthor" : {
+        "id" : "xzik-pf59",
+        "displayName" : "NY Open Data",
+        "profileImageUrlLarge" : "/images/profile/5700/9521/image_large.jpg",
+        "profileImageUrlMedium" : "/images/profile/5700/9521/image_thumb.jpg",
+        "profileImageUrlSmall" : "/images/profile/5700/9521/image_tiny.jpg",
+        "roleName" : "publisher",
+        "screenName" : "NY Open Data",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_nominations", "approve_nominations", "moderate_comments", "manage_stories", "feature_items", "change_configurations", "view_domain", "view_others_datasets", "create_pages", "edit_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards" ]
+      },
+      "tags" : [ "parks", "recreation", "historic", "golf", "camping", "nature centers" ],
+      "flags" : [ "default" ]
+    }
+  },
+  "data" : [ [ 224, "31163B90-15FD-47D1-8694-B7DC6B57B674", 224, 1387393609, "707400", 1387393609, "707400", "{\n}", "John Boyd Thacher", "State Park", "11", "Albany", "N", "N", "Y", "Y-A", null, [ "http://nysparks.com/parks/128/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/8/details.aspx", null ], "-74.01470615780", "42.65546552500", [ null, "42.65546552500", "-74.01470615780", null, false ] ]
+, [ 238, "5E4A534B-E639-4D77-BBCD-AFA0FFEF01BB", 238, 1387393609, "707400", 1387393609, "707400", "{\n}", "Schuyler Mansion", "State Historic Site", "11", "Albany", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/33/details.aspx", null ], [ null, null ], [ null, null ], "-73.75928699310", "42.64132297360", [ null, "42.64132297360", "-73.75928699310", null, false ] ]
+, [ 240, "C8347B77-57C8-48BD-B2B4-7B7114906E25", 240, 1387393609, "707400", 1387393609, "707400", "{\n}", "Thompson's Lake", "State Park", "11", "Albany", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/99/details.aspx", null ], [ null, null ], [ null, null ], "-74.04697993400", "42.65573108020", [ null, "42.65573108020", "-74.04697993400", null, false ] ]
+, [ 236, "08B7A020-E5BE-49C9-8496-3FE3DEF90235", 236, 1387393609, "707400", 1387393609, "707400", "{\n}", "Schodack Island", "State Park", "11", "Alb/Rens", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/146/details.aspx", null ], [ null, null ], [ null, null ], "-73.77652043620", "42.49059902240", [ null, "42.49059902240", "-73.77652043620", null, false ] ]
+, [ 248, "A89C100F-03A3-4F57-B113-27A74BE88F79", 248, 1387393609, "707400", 1387393609, "707400", "{\n}", "Roberto Clemente", "State Park", "12", "Bronx", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/140/details.aspx", null ], [ null, null ], [ null, null ], "-73.92004273640", "40.85536366550", [ null, "40.85536366550", "-73.92004273640", null, false ] ]
+, [ 70, "1C80164E-03A8-4660-B558-6DF4CE38FE2A", 70, 1387393609, "707400", 1387393609, "707400", "{\n}", "Chenango Valley", "State Park", "5", "Broome", "Y", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/41/details.aspx", null ], [ "http://nysparks.com/golf-courses/20/details.aspx", null ], [ null, null ], "-75.83623684010", "42.21554025070", [ null, "42.21554025070", "-75.83623684010", null, false ] ]
+, [ 86, "F90A33E6-60CC-41C0-827F-DB7702D9DB87", 86, 1387393609, "707400", 1387393609, "707400", "{\n}", "Oquaga Creek", "State Park", "5", "Broome/Delaware", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/27/details.aspx", null ], [ null, null ], [ null, null ], "-75.42467934830", "42.17805144910", [ null, "42.17805144910", "-75.42467934830", null, false ] ]
+, [ 22, "9E0789C5-AF6B-4BE7-8B99-F937747F1E40", 22, 1387393609, "707400", 1387393609, "707400", "{\n}", "Allegany", "State Park", "2", "Cattaraugus", "N", "Y", "Y", "Y-A", "Y-M", [ "http://nysparks.com/parks/136/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/12/details.aspx", null ], "-78.76855864730", "42.05475752110", [ null, "42.05475752110", "-78.76855864730", null, false ] ]
+, [ 45, "A03191C0-FB51-4623-923A-C066943966EE", 45, 1387393609, "707400", 1387393609, "707400", "{\n}", "Fair Haven Beach", "State Park", "4", "Cayuga", "Y", "Y", "Y", null, "Y-M", [ "http://nysparks.com/parks/12/details.aspx", null ], [ "http://nysparks.com/golf-courses/9/details.aspx", null ], [ null, null ], "-76.69131068280", "43.34170812210", [ null, "43.34170812210", "-76.69131068280", null, false ] ]
+, [ 46, "86B26846-0BED-4A9D-B3E1-C6CDC318F3EC", 46, 1387393609, "707400", 1387393609, "707400", "{\n}", "Fillmore Glen", "State Park", "4", "Cayuga", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/157/details.aspx", null ], [ null, null ], [ null, null ], "-76.38800624500", "42.69096898080", [ null, "42.69096898080", "-76.38800624500", null, false ] ]
+, [ 53, "2C437727-2416-4199-9EC6-0E3A65EDCA5B", 53, 1387393609, "707400", 1387393609, "707400", "{\n}", "Long Point", "State Park", "4", "Cayuga", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/170/details.aspx", null ], [ null, null ], [ null, null ], "-76.69840928250", "42.71741104130", [ null, "42.71741104130", "-76.69840928250", null, false ] ]
+, [ 23, "4CBE7C1B-A4D9-497A-82A8-45B05FA8B5F5", 23, 1387393609, "707400", 1387393609, "707400", "{\n}", "Lake Erie", "State Park", "2", "Chautauqua", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/129/details.aspx", null ], [ null, null ], [ null, null ], "-79.43141787300", "42.42289078970", [ null, "42.42289078970", "-79.43141787300", null, false ] ]
+, [ 24, "FAE42751-D1AC-473B-9BD6-88C7EBDDEF2A", 24, 1387393609, "707400", 1387393609, "707400", "{\n}", "Long Point", "State Park", "2", "Chautauqua", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/109/details.aspx", null ], [ null, null ], [ null, null ], "-79.41091140450", "42.17876065240", [ null, "42.17876065240", "-79.41091140450", null, false ] ]
+, [ 25, "1D44BE3E-4869-476A-8899-B5D220A7FE92", 25, 1387393609, "707400", 1387393609, "707400", "{\n}", "Midway", "State Park", "2", "Chautauqua", "N", "N", "N", null, null, [ "http://nysparks.com/parks/167/details.aspx", null ], [ null, null ], [ null, null ], "-79.42242740360", "42.20087248010", [ null, "42.20087248010", "-79.42242740360", null, false ] ]
+, [ 54, "2CFBB843-B034-4FE5-A9B4-F2D8CF41C617", 54, 1387393609, "707400", 1387393609, "707400", "{\n}", "Mark Twain", "State Park", "4", "Chemung", "Y", "N", "N", null, null, [ "http://nysparks.com/parks/138/details.aspx", null ], [ "http://nysparks.com/golf-courses/3/details.aspx", null ], [ null, null ], "-76.83569091250", "42.21166069400", [ null, "42.21166069400", "-76.83569091250", null, false ] ]
+, [ 55, "41982D78-2749-4BCB-9CBD-055B70D0D605", 55, 1387393609, "707400", 1387393609, "707400", "{\n}", "Newtown Battlefield", "State Park", "4", "Chemung", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/107/details.aspx", null ], [ null, null ], [ null, null ], "-76.73631726940", "42.04902651830", [ null, "42.04902651830", "-76.73631726940", null, false ] ]
+, [ 68, "B6B5E129-F0CC-49EC-ADC4-283F096A8BBE", 68, 1387393609, "707400", 1387393609, "707400", "{\n}", "Bowman Lake", "State Park", "5", "Chenango", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/76/details.aspx", null ], [ null, null ], [ null, null ], "-75.68063380290", "42.51998473800", [ null, "42.51998473800", "-75.68063380290", null, false ] ]
+, [ 185, "3E0A51CB-42B2-4267-A8E9-DB2EAC37FD5D", 185, 1387393609, "707400", 1387393609, "707400", "{\n}", "Crab Island", "State Park", "10", "Clinton", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.41714938520", "44.66175799700", [ null, "44.66175799700", "-73.41714938520", null, false ] ]
+, [ 187, "9D792B86-B83F-49B0-86E5-9D7B990A0A29", 187, 1387393609, "707400", 1387393609, "707400", "{\n}", "Cumberland Bay", "State Park", "10", "Clinton", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/34/details.aspx", null ], [ null, null ], [ null, null ], "-73.42117996320", "44.73334654280", [ null, "44.73334654280", "-73.42117996320", null, false ] ]
+, [ 192, "DD2A2298-2286-4ED5-B641-63910B75E86A", 192, 1387393609, "707400", 1387393609, "707400", "{\n}", "Great Chazy Boat Launch", "Marine Facility", "10", "Clinton", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.38722476180", "44.93159446470", [ null, "44.93159446470", "-73.38722476180", null, false ] ]
+, [ 198, "4A10E0AD-B13D-4166-B022-AEC67CBE9850", 198, 1387393609, "707400", 1387393609, "707400", "{\n}", "Macomb Reservation", "State Park", "10", "Clinton", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/77/details.aspx", null ], [ null, null ], [ null, null ], "-73.61240776110", "44.61786491630", [ null, "44.61786491630", "-73.61240776110", null, false ] ]
+, [ 200, "F86233D8-D1B8-461D-8E59-ECDDB1D310F1", 200, 1387393609, "707400", 1387393609, "707400", "{\n}", "Point Au Roche", "State Park", "10", "Clinton", "N", "N", "Y", "Y", "Y", [ "http://nysparks.com/parks/30/details.aspx", null ], [ null, null ], [ null, null ], "-73.38769347120", "44.77840042950", [ null, "44.77840042950", "-73.38769347120", null, false ] ]
+, [ 201, "532DEF10-DB01-4113-BD93-FE503D2996EE", 201, 1387393609, "707400", 1387393609, "707400", "{\n}", "Point Au Roche Boat Launch", "Marine Facility", "10", "Clinton", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.36439067550", "44.80297115220", [ null, "44.80297115220", "-73.36439067550", null, false ] ]
+, [ 96, "42FAEF54-7786-4F8D-A846-5425F2640B63", 96, 1387393609, "707400", 1387393609, "707400", "{\n}", "Clermont", "State Historic Site", "7", "Col/Dutch", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/16/details.aspx", null ], [ null, null ], [ null, null ], "-73.91104015700", "42.08330973870", [ null, "42.08330973870", "-73.91104015700", null, false ] ]
+, [ 223, "2193ACD6-9597-4F3B-AAFE-7F4D3575D4DC", 223, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hudson River Islands", "State Park", "11", "Columb/Greene", "N", "Y", "N", null, null, [ "http://nysparks.com/parks/98/details.aspx", null ], [ null, null ], [ null, null ], "-73.77837640000", "42.32888524760", [ null, "42.32888524760", "-73.77837640000", null, false ] ]
+, [ 105, "E598C6B3-1277-42FB-933F-E98F180F58F9", 105, 1387393609, "707400", 1387393609, "707400", "{\n}", "Lake Taghkanic", "State Park", "7", "Columbia", "N", "Y", "Y", null, "Y-M", [ "http://nysparks.com/parks/38/details.aspx", null ], [ null, null ], [ null, null ], "-73.70588781880", "42.09288181800", [ null, "42.09288181800", "-73.70588781880", null, false ] ]
+, [ 108, "3E37AE3E-FFA5-4E71-A44E-EBE803FAF95D", 108, 1387393609, "707400", 1387393609, "707400", "{\n}", "Olana", "State Historic Site", "7", "Columbia", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/23/details.aspx", null ], [ null, null ], [ null, null ], "-73.82875956580", "42.21459513810", [ null, "42.21459513810", "-73.82875956580", null, false ] ]
+, [ 81, "4D3ADBD6-97E8-49DE-962A-1A0E5F01E3BE", 81, 1387393609, "707400", 1387393609, "707400", "{\n}", "John Burroughs Memorial", "State Historic Site", "5", "Delaware", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/3/details.aspx", null ], [ null, null ], [ null, null ], "-74.58596903470", "42.29474197550", [ null, "42.29474197550", "-74.58596903470", null, false ] ]
+, [ 97, "A9A9DC49-261C-4020-A8D0-7131522E4023", 97, 1387393609, "707400", 1387393609, "707400", "{\n}", "Clinton House", "State Historic Site", "7", "Dutchess", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/1/details.aspx", null ], [ null, null ], [ null, null ], "-73.91624471230", "41.70036495400", [ null, "41.70036495400", "-73.91624471230", null, false ] ]
+, [ 103, "DEE6858A-45CC-41D5-8D11-7A9C6358EA7E", 103, 1387393609, "707400", 1387393609, "707400", "{\n}", "James Baird", "State Park", "7", "Dutchess", "Y", "N", "Y", null, null, [ "http://nysparks.com/parks/101/details.aspx", null ], [ "http://nysparks.com/golf-courses/1/details.aspx", null ], [ null, null ], "-73.79543181340", "41.68800509510", [ null, "41.68800509510", "-73.79543181340", null, false ] ]
+, [ 106, "9DB71719-08C9-4C77-AC51-4B55CAED73B9", 106, 1387393609, "707400", 1387393609, "707400", "{\n}", "Margaret Lewis Norrie", "State Park", "7", "Dutchess", "N", "Y", "N", null, null, [ "http://nysparks.com/parks/171/details.aspx", null ], [ null, null ], [ null, null ], "-73.93895513720", "41.84153654810", [ null, "41.84153654810", "-73.93895513720", null, false ] ]
+, [ 107, "9B640850-B2AA-4262-BE84-8E538AC3C985", 107, 1387393609, "707400", 1387393609, "707400", "{\n}", "Ogden & Ruth Livingston Mills", "State Park", "7", "Dutchess", "Y", "N", "N", null, null, [ "http://nysparks.com/parks/33/details.aspx", null ], [ "http://nysparks.com/golf-courses/21/details.aspx", null ], [ null, null ], "-73.93480595460", "41.85300539520", [ null, "41.85300539520", "-73.93480595460", null, false ] ]
+, [ 112, "E77AADEC-F207-4B08-B231-1EE4E0126C70", 112, 1387393609, "707400", 1387393609, "707400", "{\n}", "Quiet Cove Riverfront Park", "Other", "7", "Dutchess", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.93449945000", "41.73322538680", [ null, "41.73322538680", "-73.93449945000", null, false ] ]
+, [ 114, "C9026A09-A7D7-47B3-A8E1-33293C3B0233", 114, 1387393609, "707400", 1387393609, "707400", "{\n}", "Staatsburgh", "State Historic Site", "7", "Dutchess", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/25/details.aspx", null ], [ null, null ], [ null, null ], "-73.92994890210", "41.85662753880", [ null, "41.85662753880", "-73.92994890210", null, false ] ]
+, [ 115, "5B18A3DA-DEF7-4CE2-9163-21178BA15B97", 115, 1387393609, "707400", 1387393609, "707400", "{\n}", "Taconic", "State Park", "7", "Dutchess", "N", "N", "Y", "Y", "Y-M", [ "http://nysparks.com/parks/83/details.aspx", null ], [ null, null ], [ null, null ], "-73.51743928060", "42.07786385560", [ null, "42.07786385560", "-73.51743928060", null, false ] ]
+, [ 117, "C0D89C24-D216-41A5-B422-07F9408E215F", 117, 1387393609, "707400", 1387393609, "707400", "{\n}", "Walkway over the Hudson", "State Historic Park", "7", "Dutchess", "N", "N", "N", null, null, [ "http://nysparks.com/parks/178/details.aspx", null ], [ null, null ], [ null, null ], "-73.94495088990", "41.71058700040", [ null, "41.71058700040", "-73.94495088990", null, false ] ]
+, [ 102, "9DC15211-EEB4-4A96-AF72-CDF0A9F37B22", 102, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hudson Highlands", "State Park Preserve", "7", "Dutch/Put", "N", "N", "N", null, null, [ "http://nysparks.com/parks/9/details.aspx", null ], [ null, null ], [ null, null ], "-73.96211032090", "41.43375567300", [ null, "41.43375567300", "-73.96211032090", null, false ] ]
+, [ 1, "EDDCEE35-98D5-43D3-B080-BD3599F1BF1D", 1, 1387393609, "707400", 1387393609, "707400", "{\n}", "Amherst", "State Park", "1", "Erie", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-78.74808818390", "42.97100087300", [ null, "42.97100087300", "-78.74808818390", null, false ] ]
+, [ 2, "83A443E0-BB0E-47F0-A3B2-F77CAE1E8336", 2, 1387393609, "707400", 1387393609, "707400", "{\n}", "Beaver Island", "State Park", "1", "Erie", "Y", "N", "Y", "Y", "Y", [ "http://nysparks.com/parks/56/details.aspx", null ], [ "http://nysparks.com/golf-courses/4/details.aspx", null ], [ "http://www.nysparks.com/environment/nature-centers/11/details.aspx", null ], "-78.95310636330", "42.96576593970", [ null, "42.96576593970", "-78.95310636330", null, false ] ]
+, [ 3, "8126987C-0589-4E8B-BBD8-C465D1705CD6", 3, 1387393609, "707400", 1387393609, "707400", "{\n}", "Big Six Mile Creek Marina", "Marine Facility", "1", "Erie", "N", "N", "N", null, null, [ "http://nysparks.com/parks/50/details.aspx", null ], [ null, null ], [ null, null ], "-79.01098770030", "43.02319515750", [ null, "43.02319515750", "-79.01098770030", null, false ] ]
+, [ 4, "483BF788-46C5-4EA0-A9F0-D207CECA4971", 4, 1387393609, "707400", 1387393609, "707400", "{\n}", "Buckhorn Island", "State Park", "1", "Erie", "N", "N", "N", null, null, [ "http://nysparks.com/parks/174/details.aspx", null ], [ null, null ], [ null, null ], "-78.98074732480", "43.05851647910", [ null, "43.05851647910", "-78.98074732480", null, false ] ]
+, [ 250, "FC264386-84C4-4819-9273-5F69885A6AF4", 250, 1405710764, "707400", 1405710764, "707400", "{\n}", "Buffalo Harbor", "State Park", "1", "Erie", "N", "N", "N", "N", "N", [ "http://nysparks.com/parks/191/details.aspx", null ], [ null, null ], [ null, null ], "-78.86468299030", "42.84638725520", [ null, "42.84638725520", "-78.86468299030", null, false ] ]
+, [ 5, "E9FE4B17-AABC-406A-B22F-F18BF0D30C46", 5, 1387393609, "707400", 1387393609, "707400", "{\n}", "Darwin Martin House", "State Historic Site", "1", "Erie", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/35/details.aspx", null ], [ null, null ], [ null, null ], "-78.84804520450", "42.93609208890", [ null, "42.93609208890", "-78.84804520450", null, false ] ]
+, [ 6, "20BCD3DA-F11C-4396-9C1B-F5A064BE0FE6", 6, 1387393609, "707400", 1387393609, "707400", "{\n}", "DeVeaux Woods", "State Park", "1", "Erie", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/11/details.aspx", null ], [ null, null ], [ null, null ], "-79.05874317650", "43.11941679870", [ null, "43.11941679870", "-79.05874317650", null, false ] ]
+, [ 9, "85273BE7-F2BE-4222-B18F-6C03B293298C", 9, 1387393609, "707400", 1387393609, "707400", "{\n}", "Evangola", "State Park", "1", "Erie", "N", "Y", "Y", "Y", "Y", [ "http://nysparks.com/parks/91/details.aspx", null ], [ null, null ], [ null, null ], "-79.10185925780", "42.60579935850", [ null, "42.60579935850", "-79.10185925780", null, false ] ]
+, [ 14, "8F310AE5-65DB-4ADC-A202-D47C467C6061", 14, 1387393609, "707400", 1387393609, "707400", "{\n}", "Knox Farm", "State Park", "1", "Erie", "N", "N", "N", null, null, [ "http://nysparks.com/parks/163/details.aspx", null ], [ null, null ], [ null, null ], "-78.64774993590", "42.77386726570", [ null, "42.77386726570", "-78.64774993590", null, false ] ]
+, [ 18, "5E4248E9-54B2-4E2F-832B-88ECC707AB7B", 18, 1387393609, "707400", 1387393609, "707400", "{\n}", "Strawberry Island", "Other", "1", "Erie", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-78.92249742120", "42.95394905960", [ null, "42.95394905960", "-78.92249742120", null, false ] ]
+, [ 21, "073BDBC3-C097-453F-B6B0-3E5DA7700CD5", 21, 1387393609, "707400", 1387393609, "707400", "{\n}", "Woodlawn Beach", "State Park", "1", "Erie", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/47/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/10/details.aspx", null ], "-78.85220784890", "42.79381890080", [ null, "42.79381890080", "-78.85220784890", null, false ] ]
+, [ 219, "7874650A-E928-443D-952B-704E42672384", 219, 1387393609, "707400", 1387393609, "707400", "{\n}", "Crown Point", "State Historic Site", "11", "Essex", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/34/details.aspx", null ], [ null, null ], [ null, null ], "-73.43166318720", "44.02332481240", [ null, "44.02332481240", "-73.43166318720", null, false ] ]
+, [ 225, "CD5B5975-5AB3-40E8-BB51-93C3A87551A2", 225, 1387393609, "707400", 1387393609, "707400", "{\n}", "John Brown Farm", "State Historic Site", "11", "Essex", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/29/details.aspx", null ], [ null, null ], [ null, null ], "-73.97150674920", "44.24957450370", [ null, "44.24957450370", "-73.97150674920", null, false ] ]
+, [ 226, "D8B31AB0-E9FA-4818-9C2F-92A4B56D43CF", 226, 1387393609, "707400", 1387393609, "707400", "{\n}", "Johnson Hall", "State Historic Site", "11", "Fulton", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/10/details.aspx", null ], [ null, null ], [ null, null ], "-74.38189017440", "43.01551188180", [ null, "43.01551188180", "-74.38189017440", null, false ] ]
+, [ 29, "75F2B6C9-C3F6-4959-91EF-6BACEF4BE5E0", 29, 1387393609, "707400", 1387393609, "707400", "{\n}", "Darien Lakes", "State Park", "3", "Genesee", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/144/details.aspx", null ], [ null, null ], [ null, null ], "-78.41149229790", "42.91181415730", [ null, "42.91181415730", "-78.41149229790", null, false ] ]
+, [ 214, "F5419F36-750B-4EC5-A056-2BE3D67D005F", 214, 1387393609, "707400", 1387393609, "707400", "{\n}", "Athens Boat Launch", "Marine Facility", "11", "Greene", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.80227688600", "42.27295383990", [ null, "42.27295383990", "-73.80227688600", null, false ] ]
+, [ 217, "929AC655-EFEB-43F6-A067-CC50DC8BF7FD", 217, 1387393609, "707400", 1387393609, "707400", "{\n}", "Coxsackie Boat Launch", "Marine Facility", "11", "Greene", "N", "N", "Y", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.79577522510", "42.35271611280", [ null, "42.35271611280", "-73.79577522510", null, false ] ]
+, [ 79, "372833A1-8492-4539-9391-58DB7CFBA75F", 79, 1387393609, "707400", 1387393609, "707400", "{\n}", "Herkimer Home", "State Historic Site", "5", "Herkimer", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/14/details.aspx", null ], [ null, null ], [ null, null ], "-74.81586505310", "43.02532856280", [ null, "43.02532856280", "-74.81586505310", null, false ] ]
+, [ 179, "DF26FD9C-2FAE-4E0F-9248-273F26D2E12D", 179, 1387393609, "707400", 1387393609, "707400", "{\n}", "Burnham Point", "State Park", "10", "Jefferson", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/57/details.aspx", null ], [ null, null ], [ null, null ], "-76.26444426670", "44.16250248650", [ null, "44.16250248650", "-76.26444426670", null, false ] ]
+, [ 180, "BF8870C8-C8D2-458F-BBAE-91C7DE23A92D", 180, 1387393609, "707400", 1387393609, "707400", "{\n}", "Canoe Picnic Point", "State Park", "10", "Jefferson", "N", "Y", "N", null, null, [ "http://nysparks.com/parks/64/details.aspx", null ], [ null, null ], [ null, null ], "-76.07471216060", "44.30417138600", [ null, "44.30417138600", "-76.07471216060", null, false ] ]
+, [ 182, "814D0920-8A69-4B1A-BC24-E448BF7D0FBB", 182, 1387393609, "707400", 1387393609, "707400", "{\n}", "Cedar Point", "State Park", "10", "Jefferson", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/21/details.aspx", null ], [ null, null ], [ null, null ], "-76.19613394000", "44.20348919670", [ null, "44.20348919670", "-76.19613394000", null, false ] ]
+, [ 183, "3FB05CB4-EBA5-45D9-A8E7-3B91CD2D2C2E", 183, 1387393609, "707400", 1387393609, "707400", "{\n}", "Chaumont Boat Launch", "Marine Facility", "10", "Jefferson", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-76.14980352160", "44.06940899090", [ null, "44.06940899090", "-76.14980352160", null, false ] ]
+, [ 188, "E37462A0-DE66-498E-9B3B-0A78A14CE4E4", 188, 1387393609, "707400", 1387393609, "707400", "{\n}", "Dewolf Point", "State Park", "10", "Jefferson", "N", "Y", "N", null, null, [ "http://nysparks.com/parks/22/details.aspx", null ], [ null, null ], [ null, null ], "-75.99014179590", "44.33274076620", [ null, "44.33274076620", "-75.99014179590", null, false ] ]
+, [ 191, "2A4CB5C2-4720-4C08-BC95-30210C4CC727", 191, 1387393609, "707400", 1387393609, "707400", "{\n}", "Grass Point", "State Park", "10", "Jefferson", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/139/details.aspx", null ], [ null, null ], [ null, null ], "-75.99593007350", "44.28176681430", [ null, "44.28176681430", "-75.99593007350", null, false ] ]
+, [ 195, "7A563E1B-A561-412B-BD62-DAD3BE0823AA", 195, 1387393609, "707400", 1387393609, "707400", "{\n}", "Keewaydin", "State Park", "10", "Jefferson", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/24/details.aspx", null ], [ null, null ], [ null, null ], "-75.92971102700", "44.32343021440", [ null, "44.32343021440", "-75.92971102700", null, false ] ]
+, [ 196, "1EA430B4-1A80-4106-B2A2-00DD10D032AD", 196, 1387393609, "707400", 1387393609, "707400", "{\n}", "Kring Point", "State Park", "10", "Jefferson", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/14/details.aspx", null ], [ null, null ], [ null, null ], "-75.85615853970", "44.37718875030", [ null, "44.37718875030", "-75.85615853970", null, false ] ]
+, [ 197, "6B6A0EA3-83B2-4EFD-977C-EC775BF6AFF5", 197, 1387393609, "707400", 1387393609, "707400", "{\n}", "Long Point", "State Park", "10", "Jefferson", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/54/details.aspx", null ], [ null, null ], [ null, null ], "-76.21705748170", "44.02844022260", [ null, "44.02844022260", "-76.21705748170", null, false ] ]
+, [ 199, "8364ACAA-794B-4D20-88BF-7831753D3F3E", 199, 1387393609, "707400", 1387393609, "707400", "{\n}", "Mary Island", "State Park", "10", "Jefferson", "N", "Y", "N", null, null, [ "http://nysparks.com/parks/40/details.aspx", null ], [ null, null ], [ null, null ], "-75.92157812080", "44.36557110420", [ null, "44.36557110420", "-75.92157812080", null, false ] ]
+, [ 203, "BEC4C2F0-1EE3-490A-AC94-434E5B04C8AB", 203, 1387393609, "707400", 1387393609, "707400", "{\n}", "Robert Wehle", "State Park", "10", "Jefferson", "N", "N", "N", null, null, [ "http://nysparks.com/parks/137/details.aspx", null ], [ null, null ], [ null, null ], "-76.27550031840", "43.86716908390", [ null, "43.86716908390", "-76.27550031840", null, false ] ]
+, [ 204, "1388D55C-3345-4B37-A536-4BA3AD5A4BC2", 204, 1387393609, "707400", 1387393609, "707400", "{\n}", "Rock Island Lighthouse", "State Park", "10", "Jefferson", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-76.01679556720", "44.28031135040", [ null, "44.28031135040", "-76.01679556720", null, false ] ]
+, [ 205, "E6685800-A8BE-4D8B-9687-83821FB24960", 205, 1387393609, "707400", 1387393609, "707400", "{\n}", "Sackets Harbor", "State Historic Site", "10", "Jefferson", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/7/details.aspx", null ], [ null, null ], [ null, null ], "-76.12978027100", "43.94630982770", [ null, "43.94630982770", "-76.12978027100", null, false ] ]
+, [ 206, "5183BBEA-41D1-4710-B8E5-7942484C6F8E", 206, 1387393609, "707400", 1387393609, "707400", "{\n}", "Southwick Beach", "State Park", "10", "Jefferson", "N", "Y", "Y", null, "Y-M", [ "http://nysparks.com/parks/36/details.aspx", null ], [ null, null ], [ null, null ], "-76.20460032660", "43.76329126660", [ null, "43.76329126660", "-76.20460032660", null, false ] ]
+, [ 208, "E61908B0-F63D-4B75-B682-21941FC8AB2E", 208, 1387393609, "707400", 1387393609, "707400", "{\n}", "Stony Creek Boat Launch", "Marine Facility", "10", "Jefferson", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-76.22920822600", "43.82561136390", [ null, "43.82561136390", "-76.22920822600", null, false ] ]
+, [ 209, "E8546192-737E-4CF1-A469-18FE12261090", 209, 1387393609, "707400", 1387393609, "707400", "{\n}", "Waterson Point", "State Park", "10", "Jefferson", "N", "N", "N", null, null, [ "http://nysparks.com/parks/48/details.aspx", null ], [ null, null ], [ null, null ], "-76.01007586330", "44.33917817740", [ null, "44.33917817740", "-76.01007586330", null, false ] ]
+, [ 210, "A66643AD-8113-4EF6-AD0D-7765E54508F6", 210, 1387393609, "707400", 1387393609, "707400", "{\n}", "Wellesley Island", "State Park", "10", "Jefferson", "Y", "Y", "Y", "Y", "Y", [ "http://nysparks.com/parks/52/details.aspx", null ], [ "http://nysparks.com/golf-courses/7/details.aspx", null ], [ "http://www.nysparks.com/environment/nature-centers/2/details.aspx", null ], "-76.01544820650", "44.32923800290", [ null, "44.32923800290", "-76.01544820650", null, false ] ]
+, [ 211, "012B7B46-CA18-4425-B277-39F2B376828D", 211, 1387393609, "707400", 1387393609, "707400", "{\n}", "Westcott Beach", "State Park", "10", "Jefferson", "N", "Y", "Y", null, "Y-M", [ "http://nysparks.com/parks/90/details.aspx", null ], [ null, null ], [ null, null ], "-76.11801702600", "43.89698048320", [ null, "43.89698048320", "-76.11801702600", null, false ] ]
+, [ 243, "8239A6D0-9735-48EC-AB3B-7CFE4647851A", 243, 1387393609, "707400", 1387393609, "707400", "{\n}", "East River", "State Park", "12", "Kings", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/155/details.aspx", null ], [ null, null ], [ null, null ], "-73.96205753500", "40.72142461340", [ null, "40.72142461340", "-73.96205753500", null, false ] ]
+, [ 212, "76F68544-9F00-4F62-A9E6-DFA4B8327D71", 212, 1387393609, "707400", 1387393609, "707400", "{\n}", "Whetstone Gulf", "State Park", "10", "Lewis", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/92/details.aspx", null ], [ null, null ], [ null, null ], "-75.47741546370", "43.69850757390", [ null, "43.69850757390", "-75.47741546370", null, false ] ]
+, [ 28, "84F07B4C-9EBB-4776-95B1-E00D14FC0695", 28, 1387393609, "707400", 1387393609, "707400", "{\n}", "Conesus Lake Marine Park", "Marine Facility", "3", "Livingston", "N", "N", "N", null, null, [ "http://nysparks.com/parks/71/details.aspx", null ], [ null, null ], [ null, null ], "-77.71160049680", "42.77580615110", [ null, "42.77580615110", "-77.71160049680", null, false ] ]
+, [ 34, "B163609C-F1E4-43C1-9968-CB6B9CBDC33A", 34, 1387393609, "707400", 1387393609, "707400", "{\n}", "Letchworth", "State Park", "3", "Liv/Wyo", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/79/details.aspx", null ], [ null, null ], [ null, null ], "-77.97576922360", "42.64592134880", [ null, "42.64592134880", "-77.97576922360", null, false ] ]
+, [ 71, "859623A0-6604-46B7-95ED-F1BE8936D9DF", 71, 1387393609, "707400", 1387393609, "707400", "{\n}", "Chittenango Falls", "State Park", "5", "Madison", "N", "N", "Y", "Y", null, [ "http://nysparks.com/parks/130/details.aspx", null ], [ null, null ], [ null, null ], "-75.84665631290", "42.98148473660", [ null, "42.98148473660", "-75.84665631290", null, false ] ]
+, [ 78, "EEE3B194-3F7B-4A0A-BED9-AE954802439F", 78, 1387393609, "707400", 1387393609, "707400", "{\n}", "Helen L. McNitt", "Other", "5", "Madison", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-75.87410834750", "42.97085175510", [ null, "42.97085175510", "-75.87410834750", null, false ] ]
+, [ 82, "236ECAC4-1E88-4017-AF5A-EB1E72E6104B", 82, 1387393609, "707400", 1387393609, "707400", "{\n}", "Lorenzo", "State Historic Site", "5", "Madison", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/15/details.aspx", null ], [ null, null ], [ null, null ], "-75.86569996170", "42.92290209040", [ null, "42.92290209040", "-75.86569996170", null, false ] ]
+, [ 244, "7824245C-362E-4754-AB41-D915922A87A7", 244, 1387393609, "707400", 1387393609, "707400", "{\n}", "Franklin D. Roosevelt Four Freedoms", "State Park", "12", "Manhattan", "N", "N", "N", null, null, [ "http://nysparks.com/parks/186/details.aspx", null ], [ null, null ], [ null, null ], "-73.96037937080", "40.75067655220", [ null, "40.75067655220", "-73.96037937080", null, false ] ]
+, [ 246, "38EEEB9A-9501-476C-BCB0-527E89BB12E2", 246, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hudson River Park", "State Park", "12", "Manhattan", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-74.01174318270", "40.73549892950", [ null, "40.73549892950", "-74.01174318270", null, false ] ]
+, [ 247, "A5D34D24-9169-4013-9001-C04C4E16A08B", 247, 1387393609, "707400", 1387393609, "707400", "{\n}", "Riverbank", "State Park", "12", "Manhattan", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/93/details.aspx", null ], [ null, null ], [ null, null ], "-73.95685416970", "40.82553482490", [ null, "40.82553482490", "-73.95685416970", null, false ] ]
+, [ 26, "1C9548CB-D941-41B9-BAC7-D70825B1DF2E", 26, 1387393609, "707400", 1387393609, "707400", "{\n}", "Braddock Bay", "State Park", "3", "Monroe", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-77.70386571640", "43.29419545260", [ null, "43.29419545260", "-77.70386571640", null, false ] ]
+, [ 27, "4CCE5946-1FFD-46E7-999F-A7FD9A0DB902", 27, 1387393609, "707400", 1387393609, "707400", "{\n}", "Canal Park Lock 32", "Other", "3", "Monroe", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-77.54634100980", "43.09255115210", [ null, "43.09255115210", "-77.54634100980", null, false ] ]
+, [ 30, "338D957D-8057-43EF-8353-138D5E66F934", 30, 1387393609, "707400", 1387393609, "707400", "{\n}", "Genesee River", "Other", "3", "Monroe", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-77.61431270980", "43.23058470660", [ null, "43.23058470660", "-77.61431270980", null, false ] ]
+, [ 31, "E4875813-0ECD-4F8B-ACEE-037E7639BDFD", 31, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hamlin Beach", "State Park", "3", "Monroe", "N", "Y", "Y", null, "Y-M", [ "http://nysparks.com/parks/20/details.aspx", null ], [ null, null ], [ null, null ], "-77.95509767050", "43.36009130140", [ null, "43.36009130140", "-77.95509767050", null, false ] ]
+, [ 32, "9A0D9C6A-7F08-43DF-AEDB-7AABC9E5AFD7", 32, 1387393609, "707400", 1387393609, "707400", "{\n}", "Irondequoit Bay Marine Park", "Marine Facility", "3", "Monroe", "N", "N", "N", null, null, [ "http://nysparks.com/parks/100/details.aspx", null ], [ null, null ], [ null, null ], "-77.53971068810", "43.23186953420", [ null, "43.23186953420", "-77.53971068810", null, false ] ]
+, [ 222, "EFC2AFA5-7CD4-44B0-902D-BAA34F870967", 222, 1387393609, "707400", 1387393609, "707400", "{\n}", "Guy Park", "State Historic Site", "11", "Montgomery", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-74.20954821570", "42.94695200740", [ null, "42.94695200740", "-74.20954821570", null, false ] ]
+, [ 237, "9E952FDB-9810-4EFB-ADCD-2F3B472F1DAC", 237, 1387393609, "707400", 1387393609, "707400", "{\n}", "Schoharie Crossing", "State Historic Site", "11", "Montgomery", "N", "N", "Y", null, null, [ "http://nysparks.com/historic-sites/27/details.aspx", null ], [ null, null ], [ null, null ], "-74.26757027890", "42.94934485380", [ null, "42.94934485380", "-74.26757027890", null, false ] ]
+, [ 149, "A4912A64-0437-4E33-9C87-A52C7BDE8C5A", 149, 1387393609, "707400", 1387393609, "707400", "{\n}", "Bethpage", "State Park", "9", "Nassau", "Y", "N", "Y", null, null, [ "http://nysparks.com/parks/108/details.aspx", null ], [ "http://nysparks.com/golf-courses/11/details.aspx", null ], [ null, null ], "-73.45680354030", "40.74751741050", [ null, "40.74751741050", "-73.45680354030", null, false ] ]
+, [ 161, "F085DBB2-6E5E-463A-9EBA-61B60F4A128B", 161, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hempstead Lake", "State Park", "9", "Nassau", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/31/details.aspx", null ], [ null, null ], [ null, null ], "-73.64242150720", "40.68231400130", [ null, "40.68231400130", "-73.64242150720", null, false ] ]
+, [ 164, "044895F8-2489-41D7-8A42-43BD1345744F", 164, 1387393609, "707400", 1387393609, "707400", "{\n}", "Jones Beach", "State Park", "9", "Nassau", "Y", "N", "Y", "Y-A", "Y-M", [ "http://nysparks.com/parks/10/details.aspx", null ], [ "http://nysparks.com/golf-courses/18/details.aspx", null ], [ "http://www.nysparks.com/environment/nature-centers/4/details.aspx", null ], "-73.51642731820", "40.59601084800", [ null, "40.59601084800", "-73.51642731820", null, false ] ]
+, [ 170, "F62BD389-8899-4213-992E-962705362656", 170, 1387393609, "707400", 1387393609, "707400", "{\n}", "Planting Fields Arboretum", "State Historic Park", "9", "Nassau", "N", "N", "N", "Y", null, [ "http://nysparks.com/historic-sites/24/details.aspx", null ], [ null, null ], [ null, null ], "-73.55722532990", "40.86217528070", [ null, "40.86217528070", "-73.55722532990", null, false ] ]
+, [ 174, "A64FA9EA-CF8C-4837-AE2C-1BEDAEC0188D", 174, 1387393609, "707400", 1387393609, "707400", "{\n}", "Trail View", "State Park", "9", "Nassau", "N", "N", "N", null, null, [ "http://nysparks.com/parks/39/details.aspx", null ], [ null, null ], [ null, null ], "-73.47016875400", "40.81411010080", [ null, "40.81411010080", "-73.47016875400", null, false ] ]
+, [ 175, "D17F7D32-8802-4954-8F20-2ECDF2BD274C", 175, 1387393609, "707400", 1387393609, "707400", "{\n}", "Valley Stream", "State Park", "9", "Nassau", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/159/details.aspx", null ], [ null, null ], [ null, null ], "-73.69425020180", "40.67876602600", [ null, "40.67876602600", "-73.69425020180", null, false ] ]
+, [ 7, "AAC56BB1-E252-4657-B53F-2D9FF042A155", 7, 1387393609, "707400", 1387393609, "707400", "{\n}", "Devil's Hole", "State Park", "1", "Niagara", "N", "N", "N", null, null, [ "http://nysparks.com/parks/42/details.aspx", null ], [ null, null ], [ null, null ], "-79.04596070110", "43.13463185450", [ null, "43.13463185450", "-79.04596070110", null, false ] ]
+, [ 8, "CAEC8395-E2D9-4AFB-ABAE-585DB4BA8CFE", 8, 1387393609, "707400", 1387393609, "707400", "{\n}", "Earl W. Brydges Artpark", "State Park", "1", "Niagara", "N", "N", "N", null, null, [ "http://nysparks.com/parks/113/details.aspx", null ], [ null, null ], [ null, null ], "-79.04192820690", "43.16561822460", [ null, "43.16561822460", "-79.04192820690", null, false ] ]
+, [ 10, "9E93435B-BE17-4BE1-A020-54BEC8861EEA", 10, 1387393609, "707400", 1387393609, "707400", "{\n}", "Fort Niagara", "State Park", "1", "Niagara", "N", "N", "Y", "Y", null, [ "http://nysparks.com/parks/175/details.aspx", null ], [ null, null ], [ null, null ], "-79.05258585060", "43.26163493740", [ null, "43.26163493740", "-79.05258585060", null, false ] ]
+, [ 11, "4C3E5A8C-93AD-42BA-93D7-948FACCF063C", 11, 1387393609, "707400", 1387393609, "707400", "{\n}", "Four Mile Creek", "State Park", "1", "Niagara", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/6/details.aspx", null ], [ null, null ], [ null, null ], "-78.99746851150", "43.27437644850", [ null, "43.27437644850", "-78.99746851150", null, false ] ]
+, [ 12, "1368C952-DF61-410D-882A-36DF4C14DCBA", 12, 1387393609, "707400", 1387393609, "707400", "{\n}", "Golden Hill", "State Park", "1", "Niagara", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/143/details.aspx", null ], [ null, null ], [ null, null ], "-78.48015885640", "43.36946167910", [ null, "43.36946167910", "-78.48015885640", null, false ] ]
+, [ 13, "A4D24F0E-3C76-48E7-8B6E-DC7246F40988", 13, 1387393609, "707400", 1387393609, "707400", "{\n}", "Joseph Davis", "State Park", "1", "Niagara", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/45/details.aspx", null ], [ null, null ], [ null, null ], "-79.03992445770", "43.21412114900", [ null, "43.21412114900", "-79.03992445770", null, false ] ]
+, [ 15, "8A5D3660-573C-4F44-A846-D2E4C6B0F156", 15, 1387393609, "707400", 1387393609, "707400", "{\n}", "Niagara Falls", "State Park", "1", "Niagara", "N", "N", "N", "Y", null, [ "http://nysparks.com/parks/46/details.aspx", null ], [ null, null ], [ null, null ], "-79.06701953470", "43.08674820210", [ null, "43.08674820210", "-79.06701953470", null, false ] ]
+, [ 16, "4D21D2E5-E9F1-40FA-BAC4-0A4C0D24F8A2", 16, 1387393609, "707400", 1387393609, "707400", "{\n}", "Old Fort Niagara", "State Historic Site", "1", "Niagara", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/31/details.aspx", null ], [ null, null ], [ null, null ], "-79.06311434890", "43.26259391080", [ null, "43.26259391080", "-79.06311434890", null, false ] ]
+, [ 17, "DEF31F4B-D0E2-48F4-B401-30C98E812DA0", 17, 1387393609, "707400", 1387393609, "707400", "{\n}", "Reservoir", "State Park", "1", "Niagara", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/75/details.aspx", null ], [ null, null ], [ null, null ], "-79.01503814730", "43.13401154410", [ null, "43.13401154410", "-79.01503814730", null, false ] ]
+, [ 19, "9152ADD8-0BD1-41E9-855B-2CF1C9DE7881", 19, 1387393609, "707400", 1387393609, "707400", "{\n}", "Whirlpool", "State Park", "1", "Niagara", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/105/details.aspx", null ], [ null, null ], [ null, null ], "-79.06341796780", "43.12040047670", [ null, "43.12040047670", "-79.06341796780", null, false ] ]
+, [ 20, "E6EFF844-E0B2-4131-ABBB-E8099F891301", 20, 1387393609, "707400", 1387393609, "707400", "{\n}", "Wilson-Tuscarora", "State Park", "1", "Niagara", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/69/details.aspx", null ], [ null, null ], [ null, null ], "-78.85560888360", "43.30377729260", [ null, "43.30377729260", "-78.85560888360", null, false ] ]
+, [ 73, "6D96AE64-891E-4F65-BB05-FA4FB8147450", 73, 1387393609, "707400", 1387393609, "707400", "{\n}", "Delta Lake", "State Park", "5", "Oneida", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/66/details.aspx", null ], [ null, null ], [ null, null ], "-75.42187224350", "43.29096558100", [ null, "43.29096558100", "-75.42187224350", null, false ] ]
+, [ 87, "E7EAA223-6F90-4D7A-9D6D-47E8D9795208", 87, 1387393609, "707400", 1387393609, "707400", "{\n}", "Oriskany Battlefield", "State Historic Site", "5", "Oneida", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/21/details.aspx", null ], [ null, null ], [ null, null ], "-75.36671039240", "43.17677469700", [ null, "43.17677469700", "-75.36671039240", null, false ] ]
+, [ 88, "515C58D6-7323-4B94-A7F6-E6130D06CC18", 88, 1387393609, "707400", 1387393609, "707400", "{\n}", "Pixley Falls", "State Park", "5", "Oneida", "N", "Y", "N", null, null, [ "http://nysparks.com/parks/32/details.aspx", null ], [ null, null ], [ null, null ], "-75.34147555230", "43.40431845360", [ null, "43.40431845360", "-75.34147555230", null, false ] ]
+, [ 93, "02D0AFE3-B09D-4479-96A7-9715FA6566EC", 93, 1387393609, "707400", 1387393609, "707400", "{\n}", "Steuben Memorial", "State Historic Site", "5", "Oneida", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/2/details.aspx", null ], [ null, null ], [ null, null ], "-75.23248930110", "43.33810569960", [ null, "43.33810569960", "-75.23248930110", null, false ] ]
+, [ 94, "49B51A61-9637-4F62-92D5-15DB2C44ABC3", 94, 1387393609, "707400", 1387393609, "707400", "{\n}", "Verona Beach", "State Park", "5", "Oneida", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/102/details.aspx", null ], [ null, null ], [ null, null ], "-75.71658658600", "43.17800824900", [ null, "43.17800824900", "-75.71658658600", null, false ] ]
+, [ 72, "8523F001-FDFA-486F-91C6-C569D7DA31C4", 72, 1387393609, "707400", 1387393609, "707400", "{\n}", "Clark Reservation", "State Park", "5", "Onondaga", "N", "N", "Y", "Y", null, [ "http://nysparks.com/parks/126/details.aspx", null ], [ null, null ], [ null, null ], "-76.09300043590", "42.99752250310", [ null, "42.99752250310", "-76.09300043590", null, false ] ]
+, [ 77, "89B4A545-2577-4D88-B73A-6953AD71B292", 77, 1387393609, "707400", 1387393609, "707400", "{\n}", "Green Lakes", "State Park", "5", "Onondaga", "Y", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/172/details.aspx", null ], [ "http://nysparks.com/golf-courses/14/details.aspx", null ], [ null, null ], "-75.98188480470", "43.04697831830", [ null, "43.04697831830", "-75.98188480470", null, false ] ]
+, [ 92, "61FA88AF-5DBE-4B36-A74C-6AF932B583DD", 92, 1387393609, "707400", 1387393609, "707400", "{\n}", "State Park at the Fair", "Other", "5", "Onondaga", "N", "N", "N", null, null, [ "http://nysparks.com/parks/82/details.aspx", null ], [ null, null ], [ null, null ], "-76.21696591430", "43.07110463170", [ null, "43.07110463170", "-76.21696591430", null, false ] ]
+, [ 85, "F44D5895-6DAE-4D7C-9C10-339440F11F2B", 85, 1387393609, "707400", 1387393609, "707400", "{\n}", "Old Erie Canal", "State Historic Park", "5", "Onon/Mad/Oneida", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/32/details.aspx", null ], [ null, null ], [ null, null ], "-75.92176934910", "43.07547470480", [ null, "43.07547470480", "-75.92176934910", null, false ] ]
+, [ 41, "F11E9CF7-0CDF-4BA2-A0F2-17499837E5D4", 41, 1387393609, "707400", 1387393609, "707400", "{\n}", "Canandaigua Lake Marine Park", "Marine Facility", "4", "Ontario", "N", "N", "N", null, null, [ "http://nysparks.com/parks/3/details.aspx", null ], [ null, null ], [ null, null ], "-77.27568279700", "42.87666859390", [ null, "42.87666859390", "-77.27568279700", null, false ] ]
+, [ 47, "8F4065EF-3933-4BC6-AD69-B14BB9D7D041", 47, 1387393609, "707400", 1387393609, "707400", "{\n}", "Ganondagon", "State Historic Site", "4", "Ontario", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/26/details.aspx", null ], [ null, null ], [ null, null ], "-77.42206824230", "42.96482986650", [ null, "42.96482986650", "-77.42206824230", null, false ] ]
+, [ 48, "81756D73-787B-4114-850E-C084D231AB11", 48, 1387393609, "707400", 1387393609, "707400", "{\n}", "Harriet Hollister Spencer", "State Park", "4", "Ontario", "N", "N", "N", null, null, [ "http://nysparks.com/parks/164/details.aspx", null ], [ null, null ], [ null, null ], "-77.51547808690", "42.68811200300", [ null, "42.68811200300", "-77.51547808690", null, false ] ]
+, [ 49, "38670A68-D6A7-4C3C-9C46-28DC593D54B7", 49, 1387393609, "707400", 1387393609, "707400", "{\n}", "Honeoye Marine Park", "Marine Facility", "4", "Ontario", "N", "N", "N", null, null, [ "http://nysparks.com/parks/162/details.aspx", null ], [ null, null ], [ null, null ], "-77.50457814970", "42.72575401990", [ null, "42.72575401990", "-77.50457814970", null, false ] ]
+, [ 56, "1A61731C-7BA1-4E00-A417-36F3C55C83A5", 56, 1387393609, "707400", 1387393609, "707400", "{\n}", "Parrot Hall", "State Historic Site", "4", "Ontario", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-77.00881424770", "42.87677395780", [ null, "42.87677395780", "-77.00881424770", null, false ] ]
+, [ 61, "1765730A-10FA-4DC4-B1BE-CDA40328A879", 61, 1387393609, "707400", 1387393609, "707400", "{\n}", "Sonnenberg Gardens and Mansion", "State Historic Park", "4", "Ontario", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/36/details.aspx", null ], [ null, null ], [ null, null ], "-77.27215960070", "42.89814677360", [ null, "42.89814677360", "-77.27215960070", null, false ] ]
+, [ 60, "3E9315BF-FA6D-4A31-BFF7-058319B38BBA", 60, 1387393609, "707400", 1387393609, "707400", "{\n}", "Seneca Lake", "State Park", "4", "Ont/Sen", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/125/details.aspx", null ], [ null, null ], [ null, null ], "-76.95454977080", "42.87395009670", [ null, "42.87395009670", "-76.95454977080", null, false ] ]
+, [ 122, "ED63B921-329F-4E69-B18A-5D04B01063ED", 122, 1387393609, "707400", 1387393609, "707400", "{\n}", "Fort Montgomery", "State Historic Site", "8", "Orange", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/28/details.aspx", null ], [ null, null ], [ null, null ], "-73.98957245690", "41.32430220480", [ null, "41.32430220480", "-73.98957245690", null, false ] ]
+, [ 124, "022319C7-2272-42A4-BF87-8803A1FF4B8F", 124, 1387393609, "707400", 1387393609, "707400", "{\n}", "Goosepond Mountain", "State Park", "8", "Orange", "N", "N", "N", null, null, [ "http://nysparks.com/parks/55/details.aspx", null ], [ null, null ], [ null, null ], "-74.24664764090", "41.33752482690", [ null, "41.33752482690", "-74.24664764090", null, false ] ]
+, [ 128, "EFC8CA4F-19DF-497C-B33E-80C055A9446A", 128, 1387393609, "707400", 1387393609, "707400", "{\n}", "Highland Lakes", "State Park", "8", "Orange", "N", "N", "N", null, null, [ "http://nysparks.com/parks/5/details.aspx", null ], [ null, null ], [ null, null ], "-74.32857544760", "41.49130057890", [ null, "41.49130057890", "-74.32857544760", null, false ] ]
+, [ 131, "1B79A04C-7AE1-4AE1-A1A8-BBD387D96E8E", 131, 1387393609, "707400", 1387393609, "707400", "{\n}", "Knox Headquarters", "State Historic Site", "8", "Orange", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/5/details.aspx", null ], [ null, null ], [ null, null ], "-74.04782194410", "41.45343522520", [ null, "41.45343522520", "-74.04782194410", null, false ] ]
+, [ 134, "BA3590F4-55C8-4123-8C0D-E33EF1635973", 134, 1387393609, "707400", 1387393609, "707400", "{\n}", "New Windsor Cantonement", "State Historic Site", "8", "Orange", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/22/details.aspx", null ], [ null, null ], [ null, null ], "-74.05945726770", "41.47339278130", [ null, "41.47339278130", "-74.05945726770", null, false ] ]
+, [ 138, "603BC4CF-0DD5-4788-9F78-826DD32286CF", 138, 1387393609, "707400", 1387393609, "707400", "{\n}", "Schunnemunk Mountain", "State Park", "8", "Orange", "N", "N", "N", null, null, [ "http://nysparks.com/parks/184/details.aspx", null ], [ null, null ], [ null, null ], "-74.10271725190", "41.40211076090", [ null, "41.40211076090", "-74.10271725190", null, false ] ]
+, [ 139, "5A554539-2AB9-46A7-9804-53EF2AB4D8F3", 139, 1387393609, "707400", 1387393609, "707400", "{\n}", "Senate House", "State Historic Site", "8", "Orange", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/18/details.aspx", null ], [ null, null ], [ null, null ], "-74.01888424120", "41.93493646660", [ null, "41.93493646660", "-74.01888424120", null, false ] ]
+, [ 140, "4B7FC167-507C-4E4F-BDED-B5AB20758385", 140, 1387393609, "707400", 1387393609, "707400", "{\n}", "Sterling Forest", "State Park", "8", "Orange", "N", "N", "N", "Y-A", null, [ "http://nysparks.com/parks/74/details.aspx", null ], [ null, null ], [ null, null ], "-74.24676587890", "41.21191920660", [ null, "41.21191920660", "-74.24676587890", null, false ] ]
+, [ 142, "784C7198-35BA-4A32-8468-C5A13333AD00", 142, 1387393609, "707400", 1387393609, "707400", "{\n}", "Storm King", "State Park", "8", "Orange", "N", "N", "N", null, null, [ "http://nysparks.com/parks/152/details.aspx", null ], [ null, null ], [ null, null ], "-73.99134640200", "41.42564449100", [ null, "41.42564449100", "-73.99134640200", null, false ] ]
+, [ 144, "3D97D664-89D9-4077-8E09-5EC56BBB7F4C", 144, 1387393609, "707400", 1387393609, "707400", "{\n}", "Washington's Headquarters", "State Historic Site", "8", "Orange", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/17/details.aspx", null ], [ null, null ], [ null, null ], "-74.00960757880", "41.49770504710", [ null, "41.49770504710", "-74.00960757880", null, false ] ]
+, [ 33, "57292E8E-3684-49E3-88AE-D718405E635B", 33, 1387393609, "707400", 1387393609, "707400", "{\n}", "Lakeside Beach", "State Park", "3", "Orleans", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/161/details.aspx", null ], [ null, null ], [ null, null ], "-78.24370248780", "43.36638358220", [ null, "43.36638358220", "-78.24370248780", null, false ] ]
+, [ 35, "7B848952-7CE2-49FF-A549-E735708DC0C2", 35, 1387393609, "707400", 1387393609, "707400", "{\n}", "Oak Orchard Marine Park", "Marine Facility", "3", "Orleans", "N", "N", "N", null, null, [ "http://nysparks.com/parks/131/details.aspx", null ], [ null, null ], [ null, null ], "-78.20101905880", "43.36810546950", [ null, "43.36810546950", "-78.20101905880", null, false ] ]
+, [ 66, "704C3E44-1630-41DC-9707-6B3890678B93", 66, 1387393609, "707400", 1387393609, "707400", "{\n}", "Battle Island", "State Park", "5", "Oswego", "Y", "N", "N", null, null, [ "http://nysparks.com/parks/44/details.aspx", null ], [ "http://nysparks.com/golf-courses/5/details.aspx", null ], [ null, null ], "-76.43604418290", "43.36167093380", [ null, "43.36167093380", "-76.43604418290", null, false ] ]
+, [ 74, "5FFB91BB-5D7D-4D48-91F7-D4542A36D5D4", 74, 1387393609, "707400", 1387393609, "707400", "{\n}", "Fort Ontario", "State Historic Site", "5", "Oswego", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/20/details.aspx", null ], [ null, null ], [ null, null ], "-76.50744715030", "43.46612424410", [ null, "43.46612424410", "-76.50744715030", null, false ] ]
+, [ 83, "F92EC193-C832-4EAB-A9EF-5CCD80B6CD1F", 83, 1387393609, "707400", 1387393609, "707400", "{\n}", "Mexico Point", "State Park", "5", "Oswego", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-76.25846407760", "43.51999840030", [ null, "43.51999840030", "-76.25846407760", null, false ] ]
+, [ 84, "A7AD3198-8EFF-45F9-AE18-784AB32EE203", 84, 1387393609, "707400", 1387393609, "707400", "{\n}", "Mexico Point Marine Park", "Marine Facility", "5", "Oswego", "N", "N", "N", null, null, [ "http://nysparks.com/parks/183/details.aspx", null ], [ null, null ], [ null, null ], "-76.25514320860", "43.52337503640", [ null, "43.52337503640", "-76.25514320860", null, false ] ]
+, [ 90, "2F988992-8FD4-45F4-9FA2-F41AFBAD3393", 90, 1387393609, "707400", 1387393609, "707400", "{\n}", "Sandy Island Beach", "State Park", "5", "Oswego", "N", "N", "N", null, "Y", [ "http://nysparks.com/parks/153/details.aspx", null ], [ null, null ], [ null, null ], "-76.19566500410", "43.63093160520", [ null, "43.63093160520", "-76.19566500410", null, false ] ]
+, [ 91, "74A00199-E6EF-43D3-BBBE-AD1D1AE1F439", 91, 1387393609, "707400", 1387393609, "707400", "{\n}", "Selkirk Shores", "State Park", "5", "Oswego", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/84/details.aspx", null ], [ null, null ], [ null, null ], "-76.19844002330", "43.55566201050", [ null, "43.55566201050", "-76.19844002330", null, false ] ]
+, [ 67, "92247045-DA48-49D5-B3F7-E4FAF4295418", 67, 1387393609, "707400", 1387393609, "707400", "{\n}", "Betty & Wilbur Davis", "State Park", "5", "Otsego", "N", "N", "N", null, null, [ "http://nysparks.com/parks/85/details.aspx", null ], [ null, null ], [ null, null ], "-74.83290982380", "42.66363969420", [ null, "42.66363969420", "-74.83290982380", null, false ] ]
+, [ 69, "5426EB2D-2894-4EF4-86E8-33A9C863C77A", 69, 1387393609, "707400", 1387393609, "707400", "{\n}", "Canadarago Boat Marine Park", "Marine Facility", "5", "Otsego", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-75.01371176200", "42.81869731080", [ null, "42.81869731080", "-75.01371176200", null, false ] ]
+, [ 75, "349C29C8-F988-4BE0-8842-64E5D88D4DFF", 75, 1387393609, "707400", 1387393609, "707400", "{\n}", "Gilbert Lake", "State Park", "5", "Otsego", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/19/details.aspx", null ], [ null, null ], [ null, null ], "-75.13246312460", "42.58658399600", [ null, "42.58658399600", "-75.13246312460", null, false ] ]
+, [ 76, "0A968094-CE21-4352-9BF0-289ACE53EBFB", 76, 1387393609, "707400", 1387393609, "707400", "{\n}", "Glimmerglass", "State Park", "5", "Otsego", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/28/details.aspx", null ], [ null, null ], [ null, null ], "-74.86868391560", "42.79362617320", [ null, "42.79362617320", "-74.86868391560", null, false ] ]
+, [ 80, "175A3A3B-5E76-4387-9665-A7BF885C4D14", 80, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hyde Hall", "State Historic Site", "5", "Otsego", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/11/details.aspx", null ], [ null, null ], [ null, null ], "-74.87399669630", "42.79373332960", [ null, "42.79373332960", "-74.87399669630", null, false ] ]
+, [ 89, "EF9AF4C2-6D20-456C-85F1-81D0F46E35BF", 89, 1387393609, "707400", 1387393609, "707400", "{\n}", "Robert V. Riddell", "State Park", "5", "Otsego", "N", "N", "N", null, null, [ "http://nysparks.com/parks/18/details.aspx", null ], [ null, null ], [ null, null ], "-74.93710757450", "42.47625450820", [ null, "42.47625450820", "-74.93710757450", null, false ] ]
+, [ 95, "10CC50CB-59FD-46CB-8F19-A521F0C934E1", 95, 1387393609, "707400", 1387393609, "707400", "{\n}", "Clarence Fahnestock", "State Park", "7", "Putnam", "N", "Y", "N", "Y-A", "Y", [ "http://nysparks.com/parks/133/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/3/details.aspx", null ], "-73.84764739280", "41.45275633070", [ null, "41.45275633070", "-73.84764739280", null, false ] ]
+, [ 118, "90B7A42E-0DAC-4C04-AEA6-F33C8C9A4D80", 118, 1387393609, "707400", 1387393609, "707400", "{\n}", "Wonder Lake", "State Park", "7", "Putnam", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.64658631490", "41.49190316110", [ null, "41.49190316110", "-73.64658631490", null, false ] ]
+, [ 99, "B8DFE67D-DBE6-4BC7-B83E-FF170EB8CE65", 99, 1387393609, "707400", 1387393609, "707400", "{\n}", "Donald J. Trump", "State Park", "7", "Putnam/Westchester", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.80405211470", "41.26263355270", [ null, "41.26263355270", "-73.80405211470", null, false ] ]
+, [ 98, "A56C04AF-D23B-44E3-9BB2-405EA93754E0", 98, 1387393609, "707400", 1387393609, "707400", "{\n}", "Donald J. Trump", "State Park", "7", "Putnam/Westchester", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.80837178360", "41.34539867750", [ null, "41.34539867750", "-73.80837178360", null, false ] ]
+, [ 241, "B1BFCF03-13A3-458E-BAFD-24E0ABCAE292", 241, 1387393609, "707400", 1387393609, "707400", "{\n}", "Bayswater", "State Park", "12", "Queens", "N", "N", "N", null, null, [ "http://nysparks.com/parks/86/details.aspx", null ], [ null, null ], [ null, null ], "-73.77255293330", "40.61281790070", [ null, "40.61281790070", "-73.77255293330", null, false ] ]
+, [ 245, "695F46BA-98EE-4982-85B7-EAC6CB664831", 245, 1387393609, "707400", 1387393609, "707400", "{\n}", "Gantry Plaza", "State Park", "12", "Queens", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/149/details.aspx", null ], [ null, null ], [ null, null ], "-73.95904524500", "40.74435214460", [ null, "40.74435214460", "-73.95904524500", null, false ] ]
+, [ 215, "8910DB34-BB57-4680-822A-1677F8FB8051", 215, 1387393609, "707400", 1387393609, "707400", "{\n}", "Bennington Battlefield", "State Historic Site", "11", "Rensselaer", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/12/details.aspx", null ], [ null, null ], [ null, null ], "-73.30225060210", "42.93950615040", [ null, "42.93950615040", "-73.30225060210", null, false ] ]
+, [ 216, "C00FB4B3-61B8-474E-B851-03E6C5C8A2F0", 216, 1387393609, "707400", 1387393609, "707400", "{\n}", "Cherry Plain", "State Park", "11", "Rensselaer", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/173/details.aspx", null ], [ null, null ], [ null, null ], "-73.41221526600", "42.61786778960", [ null, "42.61786778960", "-73.41221526600", null, false ] ]
+, [ 218, "5D9B5993-424B-498C-96B9-5003FF9265D3", 218, 1387393609, "707400", 1387393609, "707400", "{\n}", "Crailo", "State Historic Site", "11", "Rensselaer", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/30/details.aspx", null ], [ null, null ], [ null, null ], "-73.74922568100", "42.63462907530", [ null, "42.63462907530", "-73.74922568100", null, false ] ]
+, [ 220, "58839D90-C656-4B51-924E-28DC1DBEBEAF", 220, 1387393609, "707400", 1387393609, "707400", "{\n}", "Grafton Lakes", "State Park", "11", "Rensselaer", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/53/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/1/details.aspx", null ], "-73.44286108410", "42.78418997700", [ null, "42.78418997700", "-73.44286108410", null, false ] ]
+, [ 242, "777E6163-8419-4569-A782-976931E28DC2", 242, 1387393609, "707400", 1387393609, "707400", "{\n}", "Clay Pit Ponds", "State Park Preserve", "12", "Richmond", "N", "N", "N", "Y-A", null, [ "http://nysparks.com/parks/166/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/14/details.aspx", null ], "-74.22904608840", "40.54056354560", [ null, "40.54056354560", "-74.22904608840", null, false ] ]
+, [ 120, "7C0AC364-C481-41E1-9F56-5D5228FD4337", 120, 1387393609, "707400", 1387393609, "707400", "{\n}", "Blauvelt", "State Park", "8", "Rockland", "N", "N", "N", null, null, [ "http://nysparks.com/parks/49/details.aspx", null ], [ null, null ], [ null, null ], "-73.93737308340", "41.07424136900", [ null, "41.07424136900", "-73.93737308340", null, false ] ]
+, [ 121, "E3F1E9AA-D4B7-40C3-83C1-029D968C1331", 121, 1387393609, "707400", 1387393609, "707400", "{\n}", "Bristol Beach", "State Park", "8", "Rockland", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.93253107910", "42.10837178330", [ null, "42.10837178330", "-73.93253107910", null, false ] ]
+, [ 126, "E8CD7041-E612-4FB2-8928-9D0A7862C3EA", 126, 1387393609, "707400", 1387393609, "707400", "{\n}", "Haverstraw Beach", "State Park", "8", "Rockland", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.94317047610", "41.17799181180", [ null, "41.17799181180", "-73.94317047610", null, false ] ]
+, [ 127, "1932278D-ACB3-41A5-877F-DD130F1D4A60", 127, 1387393609, "707400", 1387393609, "707400", "{\n}", "High Tor", "State Park", "8", "Rockland", "N", "N", "N", null, null, [ "http://nysparks.com/parks/78/details.aspx", null ], [ null, null ], [ null, null ], "-73.98401298960", "41.19061787350", [ null, "41.19061787350", "-73.98401298960", null, false ] ]
+, [ 129, "3A8A8E42-3981-4ED3-A21A-12DC7D8786DD", 129, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hook Mountain", "State Park", "8", "Rockland", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.91588171800", "41.15170640470", [ null, "41.15170640470", "-73.91588171800", null, false ] ]
+, [ 130, "7A549218-2083-4C14-9BD3-238727946DF0", 130, 1387393609, "707400", 1387393609, "707400", "{\n}", "Iona Island", "State Park", "8", "Rockland", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.97600369840", "41.30427060200", [ null, "41.30427060200", "-73.97600369840", null, false ] ]
+, [ 135, "275557C7-6EFC-4DB6-AA05-B2B1732AC67E", 135, 1387393609, "707400", 1387393609, "707400", "{\n}", "Nyack Beach", "State Park", "8", "Rockland", "N", "N", "N", null, null, [ "http://nysparks.com/parks/156/details.aspx", null ], [ null, null ], [ null, null ], "-73.90865449420", "41.12712769530", [ null, "41.12712769530", "-73.90865449420", null, false ] ]
+, [ 136, "004501B5-C646-4905-8A67-B9E322C8A3F9", 136, 1387393609, "707400", 1387393609, "707400", "{\n}", "Palisades", "State Park", "8", "Rockland", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.90354437080", "41.00004238580", [ null, "41.00004238580", "-73.90354437080", null, false ] ]
+, [ 137, "9080134A-25BF-4F86-AAD2-18D5FEC2FBE8", 137, 1387393609, "707400", 1387393609, "707400", "{\n}", "Rockland Lake", "State Park", "8", "Rockland", "Y", "N", "N", "Y", null, [ "http://nysparks.com/parks/81/details.aspx", null ], [ "http://nysparks.com/golf-courses/6/details.aspx", null ], [ null, null ], "-73.92191924450", "41.13621068220", [ null, "41.13621068220", "-73.92191924450", null, false ] ]
+, [ 141, "AEB18E65-D457-4413-ABEC-2CB0CAC0BF4E", 141, 1387393609, "707400", 1387393609, "707400", "{\n}", "Stony Point Battlefield", "State Historic Site", "8", "Rockland", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/8/details.aspx", null ], [ null, null ], [ null, null ], "-73.97637349730", "41.24109039190", [ null, "41.24109039190", "-73.97637349730", null, false ] ]
+, [ 143, "0834316F-48BE-49E5-B541-FE61BDF652CE", 143, 1387393609, "707400", 1387393609, "707400", "{\n}", "Tallman Mountain", "State Park", "8", "Rockland", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/119/details.aspx", null ], [ null, null ], [ null, null ], "-73.91033131530", "41.02642267600", [ null, "41.02642267600", "-73.91033131530", null, false ] ]
+, [ 119, "1FAE0FE8-BC73-4039-8CFA-5AD5A3712143", 119, 1387393609, "707400", 1387393609, "707400", "{\n}", "Bear Mountain", "State Park", "8", "Rockland/Orange", "N", "N", "Y", "Y-A", null, [ "http://nysparks.com/parks/145/details.aspx", null ], [ null, null ], [ null, null ], "-73.99240161230", "41.29900423010", [ null, "41.29900423010", "-73.99240161230", null, false ] ]
+, [ 125, "6303B14E-787F-4D9E-AE77-735EE196B96F", 125, 1387393609, "707400", 1387393609, "707400", "{\n}", "Harriman", "State Park", "8", "Rock/Orange", "N", "Y", "Y", null, "Y-M", [ "http://nysparks.com/parks/145/details.aspx", null ], [ null, null ], [ null, null ], "-74.10169996430", "41.23733048350", [ null, "41.23733048350", "-74.10169996430", null, false ] ]
+, [ 233, "734F01F2-E998-4B07-9E65-32B85F82BB0A", 233, 1387393609, "707400", 1387393609, "707400", "{\n}", "Rexford Aqueduct", "State Historic Site", "11", "Sara/Schen", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.88767645060", "42.84926496220", [ null, "42.84926496220", "-73.88767645060", null, false ] ]
+, [ 221, "8F62D8E8-6EEA-4818-BFDE-90BF6F6E0596", 221, 1387393609, "707400", 1387393609, "707400", "{\n}", "Grant Cottage", "State Historic Site", "11", "Saratoga", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/9/details.aspx", null ], [ null, null ], [ null, null ], "-73.74541757310", "43.20121170390", [ null, "43.20121170390", "-73.74541757310", null, false ] ]
+, [ 231, "EA79B064-370C-4466-B651-A29E4382A0D3", 231, 1387393609, "707400", 1387393609, "707400", "{\n}", "Moreau Lake", "State Park", "11", "Saratoga", "N", "Y", "Y", "Y", "Y", [ "http://nysparks.com/parks/150/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/7/details.aspx", null ], "-73.73377689810", "43.23321366860", [ null, "43.23321366860", "-73.73377689810", null, false ] ]
+, [ 232, "70504C4B-6A55-46EF-A191-A4925E8B97D6", 232, 1387393609, "707400", 1387393609, "707400", "{\n}", "Peebles Island", "State Park", "11", "Saratoga", "N", "N", "N", null, null, [ "http://nysparks.com/parks/111/details.aspx", null ], [ null, null ], [ null, null ], "-73.68454923040", "42.78232135940", [ null, "42.78232135940", "-73.68454923040", null, false ] ]
+, [ 234, "4639E09E-4443-4C9A-8618-536D533EF5FB", 234, 1387393609, "707400", 1387393609, "707400", "{\n}", "Saratoga Lake Marine Park", "Marine Facility", "11", "Saratoga", "N", "N", "N", null, null, [ "http://nysparks.com/parks/120/details.aspx", null ], [ null, null ], [ null, null ], "-73.72043153470", "43.05350531080", [ null, "43.05350531080", "-73.72043153470", null, false ] ]
+, [ 235, "A88D5422-FC02-4A40-8ABC-2BF7E71148D4", 235, 1387393609, "707400", 1387393609, "707400", "{\n}", "Saratoga Spa", "State Park", "11", "Saratoga", "Y", "N", "Y", null, null, [ "http://nysparks.com/parks/112/details.aspx", null ], [ "http://nysparks.com/golf-courses/15/details.aspx", null ], [ null, null ], "-73.80393559290", "43.05089144720", [ null, "43.05089144720", "-73.80393559290", null, false ] ]
+, [ 230, "8620D439-73B0-4F53-8ACB-2A48CD918FD3", 230, 1387393609, "707400", 1387393609, "707400", "{\n}", "Mohawk River", "State Park", "11", "Schenectady", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.84963983660", "42.80040937990", [ null, "42.80040937990", "-73.84963983660", null, false ] ]
+, [ 228, "25942529-B012-4D09-B810-11DCAE93EABD", 228, 1387393609, "707400", 1387393609, "707400", "{\n}", "Max V. Shaul", "State Park", "11", "Schoharie", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/94/details.aspx", null ], [ null, null ], [ null, null ], "-74.41092231350", "42.54799377170", [ null, "42.54799377170", "-74.41092231350", null, false ] ]
+, [ 229, "C8B19D4B-CF87-4699-90CC-5750F1ADDD2A", 229, 1387393609, "707400", 1387393609, "707400", "{\n}", "Mine Kill", "State Park", "11", "Schoharie", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/165/details.aspx", null ], [ null, null ], [ null, null ], "-74.46112109670", "42.43402453550", [ null, "42.43402453550", "-74.46112109670", null, false ] ]
+, [ 65, "EB0C271B-5C44-4F94-AFEF-9F52B5756372", 65, 1387393609, "707400", 1387393609, "707400", "{\n}", "Watkins Glen", "State Park", "4", "Schuyler", "N", "Y", "Y", null, null, [ "http://nysparks.com/parks/142/details.aspx", null ], [ null, null ], [ null, null ], "-76.90013375860", "42.36753973990", [ null, "42.36753973990", "-76.90013375860", null, false ] ]
+, [ 39, "862E0E59-1DBA-4F17-9162-8BF1C387FE81", 39, 1387393609, "707400", 1387393609, "707400", "{\n}", "Bonavista", "State Park", "4", "Seneca", "Y", "N", "N", null, null, [ "http://nysparks.com/parks/160/details.aspx", null ], [ "http://nysparks.com/golf-courses/10/details.aspx", null ], [ null, null ], "-76.86772497930", "42.67319421710", [ null, "42.67319421710", "-76.86772497930", null, false ] ]
+, [ 42, "5597A2AA-B2B0-48BF-BDF6-D4C369DE920F", 42, 1387393609, "707400", 1387393609, "707400", "{\n}", "Cayuga Lake", "State Park", "4", "Seneca", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/123/details.aspx", null ], [ null, null ], [ null, null ], "-76.75531185020", "42.89795190730", [ null, "42.89795190730", "-76.75531185020", null, false ] ]
+, [ 44, "0B0170FA-49EA-46F6-890C-47739C1D1B99", 44, 1387393609, "707400", 1387393609, "707400", "{\n}", "Deans Cove Boat Launch", "Marine Facility", "4", "Seneca", "N", "N", "N", null, null, [ "http://nysparks.com/parks/63/details.aspx", null ], [ null, null ], [ null, null ], "-76.76872923760", "42.74446150760", [ null, "42.74446150760", "-76.76872923760", null, false ] ]
+, [ 52, "63443772-9466-4D81-BA08-07EBE35C7AB3", 52, 1387393609, "707400", 1387393609, "707400", "{\n}", "Lodi Point Marine Park", "Marine Facility", "4", "Seneca", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/89/details.aspx", null ], [ null, null ], [ null, null ], "-76.87683054420", "42.61824658550", [ null, "42.61824658550", "-76.87683054420", null, false ] ]
+, [ 59, "3A336B2F-D53D-4ACF-B9D2-E0B9EAC92EE5", 59, 1387393609, "707400", 1387393609, "707400", "{\n}", "Sampson", "State Park", "4", "Seneca", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/154/details.aspx", null ], [ null, null ], [ null, null ], "-76.90132570350", "42.72549001870", [ null, "42.72549001870", "-76.90132570350", null, false ] ]
+, [ 50, "62EDA9A3-2E62-4471-A9CF-62B3E2E51230", 50, 1387393609, "707400", 1387393609, "707400", "{\n}", "Indian Hills", "State Park", "4", "Steuben", "Y", "N", "N", null, null, [ null, null ], [ "http://nysparks.com/golf-courses/19/details.aspx", null ], [ null, null ], "-77.15476553570", "42.09305489030", [ null, "42.09305489030", "-77.15476553570", null, false ] ]
+, [ 57, "DC4A0748-5317-4B97-BF1C-358EA04D6EF9", 57, 1387393609, "707400", 1387393609, "707400", "{\n}", "Pinnacle", "State Park", "4", "Steuben", "Y", "N", "N", null, null, [ "http://nysparks.com/parks/4/details.aspx", null ], [ "http://nysparks.com/golf-courses/16/details.aspx", null ], [ null, null ], "-77.21456092280", "42.09735296920", [ null, "42.09735296920", "-77.21456092280", null, false ] ]
+, [ 62, "8F113584-B7C0-4B0D-8C5A-4BB0E811F098", 62, 1387393609, "707400", 1387393609, "707400", "{\n}", "Stony Brook", "State Park", "4", "Steuben", "N", "Y", "Y", null, "Y-M", [ "http://nysparks.com/parks/118/details.aspx", null ], [ null, null ], [ null, null ], "-77.69296639290", "42.51855952910", [ null, "42.51855952910", "-77.69296639290", null, false ] ]
+, [ 178, "FBDE7CE0-F7C2-46CC-9835-F60B700FFF51", 178, 1387393609, "707400", 1387393609, "707400", "{\n}", "Black Lake Boat Launch", "Marine Facility", "10", "St. Lawrence", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-75.61303889280", "44.50938677290", [ null, "44.50938677290", "-75.61303889280", null, false ] ]
+, [ 181, "33921F6C-255E-4B47-ACFE-732A1AC0A8CE", 181, 1387393609, "707400", 1387393609, "707400", "{\n}", "Cedar Island", "State Park", "10", "St. Lawrence", "N", "Y", "N", null, null, [ "http://nysparks.com/parks/25/details.aspx", null ], [ null, null ], [ null, null ], "-75.79052886370", "44.44967933200", [ null, "44.44967933200", "-75.79052886370", null, false ] ]
+, [ 184, "9042CB72-1A7F-4671-B6AE-02DAE2FA3538", 184, 1387393609, "707400", 1387393609, "707400", "{\n}", "Coles Creek", "State Park", "10", "St. Lawrence", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/72/details.aspx", null ], [ null, null ], [ null, null ], "-75.12323608550", "44.88473357010", [ null, "44.88473357010", "-75.12323608550", null, false ] ]
+, [ 186, "0A1126F4-19D9-4A08-8B52-D19F71E0C844", 186, 1387393609, "707400", 1387393609, "707400", "{\n}", "Croil Island", "State Park", "10", "St. Lawrence", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-74.97947525210", "44.97256811030", [ null, "44.97256811030", "-74.97947525210", null, false ] ]
+, [ 189, "B6AC9CA7-7BB0-45C5-AFBF-819382E1AD97", 189, 1387393609, "707400", 1387393609, "707400", "{\n}", "Eel Weir", "State Park", "10", "St. Lawrence", "N", "Y", "N", null, null, [ "http://nysparks.com/parks/121/details.aspx", null ], [ null, null ], [ null, null ], "-75.47592957720", "44.62999003910", [ null, "44.62999003910", "-75.47592957720", null, false ] ]
+, [ 190, "3B1C6A5F-5EC4-4F49-93A6-4771F97C7199", 190, 1387393609, "707400", 1387393609, "707400", "{\n}", "Galop Island", "State Park", "10", "St. Lawrence", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-75.39276378220", "44.76843672150", [ null, "44.76843672150", "-75.39276378220", null, false ] ]
+, [ 193, "73ABB021-78F1-4A9E-B138-1DAD5A888C54", 193, 1387393609, "707400", 1387393609, "707400", "{\n}", "Higley Flow", "State Park", "10", "St. Lawrence", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/58/details.aspx", null ], [ null, null ], [ null, null ], "-74.91464272620", "44.49829863400", [ null, "44.49829863400", "-74.91464272620", null, false ] ]
+, [ 194, "B4EAAE12-FAE8-434C-8288-9A48819ED876", 194, 1387393609, "707400", 1387393609, "707400", "{\n}", "Jacques Cartier", "State Park", "10", "St. Lawrence", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/114/details.aspx", null ], [ null, null ], [ null, null ], "-75.68051919670", "44.55484146380", [ null, "44.55484146380", "-75.68051919670", null, false ] ]
+, [ 202, "2B79F4A8-5D9E-46A2-850D-028EE89A3A7C", 202, 1387393609, "707400", 1387393609, "707400", "{\n}", "Robert Moses", "State Park", "10", "St. Lawrence", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/51/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/5/details.aspx", null ], "-74.82735034810", "45.00064012250", [ null, "45.00064012250", "-74.82735034810", null, false ] ]
+, [ 207, "43F3467D-0FBF-4134-8E9B-C9D0ED94BEB1", 207, 1387393609, "707400", 1387393609, "707400", "{\n}", "St. Lawrence", "State Park", "10", "St. Lawrence", "Y", "N", "N", null, null, [ "http://nysparks.com/parks/70/details.aspx", null ], [ "http://nysparks.com/golf-courses/2/details.aspx", null ], [ null, null ], "-75.57656983570", "44.62983633830", [ null, "44.62983633830", "-75.57656983570", null, false ] ]
+, [ 213, "68804B28-27E8-4E0E-B3F6-3B4A380E2F61", 213, 1387393609, "707400", 1387393609, "707400", "{\n}", "Wilson Hill Boat Launch", "Marine Facility", "10", "St. Lawrence", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-75.00699964460", "44.92902871910", [ null, "44.92902871910", "-75.00699964460", null, false ] ]
+, [ 145, "17609C8A-3820-4881-9C23-259DCBB4A3DC", 145, 1387393609, "707400", 1387393609, "707400", "{\n}", "Alfred E. Smith/Sunken Meadow", "State Park", "9", "Suffolk", "Y", "N", "Y", null, "Y", [ "http://nysparks.com/parks/37/details.aspx", null ], [ "http://nysparks.com/golf-courses/13/details.aspx", null ], [ null, null ], "-73.26320632450", "40.90999226950", [ null, "40.90999226950", "-73.26320632450", null, false ] ]
+, [ 146, "35FE06AD-6F06-48FD-830F-EBFDD5EBAE47", 146, 1387393609, "707400", 1387393609, "707400", "{\n}", "Amsterdam Beach", "State Park", "9", "Suffolk", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-71.90026531100", "41.04777113090", [ null, "41.04777113090", "-71.90026531100", null, false ] ]
+, [ 147, "4DC57E2E-839C-49C4-8C2C-0F78AC10B8F1", 147, 1387393609, "707400", 1387393609, "707400", "{\n}", "Bayard Cutting Arboretum", "State Park", "9", "Suffolk", "N", "N", "N", "Y", null, [ "http://nysparks.com/parks/95/details.aspx", null ], [ null, null ], [ null, null ], "-73.15775835320", "40.74724053560", [ null, "40.74724053560", "-73.15775835320", null, false ] ]
+, [ 148, "DC82786C-E397-4B64-A78B-A1319AEE13DD", 148, 1387393609, "707400", 1387393609, "707400", "{\n}", "Belmont Lake", "State Park", "9", "Suffolk", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/88/details.aspx", null ], [ null, null ], [ null, null ], "-73.33679499630", "40.72623240190", [ null, "40.72623240190", "-73.33679499630", null, false ] ]
+, [ 150, "25F5D3CE-6ADC-48A3-ADA3-8CF2D949847A", 150, 1387393609, "707400", 1387393609, "707400", "{\n}", "Brentwood", "State Park", "9", "Suffolk", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.27112999250", "40.79155338420", [ null, "40.79155338420", "-73.27112999250", null, false ] ]
+, [ 151, "4E953CD9-4AFA-49FC-B25A-AE8D3D0469CA", 151, 1387393609, "707400", 1387393609, "707400", "{\n}", "Brookhaven", "State Park", "9", "Suffolk", "N", "N", "N", null, null, [ "http://nysparks.com/parks/180/details.aspx", null ], [ null, null ], [ null, null ], "-72.86481657330", "40.92095003770", [ null, "40.92095003770", "-72.86481657330", null, false ] ]
+, [ 152, "4BA78814-13A6-40A6-9F2A-BA0522979F33", 152, 1387393609, "707400", 1387393609, "707400", "{\n}", "Caleb Smith Park Preserve", "State Park Preserve", "9", "Suffolk", "N", "N", "N", "Y-A", null, [ "http://nysparks.com/parks/124/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/9/details.aspx", null ], "-73.22601644730", "40.85303798080", [ null, "40.85303798080", "-73.22601644730", null, false ] ]
+, [ 153, "83EB967C-2287-4DED-AC3E-35A3609C01E3", 153, 1387393609, "707400", 1387393609, "707400", "{\n}", "Camp Hero", "State Park", "9", "Suffolk", "N", "N", "N", null, null, [ "http://nysparks.com/parks/97/details.aspx", null ], [ null, null ], [ null, null ], "-71.87778729950", "41.06177194750", [ null, "41.06177194750", "-71.87778729950", null, false ] ]
+, [ 154, "A4E968E0-68CE-4464-8626-7468DA669389", 154, 1387393609, "707400", 1387393609, "707400", "{\n}", "Captree", "State Park", "9", "Suffolk", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/65/details.aspx", null ], [ null, null ], [ null, null ], "-73.26127358590", "40.63885218330", [ null, "40.63885218330", "-73.26127358590", null, false ] ]
+, [ 155, "FF7EE90F-DEE2-4A6F-B4CE-BB858E470DFA", 155, 1387393609, "707400", 1387393609, "707400", "{\n}", "Caumsett", "State Historic Park", "9", "Suffolk", "N", "N", "N", null, null, [ "http://nysparks.com/parks/23/details.aspx", null ], [ null, null ], [ null, null ], "-73.46867734940", "40.92812461750", [ null, "40.92812461750", "-73.46867734940", null, false ] ]
+, [ 156, "FAB86EE9-89EC-4383-87D7-C92CDC23750D", 156, 1387393609, "707400", 1387393609, "707400", "{\n}", "Cold Spring Harbor", "State Park", "9", "Suffolk", "N", "N", "N", null, null, [ "http://nysparks.com/parks/115/details.aspx", null ], [ null, null ], [ null, null ], "-73.46022300860", "40.86283939140", [ null, "40.86283939140", "-73.46022300860", null, false ] ]
+, [ 157, "EAF81F6B-F903-4848-8AB8-1B30EA668FD4", 157, 1387393609, "707400", 1387393609, "707400", "{\n}", "Connetquot River", "State Park Preserve", "9", "Suffolk", "N", "N", "N", "Y-A", null, [ "http://nysparks.com/parks/8/details.aspx", null ], [ null, null ], [ "http://www.nysparks.com/environment/nature-centers/6/details.aspx", null ], "-73.14924968890", "40.76942924760", [ null, "40.76942924760", "-73.14924968890", null, false ] ]
+, [ 158, "345ABC79-3E26-44E0-9EE7-26AC8F144619", 158, 1387393609, "707400", 1387393609, "707400", "{\n}", "Gilgo", "State Park", "9", "Suffolk", "N", "N", "N", null, null, [ "http://nysparks.com/parks/15/details.aspx", null ], [ null, null ], [ null, null ], "-73.34293029080", "40.63428809940", [ null, "40.63428809940", "-73.34293029080", null, false ] ]
+, [ 159, "817F74B3-92DE-4DF0-8914-630A39E91805", 159, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hallock", "State Park Preserve", "9", "Suffolk", "N", "N", "N", null, null, [ "http://nysparks.com/parks/181/details.aspx", null ], [ null, null ], [ null, null ], "-72.59747380930", "40.99072069450", [ null, "40.99072069450", "-72.59747380930", null, false ] ]
+, [ 160, "27AE49C9-EDE3-4E23-B3F0-9F9D87EB41E0", 160, 1387393609, "707400", 1387393609, "707400", "{\n}", "Heckscher", "State Park", "9", "Suffolk", "N", "Y", "Y", null, "Y-M", [ "http://nysparks.com/parks/136/details.aspx", null ], [ null, null ], [ null, null ], "-73.16492237860", "40.70866150840", [ null, "40.70866150840", "-73.16492237860", null, false ] ]
+, [ 162, "10378BF4-EB91-4FC8-B4BB-A9E84DA82505", 162, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hither Hills", "State Park", "9", "Suffolk", "N", "Y", "Y", "Y", "Y", [ "http://nysparks.com/parks/122/details.aspx", null ], [ null, null ], [ null, null ], "-72.02131303600", "41.01605601000", [ null, "41.01605601000", "-72.02131303600", null, false ] ]
+, [ 163, "6865D556-29DD-473D-B333-D8B8B971F7A0", 163, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hither Woods", "State Park", "9", "Suffolk", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-71.98933313460", "41.03132370160", [ null, "41.03132370160", "-71.98933313460", null, false ] ]
+, [ 165, "09B3BF97-7148-4AF1-A293-BFB70E067EB5", 165, 1387393609, "707400", 1387393609, "707400", "{\n}", "Montauk Downs", "State Park", "9", "Suffolk", "Y", "N", "N", null, null, [ "http://nysparks.com/parks/29/details.aspx", null ], [ "http://nysparks.com/golf-courses/8/details.aspx", null ], [ null, null ], "-71.93852780020", "41.04928768220", [ null, "41.04928768220", "-71.93852780020", null, false ] ]
+, [ 166, "E3ABCE7D-839D-4C1A-87E8-F40C6ABD348B", 166, 1387393609, "707400", 1387393609, "707400", "{\n}", "Montauk Point", "State Park", "9", "Suffolk", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/61/details.aspx", null ], [ null, null ], [ null, null ], "-71.88138834920", "41.07145027740", [ null, "41.07145027740", "-71.88138834920", null, false ] ]
+, [ 167, "9F10D744-FB62-487E-9A4F-C76052A532C5", 167, 1387393609, "707400", 1387393609, "707400", "{\n}", "Napeague", "State Park", "9", "Suffolk", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-72.07589738350", "40.99326499570", [ null, "40.99326499570", "-72.07589738350", null, false ] ]
+, [ 168, "E0638369-F519-4571-A4F8-FCD47491F92C", 168, 1387393609, "707400", 1387393609, "707400", "{\n}", "Nissequogue River", "State Park", "9", "Suffolk", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/110/details.aspx", null ], [ null, null ], [ null, null ], "-73.23169620380", "40.89867044230", [ null, "40.89867044230", "-73.23169620380", null, false ] ]
+, [ 169, "89537B74-904F-4622-8C4F-B72497DF97EF", 169, 1387393609, "707400", 1387393609, "707400", "{\n}", "Orient Beach", "State Park", "9", "Suffolk", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/106/details.aspx", null ], [ null, null ], [ null, null ], "-72.27152525200", "41.12855132490", [ null, "41.12855132490", "-72.27152525200", null, false ] ]
+, [ 171, "2DE09F11-1B8E-49E3-A344-027DD60DCFAF", 171, 1387393609, "707400", 1387393609, "707400", "{\n}", "Robert Moses", "State Park", "9", "Suffolk", "Y", "N", "Y", null, "Y-M", [ "http://nysparks.com/parks/7/details.aspx", null ], [ "http://nysparks.com/golf-courses/12/details.aspx", null ], [ null, null ], "-73.26514243630", "40.62351774640", [ null, "40.62351774640", "-73.26514243630", null, false ] ]
+, [ 172, "0A104288-C117-4102-A27C-5F022F12220F", 172, 1387393609, "707400", 1387393609, "707400", "{\n}", "Sag Harbor", "State Park", "9", "Suffolk", "Y", "N", "N", null, null, [ null, null ], [ "http://nysparks.com/golf-courses/17/details.aspx", null ], [ null, null ], "-72.26056664280", "40.99702451660", [ null, "40.99702451660", "-72.26056664280", null, false ] ]
+, [ 173, "E8D48ADE-86A7-4C56-87C5-FAB215297ABA", 173, 1387393609, "707400", 1387393609, "707400", "{\n}", "Shadmoor", "State Park", "9", "Suffolk", "N", "N", "N", null, null, [ "http://nysparks.com/parks/16/details.aspx", null ], [ null, null ], [ null, null ], "-71.92772811820", "41.03868098430", [ null, "41.03868098430", "-71.92772811820", null, false ] ]
+, [ 176, "1532D27B-477D-4E12-8139-558497E26E7C", 176, 1387393609, "707400", 1387393609, "707400", "{\n}", "Walt Whitman Birthplace", "State Historic Site", "9", "Suffolk", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/19/details.aspx", null ], [ null, null ], [ null, null ], "-73.41176451860", "40.81717508380", [ null, "40.81717508380", "-73.41176451860", null, false ] ]
+, [ 177, "9F161E17-DE57-4202-BFB4-52A6ACC13F6D", 177, 1387393609, "707400", 1387393609, "707400", "{\n}", "Wildwood", "State Park", "9", "Suffolk", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/68/details.aspx", null ], [ null, null ], [ null, null ], "-72.79457341390", "40.96049995990", [ null, "40.96049995990", "-72.79457341390", null, false ] ]
+, [ 132, "968D5805-34D9-47DE-B104-DC141CC0D4C9", 132, 1387393609, "707400", 1387393609, "707400", "{\n}", "Lake Superior", "State Park", "8", "Sullivan", "N", "N", "N", null, "Y", [ "http://nysparks.com/parks/87/details.aspx", null ], [ null, null ], [ null, null ], "-74.87942647960", "41.66793052970", [ null, "41.66793052970", "-74.87942647960", null, false ] ]
+, [ 64, "0A999902-AAB9-425E-A1D6-6EE222AC32B0", 64, 1387393609, "707400", 1387393609, "707400", "{\n}", "Two Rivers", "State Park", "4", "Tioga", "N", "N", "N", null, null, [ "http://nysparks.com/parks/179/details.aspx", null ], [ null, null ], [ null, null ], "-76.54731999330", "42.02516354530", [ null, "42.02516354530", "-76.54731999330", null, false ] ]
+, [ 37, "5AF2A1C5-49FB-44DC-88F8-8E6A37D24D4A", 37, 1387393609, "707400", 1387393609, "707400", "{\n}", "Allan H. Treman", "Marine Facility", "4", "Tompkins", "N", "N", "N", null, null, [ "http://nysparks.com/parks/35/details.aspx", null ], [ null, null ], [ null, null ], "-76.51756817400", "42.46139668170", [ null, "42.46139668170", "-76.51756817400", null, false ] ]
+, [ 40, "196042A0-5C7E-46B9-B099-6A7FE5635E9F", 40, 1387393609, "707400", 1387393609, "707400", "{\n}", "Buttermilk Falls", "State Park", "4", "Tompkins", "N", "Y", "Y", null, "Y-M", [ "http://nysparks.com/parks/151/details.aspx", null ], [ null, null ], [ null, null ], "-76.51225663690", "42.40402595950", [ null, "42.40402595950", "-76.51225663690", null, false ] ]
+, [ 58, "DF732FC8-9371-47ED-8EF4-464FF29AF995", 58, 1387393609, "707400", 1387393609, "707400", "{\n}", "Robert H. Treman", "State Park", "4", "Tompkins", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/135/details.aspx", null ], [ null, null ], [ null, null ], "-76.57954420760", "42.40057563940", [ null, "42.40057563940", "-76.57954420760", null, false ] ]
+, [ 63, "84877A8A-6FE1-4DCC-89CE-376065468F96", 63, 1387393609, "707400", 1387393609, "707400", "{\n}", "Taughannock Falls", "State Park", "4", "Tompkins", "N", "Y", "Y", null, "Y", [ "http://nysparks.com/parks/62/details.aspx", null ], [ null, null ], [ null, null ], "-76.60976708320", "42.54073823840", [ null, "42.54073823840", "-76.60976708320", null, false ] ]
+, [ 123, "CC29D22C-6983-4F6F-8FEE-CD21029A7BF6", 123, 1387393609, "707400", 1387393609, "707400", "{\n}", "Franny Reese Preserve", "State Park", "8", "Ulster", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.95596437460", "41.70146444660", [ null, "41.70146444660", "-73.95596437460", null, false ] ]
+, [ 133, "4BC4B349-687C-4758-AD1F-3F14D087AEC5", 133, 1387393609, "707400", 1387393609, "707400", "{\n}", "Minnewaska", "State Park Preserve", "8", "Ulster", "N", "N", "N", "Y", "Y-M", [ "http://nysparks.com/parks/127/details.aspx", null ], [ null, null ], [ null, null ], "-74.29323529390", "41.71581549160", [ null, "41.71581549160", "-74.29323529390", null, false ] ]
+, [ 227, "1586CCA7-D715-477B-8EE0-FEA9B6F3B004", 227, 1387393609, "707400", 1387393609, "707400", "{\n}", "Lake Lauderdale", "State Park", "11", "Washington", "N", "N", "N", null, "Y", [ null, null ], [ null, null ], [ null, null ], "-73.37041512790", "43.08508562190", [ null, "43.08508562190", "-73.37041512790", null, false ] ]
+, [ 239, "B12BE2E4-7822-4FA8-9729-D9D9BE1CDE49", 239, 1387393609, "707400", 1387393609, "707400", "{\n}", "Susan B Anthony", "Other", "11", "Washington", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.42311978200", "43.11052996620", [ null, "43.11052996620", "-73.42311978200", null, false ] ]
+, [ 38, "DD4DB28F-7A6C-4620-95CC-435CBC86777A", 38, 1387393609, "707400", 1387393609, "707400", "{\n}", "Beechwood", "State Park", "4", "Wayne", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-77.03379330370", "43.26669445500", [ null, "43.26669445500", "-77.03379330370", null, false ] ]
+, [ 43, "878D59C8-0F87-441A-893E-534D9F9919FC", 43, 1387393609, "707400", 1387393609, "707400", "{\n}", "Chimney Bluffs", "State Park", "4", "Wayne", "N", "N", "N", null, null, [ "http://nysparks.com/parks/43/details.aspx", null ], [ null, null ], [ null, null ], "-76.91702420280", "43.28094551730", [ null, "43.28094551730", "-76.91702420280", null, false ] ]
+, [ 100, "B84657E8-361E-4009-A0C8-43AD414A7496", 100, 1387393609, "707400", 1387393609, "707400", "{\n}", "Franklin Delano Roosevelt", "State Park", "7", "Westchester", "N", "N", "Y", null, null, [ "http://nysparks.com/parks/148/details.aspx", null ], [ null, null ], [ null, null ], "-73.80875690520", "41.28230417020", [ null, "41.28230417020", "-73.80875690520", null, false ] ]
+, [ 101, "B4DD40A3-076A-4BA0-B3F2-B4AEC6B5DA9E", 101, 1387393609, "707400", 1387393609, "707400", "{\n}", "Hart's Brook Nature Preserve & Arboretum", "Other", "7", "Westchester", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.80806016760", "41.01796144330", [ null, "41.01796144330", "-73.80806016760", null, false ] ]
+, [ 104, "B50C1AB5-7B4E-464F-BB45-FE757E67A6C9", 104, 1387393609, "707400", 1387393609, "707400", "{\n}", "John Jay Homestead", "State Historic Site", "7", "Westchester", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/4/details.aspx", null ], [ null, null ], [ null, null ], "-73.65880640870", "41.25034095730", [ null, "41.25034095730", "-73.65880640870", null, false ] ]
+, [ 109, "17AF0066-811C-4D82-AFEC-5ED72187CC68", 109, 1387393609, "707400", 1387393609, "707400", "{\n}", "Old Croton Aqueduct", "State Historic Park", "7", "Westchester", "N", "N", "N", null, null, [ "http://nysparks.com/parks/96/details.aspx", null ], [ null, null ], [ null, null ], "-73.86317128260", "41.16566387170", [ null, "41.16566387170", "-73.86317128260", null, false ] ]
+, [ 110, "9CB19642-A076-4343-A68A-C0BDF719634B", 110, 1387393609, "707400", 1387393609, "707400", "{\n}", "Peter Jay", "Other", "7", "Westchester", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/39/details.aspx", null ], [ null, null ], [ null, null ], "-73.70587754860", "40.95694601390", [ null, "40.95694601390", "-73.70587754860", null, false ] ]
+, [ 111, "365B0BF2-4C82-4008-AE49-CBC32750C799", 111, 1387393609, "707400", 1387393609, "707400", "{\n}", "Philipse Manor Hall", "State Historic Site", "7", "Westchester", "N", "N", "N", null, null, [ "http://nysparks.com/historic-sites/37/details.aspx", null ], [ null, null ], [ null, null ], "-73.89931286140", "40.93555005170", [ null, "40.93555005170", "-73.89931286140", null, false ] ]
+, [ 113, "ABF70789-5458-4B56-B0D4-56F63E9FAA69", 113, 1387393609, "707400", 1387393609, "707400", "{\n}", "Rockefeller Park Preserve", "State Park", "7", "Westchester", "N", "N", "N", null, null, [ "http://nysparks.com/parks/59/details.aspx", null ], [ null, null ], [ null, null ], "-73.83253998950", "41.10969308530", [ null, "41.10969308530", "-73.83253998950", null, false ] ]
+, [ 116, "8188B8E4-31DE-4D79-882D-6184B5720E91", 116, 1387393609, "707400", 1387393609, "707400", "{\n}", "Taxter Ridge", "Other", "7", "Westchester", "N", "N", "N", null, null, [ null, null ], [ null, null ], [ null, null ], "-73.83877677420", "41.05511939330", [ null, "41.05511939330", "-73.83877677420", null, false ] ]
+, [ 36, "83BD4550-5978-4FD9-B2BB-DB1C37E02AFC", 36, 1387393609, "707400", 1387393609, "707400", "{\n}", "Silver Lake", "State Park", "3", "Wyoming", "N", "N", "N", null, null, [ "http://nysparks.com/parks/104/details.aspx", null ], [ null, null ], [ null, null ], "-78.05656097830", "42.67925421890", [ null, "42.67925421890", "-78.05656097830", null, false ] ]
+, [ 51, "4F85C2EA-FF42-46EF-8245-7A4FDF177D0D", 51, 1387393609, "707400", 1387393609, "707400", "{\n}", "Keuka Lake", "State Park", "4", "Yates", "N", "N", "Y", null, "Y", [ "http://nysparks.com/parks/67/details.aspx", null ], [ null, null ], [ null, null ], "-77.12858335890", "42.58218255220", [ null, "42.58218255220", "-77.12858335890", null, false ] ]
+ ]
+}

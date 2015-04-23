@@ -5,7 +5,7 @@ namespace :govreviews do
     require 'nokogiri'
     require 'json'
     
-    file = File.read('/Users/awhughes/Desktop/nys.json')
+    file = File.read('/Users/awhughes/code/govreviews/lib/assets/nys.json')
     parsed_file = JSON.parse(file)
     page = parsed_file['data']
     
@@ -40,7 +40,7 @@ namespace :govreviews do
     require 'nokogiri'
     require 'json'
     
-    file = File.read('/Users/awhughes/Desktop/nyc.html')
+    file = File.read('/Users/awhughes/code/govreviews/lib/assets/nyc.html')
     giri_file = Nokogiri::HTML(file)
     agency_section = giri_file.css("ul[class=alpha-list]").css('li')
 
@@ -71,7 +71,7 @@ namespace :govreviews do
     require 'rubygems'
     require 'JSON'
     
-    file = File.read('/Users/awhughes/Desktop/NYS Parks.json')
+    file = File.read('/Users/awhughes/code/govreviews/lib/assets/NYS Parks.json')
     output = JSON.parse(file)
     page = output['data']
     all_results = []
