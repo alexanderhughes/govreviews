@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150402222913) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
   end
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 20150402222913) do
     t.integer "public_entity_id"
   end
 
-  add_index "categories_public_entities", ["category_id"], name: "index_categories_public_entities_on_category_id"
-  add_index "categories_public_entities", ["public_entity_id"], name: "index_categories_public_entities_on_public_entity_id"
+  add_index "categories_public_entities", ["category_id"], name: "index_categories_public_entities_on_category_id", using: :btree
+  add_index "categories_public_entities", ["public_entity_id"], name: "index_categories_public_entities_on_public_entity_id", using: :btree
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"
