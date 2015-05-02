@@ -28,7 +28,8 @@ namespace :govreviews do
     end
     
     all_results.each do |entity|
-      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type])
+      governor = PublicEntity.find(1)
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], superior: governor)
       entity[:category].each do |catg|
         c = Category.find_or_create_by(name: catg)
         pe.categories.push(c)
@@ -37,7 +38,7 @@ namespace :govreviews do
   end
   
   desc "Crawl NY City agencies and load them into PublicEntity table"
-  task crawl_city: :environment do
+  task crawl_city_agencies: :environment do
     require 'rubygems'
     require 'nokogiri'
     require 'json'
@@ -57,12 +58,14 @@ namespace :govreviews do
       cat_info = agency["data-topic"]
       cat_json = JSON.parse(cat_info)
       website = agency["data-social-email"]
-      results = { name: name, description: description, website: website, authority_level: 'city', category: cat_json['topics'] }
+      superior_id = PublicEntity.where(name: "The Office of the Mayor of New York City")[0].id
+      results = { name: name, description: description, website: website, authority_level: 'city', category: cat_json['topics'], superior_id: superior_id }
       all_results.push(results)
     end
     
     all_results.each do |entity|
-      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: 'agency')
+      mayor = PublicEntity.find(2)
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: 'agency', superior: mayor)
       entity[:category].each do |catg|
         c = Category.find_or_create_by(name: catg)
         pe.categories.push(c)
@@ -71,7 +74,7 @@ namespace :govreviews do
   end
   
   desc "Crawl NY State Parks and load them into PublicEntity table"
-  task crawl_parks: :environment do
+  task crawl_state_parks: :environment do
     require 'rubygems'
     require 'json'
     require 'open-uri'
@@ -90,14 +93,76 @@ namespace :govreviews do
       all_results.push(results)
     end
     
-    c = Category.create(name: 'Park')
+    c = Category.create(name: 'Parks')
     
+    all_results.each do |entity|
+      state_park_authority = find_by(name: "Office of Parks, Recreation and Historic Preservation")
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], superior: state_park_authority)
+      pe.categories.push(c)
+    end
+  end
+  
+  desc "Crawl Post Offices in New York City and load them into PublicEntity table"
+  task crawl_post_offices: :environment do
+    require 'rubygems'
+    require 'json'
+    require 'open-uri'
+    
+    url = 'https://data.cityofnewyork.us/api/views/bdha-6eqy/rows.json?accessType=DOWNLOAD'
+    file = open(url) { |f| f.read }
+    output = JSON.parse(file)
+    page = output["data"]
+
+    all_results = []
+
+    page.each do |office|
+      name = office[9] + ' ' + 'Post Office'
+      description = "Post Office"
+      website = "http://www.usps.com"
+      results = { name: name, description: description, website: website, authority_level: 'federal', entity_type: 'post_office' }
+      all_results.push(results)
+    end
+
+    c = Category.create(name: 'Post Offices')
+
     all_results.each do |entity|
       pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type])
       pe.categories.push(c)
     end
   end
   
+  desc "Crawl NYC Subway Stations and load them into PublicEntity table"
+  task crawl_subway_stations: :environment do
+    require 'json'
+    require 'rubygems'
+    require 'open-uri'
+    
+    url = 'https://data.cityofnewyork.us/api/views/kk4q-3rt2/rows.json?accessType=DOWNLOAD'
+    page = open(url) { |f| f.read }
+    output = JSON.parse(page)
+    info = output["data"]
+
+    all_results = []
+
+    info.each do |station|
+      name = station[9]
+      description = "Subway station servicing lines" + " " + station[10]
+      website = station[8]
+      results = {}
+      results = { name: name, description: description, website: website, authority_level: "city", entity_type: "subway_station", category: ["Transportation", "Subway Stations"] }
+      all_results.push(results)
+    end
+
+    all_results.each do |entity|
+      #mta_nycta = create Public Entity!
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type])
+      entity[:category].each do |catg|
+        c = Category.find_or_create_by(name: catg)
+        pe.categories.push(c)
+      end
+    end
+  end
+
 end
 
 #first_page = Nokogiri::HTML(parsed_file['data'][99]['markup'])

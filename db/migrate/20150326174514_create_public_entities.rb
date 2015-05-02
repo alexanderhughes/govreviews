@@ -6,6 +6,7 @@ class CreatePublicEntities < ActiveRecord::Migration
       t.string :address
       t.string :description
       t.string :website
+      t.references :superior, index: true
 
       t.timestamps null: false
     end

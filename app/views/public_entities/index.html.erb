@@ -1,7 +1,24 @@
 <% provide(:title, "Index") %>
 
+<h1>NYC Executive Officers</h1>
+<p><% @public_entities.where(authority_level: 'city', entity_type: 'city executive').each do |entity| %>
+	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<%end%>
+</p>
 <h1>City Agencies</h1>
-<p><% @public_entities.where(authority_level: 'city').each do |entity| %>
+<p><% @public_entities.where(authority_level: 'city', entity_type: 'agency').each do |entity| %>
+	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<%end%>
+</p>
+
+<h1>Subway Stations</h1>
+<p><% @public_entities.where(entity_type: 'subway_station').each do |entity| %>
+	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<%end%>
+</p>
+
+<h1>Post Offices</h1>
+<p><% @public_entities.where(entity_type: 'post_office').each do |entity| %>
 	<div><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>

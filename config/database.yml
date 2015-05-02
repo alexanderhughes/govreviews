@@ -29,13 +29,15 @@ development:
   encoding: unicode
   database: govreviews_development
   pool: 5
-  username: awhughes
+  username: alexanderhughes
   password:
+  host: localhost
 
 test:
   adapter: postgresql
   encoding: unicode
   database: govreviews_test
   pool: 5
-  username: awhughes
+  username: alexanderhughes
   password:
+  host: localhost
