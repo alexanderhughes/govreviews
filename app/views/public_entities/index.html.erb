@@ -1,5 +1,17 @@
 <% provide(:title, "Index") %>
 
+<script>
+$(document).ready(function(){
+	$('input[type=text]:first').focus()
+	})
+</script>
+	
+<h1>Browse by Category</h1>
+<p><% @categories.each do |category| %>
+	<li><%= category.name %></li>
+	<% end %>
+</p>
+
 <h1>NYC Executive Officers</h1>
 <p><% @public_entities.where(authority_level: 'city', entity_type: 'city executive').each do |entity| %>
 	<div><%=link_to entity.name, public_entity_url(entity) %></div>

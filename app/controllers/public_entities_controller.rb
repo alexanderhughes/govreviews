@@ -1,6 +1,7 @@
 class PublicEntitiesController < ApplicationController
   def index
     @public_entities = PublicEntity.all
+    @categories = Category.all
   end
   
   def show
