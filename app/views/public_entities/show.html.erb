@@ -2,7 +2,10 @@
 <body>
 	<h3><%= link_to @public_entity.name, @public_entity.website %></h3>
 		<div><%= @public_entity.description %></div>
-		<div>This entity reports to <%= link_to @public_entity.superior.name, @public_entity.superior %></div>
+		<div><% if @public_entity.superior != nil %>
+			This entity reports to <%= link_to @public_entity.superior.name, @public_entity.superior %>
+			<% end %>
+		</div>
 		<p></p>
 		<div>There are <strong><%= @posts.count %></strong> reviews.</div><br>
 		<p></p>
