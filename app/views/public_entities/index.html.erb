@@ -2,47 +2,89 @@
 
 <script>
 $(document).ready(function(){
-	$('input[type=text]:first').focus()
-	})
+	var listCat = $('.categories_list');
+	$(listCat).hide();
+	$('.categories').click(function(){
+		$(listCat).slideToggle('slow');
+	});
+	
+	var listExecs = $('.nyc_executives_list');
+	$(listExecs).hide();
+	$('.nyc_executives').click(function(){
+		$(listExecs).slideToggle('slow');
+	});
+	
+	var listCA = $('.city_agencies_list');
+	$(listCA).hide();
+	$('.city_agencies').click(function(){
+		$(listCA).slideToggle('slow');
+	});
+	
+	var listSS = $('.subways_list');
+	$(listSS).hide();
+	$('.subways').click(function(){
+		$(listSS).slideToggle('slow');
+	});
+	
+	var listPO = $('.post_offices_list');
+	$(listPO).hide();
+	$('.post_offices').click(function(){
+		$(listPO).slideToggle('slow');
+	});
+
+	
+	var listSA = $('.state_agencies_list');
+	$(listSA).hide();
+	$('.state_agencies').click(function(){
+		$(listSA).slideToggle('slow');
+	});
+	
+	var listSP = $('.state_parks_list');
+	$(listSP).hide();
+	$('.state_parks').click(function(){
+		$(listSP).slideToggle('slow');
+	});
+});
 </script>
 	
-<h1>Browse by Category</h1>
+<h1 class="categories">Browse by Category</h1>
 <p><% @categories.each do |category| %>
-	<li><%= category.name %></li>
+	<li class="categories_list"><%= category.name %></li>
 	<% end %>
 </p>
 
-<h1>NYC Executive Officers</h1>
+<h1 class="nyc_executives">NYC Executive Officers</h1>
 <p><% @public_entities.where(authority_level: 'city', entity_type: 'city executive').each do |entity| %>
-	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<div class="nyc_executives_list"><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>
-<h1>City Agencies</h1>
+
+<h1 class="city_agencies">NYC Agencies</h1>
 <p><% @public_entities.where(authority_level: 'city', entity_type: 'agency').each do |entity| %>
-	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<div class="city_agencies_list"><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>
 
-<h1>Subway Stations</h1>
+<h1 class="subways">NYC Subway Stations</h1>
 <p><% @public_entities.where(entity_type: 'subway_station').each do |entity| %>
-	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<div class="subways_list"><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>
 
-<h1>Post Offices</h1>
+<h1 class="post_offices">NYC Post Offices</h1>
 <p><% @public_entities.where(entity_type: 'post_office').each do |entity| %>
-	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<div class="post_offices_list"><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>
 
-<h1>State Agencies</h1>
+<h1 class="state_agencies">NY State Agencies</h1>
 <p><% @public_entities.where(authority_level: 'state', entity_type: 'agency').each do |entity| %>
-	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<div class="state_agencies_list"><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>
 
-<h1>State Parks</h1>
+<h1 class="state_parks">NY State Parks</h1>
 <p><% @public_entities.where(authority_level: 'state', entity_type: 'park').each do |entity| %>
-	<div><%=link_to entity.name, public_entity_url(entity) %></div>
+	<div class="state_parks_list"><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </p>

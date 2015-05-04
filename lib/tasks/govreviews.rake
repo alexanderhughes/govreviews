@@ -96,8 +96,8 @@ namespace :govreviews do
     c = Category.create(name: 'Parks')
     
     all_results.each do |entity|
-      state_park_authority = find_by(name: "Office of Parks, Recreation and Historic Preservation")
-      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], superior: state_park_authority)
+      state_park_authority = where(name: "Office of Parks, Recreation and Historic Preservation")
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], superior: state_park_authority[0])
       pe.categories.push(c)
     end
   end

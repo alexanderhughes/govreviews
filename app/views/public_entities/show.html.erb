@@ -1,7 +1,8 @@
-<% provide(:title, "Show") %>
+<% provide(:title, "Leave a review!") %>
 <body>
 	<h3><%= link_to @public_entity.name, @public_entity.website %></h3>
 		<div><%= @public_entity.description %></div>
+		<p></p>
 		<div><% if @public_entity.superior != nil %>
 			This entity reports to <%= link_to @public_entity.superior.name, @public_entity.superior %>
 			<% end %>
