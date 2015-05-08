@@ -1,0 +1,12 @@
+<% provide(:title, @category.name) %>
+<body>
+	<h3><%= @category.name %></h3>
+		<h4>NYC</h4>
+		<% @category.public_entities.where(authority_level: "city").each do |city_entity| %>
+			<%= city_entity.name %>
+		<% end %>
+		<h4>NY State</h4>>
+		<% @category.public_entities.where(authority_level: "state").each do |state_entity| %>
+			<%= state_entity.name %>
+		<% end %>
+</body>
