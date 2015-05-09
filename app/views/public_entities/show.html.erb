@@ -1,4 +1,5 @@
 <% provide(:title, "Leave a review!") %>
+
 <body>
 	<h3><%= link_to @public_entity.name, @public_entity.website %></h3>
 		<div><%= @public_entity.description %></div>
@@ -11,6 +12,7 @@
 		<div>There are <strong><%= @posts.count %></strong> reviews.</div><br>
 		<p></p>
 		<div><% @posts.each do |info| %>
+			<div class="line_break"></div>
 			<div><strong><%= info.title %></strong></div>
 			<div><%= info.rating %></div>
 			<div><%= info.review %></div>
