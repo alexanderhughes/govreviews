@@ -1,8 +1,8 @@
-<% provide(:title, "Index") %>
+<% provide(:title, "Home") %>
 
-<script>
+<script type="text/javascript">
 $(document).ready(function(){
-	$.each(['categories', 'nyc_executives'], function(index, cssName){
+	$.each(['categories', 'nyc_executives', 'city_agencies', 'subways', 'post_offices', 'state_agencies', 'state_parks'], function(index, cssName){
 		var list = $('.'+cssName+'_list');
 		$(list).hide();
 		$('.'+cssName).click(function(){
@@ -21,7 +21,7 @@ $(document).ready(function(){
 	$('.nyc_executives').click(function(){
 		$(listExecs).slideToggle('slow');
 	});
-*/	
+
 	var listCA = $('.city_agencies_list');
 	$(listCA).hide();
 	$('.city_agencies').click(function(){
@@ -51,9 +51,33 @@ $(document).ready(function(){
 	$('.state_parks').click(function(){
 		$(listSP).slideToggle('slow');
 	});
+	*/	
 });
 </script>
-	
+
+<script type="text/javascript" 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblSuZVzczfE">
+</script>
+
+<style type="text/css">
+  html { height: 100% }
+  body { height: 100%; margin: 0; padding: 0 }
+  #map-canvas { height: 100% }
+</style>
+
+<script type="text/javascript">
+	function initialize() {
+	    var mapOptions = {
+			center: { lat: 40.725968, lng: -73.997667}, zoom: 12
+	    };
+	    var map = new google.maps.Map(document.getElementById('map-canvas'),
+	        mapOptions);
+	  }
+	  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="map-canvas" style="width: 300px; height: 400px"></div>
+
 <div>
 	<h4>Most Recent Posts</h4>
 	<ol>
@@ -67,7 +91,6 @@ $(document).ready(function(){
 	</ol>
 </div>
 
-<div>
 <h1 class="categories">Browse by Category</h1>
 <ul>
 	<% @categories.each do |category| %>
@@ -110,4 +133,3 @@ $(document).ready(function(){
 	<div class="state_parks_list"><%=link_to entity.name, public_entity_url(entity) %></div>
 	<%end%>
 </ul>
-</div>
