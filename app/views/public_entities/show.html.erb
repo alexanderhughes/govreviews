@@ -11,30 +11,32 @@
 		<p></p>
 		<div>There are <strong><%= @posts.count %></strong> reviews.</div><br>
 		<p></p>
-		<div><% @posts.each do |info| %>
-			<div class="line_break"></div>
-			<div><strong><%= info.title %></strong></div>
-			<div><%= info.rating %></div>
-			<div><%= info.review %></div>
+		<div><% @posts.each do |post| %>
+			<div><strong><%= post.title %></strong></div>
+			<div><%= post.created_at.time.strftime("%m/%d/%y") %></div>
+			<div><%= post.user.email %> left a review:</div>
+			<div><%= post.rating %></div>
+			<div><%= post.review %></div>
 			<p></p>
 		<% end %>
 		</div>
 		
 	<h4>Write a review!</h4>
-	<div>
-		<%= form_for @post do |f| %>
-		<%= f.hidden_field :public_entity_id, value: @public_entity.id %>
-		<%= f.label :title, "Title:" %>
-		<%= f.text_field :title, class: "form-control" %><br>
+	<form>
+		<div class="form-group">
+			<%= form_for @post do |f| %>
+			<%= f.hidden_field :public_entity_id, value: @public_entity.id %>
+			<%= f.label :title, "Title:" %>
+			<%= f.text_field :title, class: "form-control" %><br>
 	
-		<%= f.label :rating, "Please give a rating on a scale from 1-5" %>
-		<%= f.text_field :rating, class: "form-control" %><br>
+			<%= f.label :rating, "Please give a rating on a scale from 1-5" %>
+			<%= f.text_field :rating, class: "form-control" %><br>
 	
-		<%= f.label :review, "Enter your review here:" %>
-		<%= f.text_field :review, class: "form-control" %><br>
+			<%= f.label :review, "Enter your review here:" %>
+			<%= f.text_field :review, class: "form-control input-lg" %><br>
 	
-		<%= f.submit "Submit your view", class: "btn btn-default"%>
-		<% end %>
-	</div>
-
+			<%= f.submit "Submit your view", class: "btn btn-default"%>
+			<% end %>
+		</div>
+	</form>
 </body>

@@ -14,6 +14,6 @@ class PostsController < ApplicationController
   
   private
   def post_params
-    params[:post].permit(:title, :rating, :review, :public_entity_id)
+    params[:post].permit(:title, :rating, :review, :public_entity_id, :user)
   end
 end
