@@ -1,5 +1,22 @@
 <% provide(:title, "Leave a review!") %>
 
+<script type="text/javascript" 
+src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblSuZVzczfE">
+</script>
+
+<script type="text/javascript">
+	function initialize() {
+	    var mapOptions = {
+			center: { lat: 40.725968, lng: -73.997667}, zoom: 12
+	    };
+	    var map = new google.maps.Map(document.getElementById('map-canvas'),
+	        mapOptions);
+	  }
+	  google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<div id="map-canvas" style="width: 300px; height: 400px"></div>
+
 <body>
 	<h3><%= link_to @public_entity.name, @public_entity.website %></h3>
 		<div><%= @public_entity.description %></div>
