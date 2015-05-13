@@ -5,6 +5,7 @@ class Post < ActiveRecord::Base
   include Mongoid::Document
   include Mongoid::Timestamps
   belongs_to :public_entity
+  belongs_to :user
   field :title
   field :rating
   field :review
