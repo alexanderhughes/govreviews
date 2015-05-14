@@ -28,7 +28,7 @@ namespace :govreviews do
     end
     
     all_results.each do |entity|
-      governor = PublicEntity.find(1)
+      governor = PublicEntity.where(name: "The Governor of New York")[0]
       pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], superior: governor)
       entity[:category].each do |catg|
         c = Category.find_or_create_by(name: catg)
@@ -50,6 +50,7 @@ namespace :govreviews do
     agency_section = giri_file.css("ul[class=alpha-list]").css('li')
 
     all_results = []
+    mayor = PublicEntity.where(name: "The Mayor of New York City").first
 
     agency_section.each do |agency|
       name = agency.text
@@ -58,13 +59,12 @@ namespace :govreviews do
       cat_info = agency["data-topic"]
       cat_json = JSON.parse(cat_info)
       website = agency["data-social-email"]
-      superior_id = PublicEntity.where(name: "The Office of the Mayor of New York City")[0].id
+      superior_id = mayor.id
       results = { name: name, description: description, website: website, authority_level: 'city', category: cat_json['topics'], superior_id: superior_id }
       all_results.push(results)
     end
     
     all_results.each do |entity|
-      mayor = PublicEntity.find(2)
       pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: 'agency', superior: mayor)
       entity[:category].each do |catg|
         c = Category.find_or_create_by(name: catg)

@@ -22,7 +22,12 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 		<div><%= @public_entity.description %></div>
 		<p></p>
 		<div><% if @public_entity.superior != nil %>
-			This entity reports to <%= link_to @public_entity.superior.name, @public_entity.superior %>
+			This entity reports to <%= link_to @public_entity.superior.name, @public_entity.superior, 'data-no-turbolink' => true %>
+			<% end %>
+		</div>
+		<div>
+			<% @categories.each do |category| %>
+				<div><%= category.name %></div>
 			<% end %>
 		</div>
 		<p></p>
