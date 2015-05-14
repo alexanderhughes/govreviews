@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   devise_for :installs
   get 'posts/new'
   resources :posts
+  
+  resources :categories
+  get 'categories/index'
 
   resources :public_entities
   root 'public_entities#index'
