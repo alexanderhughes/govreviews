@@ -27,7 +27,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 		</div>
 		<div>
 			<% @categories.each do |category| %>
-				<div><%= category.name %></div>
+				<div><%= link_to category.name, category_path(category) %></div>
 			<% end %>
 		</div>
 		<p></p>

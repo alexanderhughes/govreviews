@@ -36,7 +36,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 <div id="map-canvas" style="width: 300px; height: 400px"></div>
 
 <div>
-	<h4>Most Recent Posts</h4>
+	<h3>Most Recent Posts</h3>
 	<ol>
 		<% @ten_most_recent_posts.each do |post| %>
 				<li>
@@ -48,44 +48,44 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 	</ol>
 </div>
 
-<h1 class="categories">Browse by Category</h1>
+<h3 class="categories">Browse by Category</h3>
 <ul>
 	<% @categories.each do |category| %>
-		<li class="categories_list"><%= category.name %></li>
+		<li class="categories_list"><%= link_to category.name, category_path(category) %></li>
 	<% end %>
 </ul>
 
-<h1 class="nyc_executives">NYC Executive Officers</h1>
+<h3 class="nyc_executives">NYC Executive Officers</h3>
 <ul><% @nyc_executives.each do |entity| %>
 	<div class="nyc_executives_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
 	<%end%>
 </ul>
 
-<h1 class="city_agencies">NYC Agencies</h1>
+<h3 class="city_agencies">NYC Agencies</h3>
 <ul><% @nyc_agencies.each do |entity| %>
 	<div class="city_agencies_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
 	<%end%>
 </ul>
 
-<h1 class="subways">NYC Subway Stations</h1>
+<h3 class="subways">NYC Subway Stations</h3>
 <ul><% @nyc_subway_stations.each do |entity| %>
 	<div class="subways_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
 	<%end%>
 </ul>
 
-<h1 class="post_offices">NYC Post Offices</h1>
+<h3 class="post_offices">NYC Post Offices</h3>
 <ul><% @nyc_post_offices.each do |entity| %>
 	<div class="post_offices_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
 	<%end%>
 </ul>
 
-<h1 class="state_agencies">NY State Agencies</h1>
+<h3 class="state_agencies">NY State Agencies</h3>
 <ul><% @nystate_agencies.each do |entity| %>
 	<div class="state_agencies_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
 	<%end%>
 </ul>
 
-<h1 class="state_parks">NY State Parks</h1>
+<h3 class="state_parks">NY State Parks</h3>
 <ul><% @nystate_parks.each do |entity| %>
 	<div class="state_parks_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
 	<%end%>

@@ -12,6 +12,7 @@ class CategoriesController < ApplicationController
   
   def show
     @categories = Category.find(params[:id])
+    @public_entities = PublicEntity.all
   end    
   
 end
