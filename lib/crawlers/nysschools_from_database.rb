@@ -1,0 +1,51 @@
+#if entity_cd last four digits = 0000, then it's a school district:
+#from table STAFF:
+school_district_name = SCHOOL_NAME
+superintendent_name = CSO_NAME
+school_district_street_address = STREET
+school_district_city = CITY
+school_district_phone = PHONE
+school_district_grade_range = GRADE_RANGE
+sd_number_of_teachers = NUM_TEACH
+sd_teachers_without_valid_certificate = NUM_NO_VALID_CERT
+sd_teachers_out_of_certification = NUM_TEACH_OUT_CERT
+sd_turnover_rate_of_teachers_less_than_five_years_experience_percentage = PER_TURN_FIVE_YRS
+sd_turnover_rate_of_all_teachers_percentage = PER_TURN_ALL
+sd_full_time_asst_principals = NUM_FT_ASST_PRINCIPALS
+sd_part_time_asst_principals = NUM_PT_ASST_PRINCIPALS
+sd_full_time_principals = NUM_FT_PRINCIPALS
+sd_part_time_principals = NUM_PT_PRINCIPALS
+
+school_name = SCHOOL_NAME
+county = 
+school_district_name = 
+principal_name = 
+school_street_address = 
+zip_code = 
+city =
+phone = 
+grade_range = 
+charter_or_public = 
+school_website = 
+number_of_teachers = 
+number_of_part_time_asst_principals =
+number_of_full_time_asst_principals =
+number_of_part_time_principals =
+number_of_full_time_principals =
+
+#demographics table
+percent_free_lunch = 
+percent_reduced_lunch = 
+percent_limited_english_proficient_students = 
+percent_amerindian_or_native_alaskan_students = 
+percent_black_students =
+percent_latino_students = 
+percent_asian_or_pacific_islander_setudents = 
+percent_white_students = 
+percent_multiracial = 
+percent_disabilities =
+percent_female = 
+precent_male = 
+percent_economically_disadvantaged = 
+percent_four_year_college = PER_4YR_COLLEGE
+percent__two_year_college = PER_2YR_COLLEGE
