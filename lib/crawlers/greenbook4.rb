@@ -101,6 +101,7 @@ subordinates[2..45].each do |office|
     position = office.css('tr')
     while position[m] != nil && m <= 12
       #check if not a phone number, fax number, TTY number, empty string, or nil, not a description, then it is an agency chief string
+      # if is_agency_chief_string(position[m])
       if position[m].text.strip.index(/\(\d/) == nil && 
         position[m].text.strip.index("Fax") != 0 &&
         position[m].text.strip.index("TTY") != 0 &&

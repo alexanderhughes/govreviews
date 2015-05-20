@@ -29,6 +29,12 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 	    };
 	    var map = new google.maps.Map(document.getElementById('map-canvas'),
 	        mapOptions);
+		
+		var marker = new google.maps.Marker({
+	      position: new google.maps.LatLng(40.716593, -74.010593),
+	      map: map,
+	      title: 'My old house!'
+	  	});
 	  }
 	  google.maps.event.addDomListener(window, 'load', initialize);
 </script>
