@@ -1,4 +1,4 @@
-class Category < ActiveRecord::Base
+class Category
   #postgresql
   #has_and_belongs_to_many :public_entities
   include Mongoid::Document

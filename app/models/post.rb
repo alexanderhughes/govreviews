@@ -1,4 +1,4 @@
-class Post < ActiveRecord::Base
+class Post
   #postgresql
   #belongs_to :public_entity
   #belongs_to :user

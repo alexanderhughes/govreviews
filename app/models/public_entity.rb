@@ -1,4 +1,4 @@
-class PublicEntity < ActiveRecord::Base
+class PublicEntity
   #postgresql
   #has_many :posts
   #has_and_belongs_to_many :categories
