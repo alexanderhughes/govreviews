@@ -99,7 +99,15 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
+
 production:
-  sessions:
-    default:
-      uri: <%= ENV['MONGO_URL'] %>
+  host: <%= ENV['MONGOID_HOST'] %>
+  port: <%= ENV['MONGOID_PORT'] %>
+  username: <%= ENV['MONGOID_USERNAME'] %>
+  password: <%= ENV['MONGOID_PASSWORD'] %>
+  database: <%= ENV['MONGOID_DATABASE'] %>
+  # slaves:
+  #   - host: slave1.local
+  #     port: 27018
+  #   - host: slave2.local
+  #     port: 27019
