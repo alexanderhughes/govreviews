@@ -16,8 +16,6 @@ gem 'bootstrap-sass', '3.2.0.0'
 
 gem 'devise'
 
-gem 'geocoder'
-
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
@@ -31,6 +29,7 @@ gem 'pry'
 #binding.pry
 
 gem "mongoid", "~> 4.0.0"
+gem 'geocoder', git: "git://github.com/alexreisner/geocoder.git"
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

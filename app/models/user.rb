@@ -35,4 +35,10 @@ class User
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
   has_many :posts
+  
+  include Geocoder::Model::Mongoid
+  field :coordinates, :type => Array
+  field :ip_address
+  geocoded_by :ip_address
+  after_validation :geocode
 end
