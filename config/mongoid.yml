@@ -99,7 +99,3 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
-production:
-  sessions:
-    default:
-	  uri: <%= ENV['mongodb://govreviews:RVlCMnZzRGlXNlY3ZWNGRWpaeUdxdUU5YmEyb0hNV3lHOEt4TG9hTzlDYz0K@172.17.0.98:27017/production-production$'] %>
