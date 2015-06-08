@@ -102,4 +102,4 @@ test:
 production:
   sessions:
     default:
-	  uri: <%= ENV['MONGO_URL'] %>
+	  uri: <%= ENV['mongodb://govreviews:RVlCMnZzRGlXNlY3ZWNGRWpaeUdxdUU5YmEyb0hNV3lHOEt4TG9hTzlDYz0K@172.17.0.98:27017/production-production$'] %>
