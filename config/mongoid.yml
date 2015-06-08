@@ -103,4 +103,4 @@ test:
 production:
   sessions:
     default:
-		uri: <%= ENV['MONGO_URL'] %>
+	  uri: <%= ENV['MONGO_URL'] %>
