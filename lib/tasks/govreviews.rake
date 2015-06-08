@@ -67,7 +67,11 @@ namespace :govreviews do
     all_results.each do |entity|
       pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: 'agency', superior: mayor)
       entity[:category].each do |catg|
-        catg = catg.capitalize
+        catg = catg.capitalize.gsub('-',' ')
+        if catg.index(' ') != nil
+          space_index = catg.index(' ')
+          catg = catg[0..space_index] + catg[space_index+1].capitalize + catg[space_index+2..-1]
+        end
         c = Category.find_or_create_by(name: catg)
         pe.categories.push(c)
       end
