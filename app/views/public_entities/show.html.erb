@@ -44,20 +44,20 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 		</div>
 		
 	<h4>Write a review!</h4>
+	<br>
 	<form>
 		<div class="form-group">
 			<%= form_for @post do |f| %>
 			<%= f.hidden_field :public_entity_id, value: @public_entity.id %>
-			<%= f.label :title, "Title:" %>
-			<%= f.text_field :title, class: "form-control" %><br>
+			
+			<%= f.text_field :title, class: "form-control", placeholder: "Title your review here" %><br>
 	
 			<%= f.label :rating, "Please give a rating on a scale from 1-5" %>
 			<%= f.number_field :rating, in: 1..5 %><br>
 	
-			<%= f.label :review, "Enter your review here:" %>
-			<%= f.text_area :review, class: "form-control input-lg", rows: 5 %><br>
+			<%= f.text_area :review, class: "form-control input-lg", rows: 5, placeholder: "Enter your review here!" %><br>
 	
-			<%= f.submit "Submit your view", class: "btn btn-default"%>
+			<%= f.submit "Submit your review", class: "btn btn-default"%>
 			<% end %>
 		</div>
 	</form>

@@ -15,6 +15,7 @@ class PublicEntity
   field :entity_type
   field :superior_id
   field :chief_id
+  field :phone
   field :coordinates, :type => Array
   has_and_belongs_to_many :categories
   has_many :posts

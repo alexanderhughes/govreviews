@@ -60,12 +60,26 @@ namespace :govreviews do
       cat_json = JSON.parse(cat_info)
       website = agency["data-social-email"]
       superior_id = mayor.id
+      #get contact info
+      #if website.index('www.nyc.gov') != nil
+      #  web_url = website.gsub('home/home.shtml', 'contact/contact.shtml')
+      #  file = open(web_url) { |f| f.read }
+      #  giri_file = Nokogiri::HTML(file)
+      #  street_address = giri_file.css('span').css('p')[0].children[0].text
+      #  city_and_zip = giri_file.css('span').css('p')[0].children[2].text
+      #  address = street_address + ' ' + city_and_zip
+      #  phone = giri_file.css('span').css('p')[0].children[4].text
+      #  fax = giri_file.css('span').css('p')[0].children[6].text[0..11]
+      #else
+      #  phone = nil
+      #  address = nil
+      #end
       results = { name: name, description: description, website: website, authority_level: 'city', category: cat_json['topics'], superior_id: superior_id }
       all_results.push(results)
     end
     
     all_results.each do |entity|
-      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: 'agency', superior: mayor)
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: 'agency', superior: mayor )
       entity[:category].each do |catg|
         catg = catg.capitalize.gsub('-',' ')
         if catg.index(' ') != nil

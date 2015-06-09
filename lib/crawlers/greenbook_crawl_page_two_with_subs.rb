@@ -81,7 +81,7 @@ agency_link = agency_links[0]
 
   puts entity_name
 
-  subordinates[0..-2].each do |office|
+  subordinates[2..-2].each do |office|
   
     if office.css('a')[0] != nil
       entity_name = office.css('a')[0].text.strip

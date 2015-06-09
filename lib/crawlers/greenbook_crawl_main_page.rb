@@ -24,6 +24,8 @@ end
 agency_links = get_links(list_of_agencies)
 #returns an array of full greenbook url for each agency
 
+all_agencies = [] #initiate array to push all agencies into
+
 agency_links.each do |agency_link|
   agency_page = open(agency_link) { |f| f.read }
   nokofile = Nokogiri::HTML(agency_page)
@@ -77,4 +79,13 @@ agency_links.each do |agency_link|
     description = nil
   end
   
+  results = { }
+  results = { name: entity_name.to_s, address: address.to_s, phone: phone.to_s, website: website.to_s, email: email.to_s, description: description.to_s }
+  all_agencies.push(results)
+end
+
+#create Public Entity for each item on the main page
+all_agencies.each do |agency|
+  mayor = PublicEntity.where(name: "Mayor, Office of the (OTM)")
+  new_agency = PublicEntity.create(name: agency[:name], authority_level: 'city', address: agency[:address], phone: agency[:phone], description: agency[:description], entity_type: 'agency', website: agency[:website], superior: mayor)
 end
