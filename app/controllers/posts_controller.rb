@@ -5,6 +5,9 @@ class PostsController < ApplicationController
   
   def create
     @post = Post.create(post_params)
+    @post.public_entity_id = BSON::ObjectId.from_string(@post.public_entity_id)
+    @post.user_id = current_user.id
+    @post.save
     redirect_to public_entity_path(@post.public_entity)
   end
   

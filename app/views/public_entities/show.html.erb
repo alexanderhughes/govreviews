@@ -48,9 +48,9 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 		
 	<h4>Write a review!</h4>
 	<div class="form-group">
-		<%= form_for @post, :url => {:controller => "posts", :action => "create", :method => :post } do |f| %>
+		<%= form_for @post, :url => {:controller => "posts", :action => "create" } do |f| %>
 		<%= f.hidden_field :public_entity_id, value: @public_entity.id %>
-		
+				
 		<%= f.text_field :title, class: "form-control", placeholder: "Title..." %><br>
 
 		<%= f.label :rating, "Please give a rating on a scale from 1-5" %>
