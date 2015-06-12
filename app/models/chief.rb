@@ -7,7 +7,9 @@ class Chief
   include Mongoid::Document
   include Mongoid::Timestamps
   field :name
+  field :title
   field :salary
+  field :election_info
   field :public_entity_id
   belongs_to :public_entity
 end

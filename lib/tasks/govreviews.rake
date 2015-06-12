@@ -181,6 +181,94 @@ namespace :govreviews do
       end
     end
   end
+  
+  desc "Crawl Greenbook for Mayor and Incumbent"
+  task crawl_greenbook_for_mayor: :environment do
+    require 'nokogiri'
+    require 'open-uri'
+
+    mayor_page_link = 'http://a856-gbol.nyc.gov/gbolwebsite/390.html'
+    mayor_page = open(mayor_page_link) { |f| f.read }
+    nokofile = Nokogiri::HTML(mayor_page)
+
+    #scrape info about the main agency - true for every page
+    entity_name = nokofile.title.strip
+    #get address
+    if nokofile.css('#ContentPlaceHolder1_lblAgencyAddress').children[0] != nil
+      address = nokofile.css('#ContentPlaceHolder1_lblAgencyAddress').children[0].text.strip
+    else
+      address = nil
+    end
+    #get phone 
+    if nokofile.css('#ContentPlaceHolder1_lblAgencyPhoneFax').text != nil &&
+       nokofile.css('#ContentPlaceHolder1_lblAgencyPhoneFax').css('b').text.strip[0] == "("
+      phone = nokofile.css('#ContentPlaceHolder1_lblAgencyPhoneFax').css('b').text.strip[0..13]
+    else
+      phone = '311'
+    end
+    #get website 
+    if nokofile.css('#ContentPlaceHolder1_lblAgencyWebAddress').css('a')[0] != nil
+      website = nokofile.css('#ContentPlaceHolder1_lblAgencyWebAddress').css('a')[0].attributes['href'].value
+    else
+      website = nil
+    end
+    # get email
+    if nokofile.css('#ContentPlaceHolder1_lblAgencyEmail').text != nil
+      email = nokofile.css('#ContentPlaceHolder1_lblAgencyEmail').text.strip
+    else
+      email = nil
+    end
+    # get mission
+    if nokofile.css('#ContentPlaceHolder1_lblMission').text != nil
+      mission = nokofile.css('#ContentPlaceHolder1_lblMission').text
+    else
+      mission = nil
+    end
+    #get longer description
+    if nokofile.css('.style3')[1].text != nil
+      des = nokofile.css('.style3')[1].text.strip
+    else
+      des = nil
+    end
+    if mission != nil && des != nil
+      description = mission.to_s + ' ' + des.to_s
+    elsif mission != nil && des == nil
+      description = mission
+    elsif mission == nil && des != nil
+      description = des
+    elsif mission == nil && des == nil
+      description = nil
+    end
+
+    #Get incumbent mayor info
+
+    if nokofile.css('.tel')[0] != nil
+      mayor_info = nokofile.css('.tel')[0].text
+      find_first_space = mayor_info.index(' ')
+      title = mayor_info[0..find_first_space-1]
+      salary_string_index = mayor_info.index('Salary: $')
+      name = mayor_info[find_first_space+4..salary_string_index-3]
+      dollar_sign_index = mayor_info.index('$')
+      period_index = mayor_info.index('.')
+      salary = mayor_info[dollar_sign_index+1..period_index-1]
+      election_info = mayor_info[period_index+2..-1]
+    else
+      title = nil
+      name = nil
+      salary = nil
+      election_info = nil
+    end
+
+    incumbent = Chief.create(name: name, title: title, salary: salary, election_info: election_info)
+
+    #add mayor to database
+    agency = {}
+    agency = { name: entity_name, address: address, phone: phone, website: website, email: email, description: description, authority_level: "city", entity_type: "city executive" }
+    mayor = PublicEntity.create(name: agency[:name], authority_level: agency[:authority_level], address: agency[:address], description: agency[:description], website: agency[:website], entity_type: agency[:entity_type], phone: agency[:phone])
+    catg = Category.find_or_create_by(name: "Political Officer")
+    mayor.categories.push(catg)
+    mayor.chiefs.push(incumbent)
+  end
 
 end
 
