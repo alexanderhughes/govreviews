@@ -15,7 +15,7 @@ class PublicEntitiesController < ApplicationController
   def show
     @post = Post.new
     @public_entity = PublicEntity.find(params[:id])
-    @posts = PublicEntity.find(params[:id]).posts
+    @posts = PublicEntity.find(params[:id]).posts.order_by(:created_at => 'desc')
     @categories = PublicEntity.find(params[:id]).categories
   end
 

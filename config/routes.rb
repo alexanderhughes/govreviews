@@ -1,15 +1,16 @@
 Rails.application.routes.draw do
   resources :public_entities
   root 'public_entities#index'
+  
   resources :posts
   get 'posts/new'
+  
+  resources :categories
+  get 'categories/index'  
   
   devise_for :users
   devise_for :installs
   
-  resources :categories
-  get 'categories/index'
-
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
