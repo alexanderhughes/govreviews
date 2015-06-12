@@ -37,7 +37,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 		<div>There are <strong><%= @posts.count %></strong> reviews.</div><br>
 		<p></p>
 		<div><% @posts.each do |post| %>
-			<div><strong><%= post.title %></strong></div>
 			<div><%= post.created_at.time.strftime("%m/%d/%y") %></div>
 			<div><%= post.user.email %> left a review:</div>
 			<div><%= post.rating %></div>
@@ -50,8 +49,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 	<div class="form-group">
 		<%= form_for @post, :url => {:controller => "posts", :action => "create" } do |f| %>
 		<%= f.hidden_field :public_entity_id, value: @public_entity.id %>
-				
-		<%= f.text_field :title, class: "form-control", placeholder: "Title..." %><br>
 
 		<%= f.label :rating, "Please give a rating on a scale from 1-5" %>
 		<%= f.text_field :rating, class: "form-control" %><br>
