@@ -8,5 +8,6 @@ class Chief
   include Mongoid::Timestamps
   field :name
   field :salary
-  has_and_belongs_to_many :public_entities
+  field :public_entity_id
+  belongs_to :public_entity
 end

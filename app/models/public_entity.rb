@@ -14,9 +14,9 @@ class PublicEntity
   field :website
   field :entity_type
   field :superior_id
-  field :chief_id
   field :phone
   field :coordinates, :type => Array
+  has_many :chiefs
   has_and_belongs_to_many :categories
   has_many :posts
   has_many :subordinates, class_name: "PublicEntity", :foreign_key => "superior_id"
