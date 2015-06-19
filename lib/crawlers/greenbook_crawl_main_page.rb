@@ -1,4 +1,3 @@
-require 'json'
 require 'nokogiri'
 require 'open-uri'
 
@@ -26,7 +25,7 @@ agency_links = get_links(list_of_agencies)
 
 all_agencies = [] #initiate array to push all agencies into
 
-agency_links.each do |agency_link|
+agency_links[1..-1] do |agency_link|
   agency_page = open(agency_link) { |f| f.read }
   nokofile = Nokogiri::HTML(agency_page)
 
@@ -80,12 +79,12 @@ agency_links.each do |agency_link|
   end
   
   results = { }
-  results = { name: entity_name.to_s, address: address.to_s, phone: phone.to_s, website: website.to_s, email: email.to_s, description: description.to_s }
+  results = { name: entity_name, address: address, phone: phone, website: website, email: email, description: description }
   all_agencies.push(results)
 end
 
 #create Public Entity for each item on the main page
 all_agencies.each do |agency|
-  mayor = PublicEntity.where(name: "Mayor, Office of the (OTM)")
+  mayor = PublicEntity.find_by(name: "Mayor, Office of the (OTM)")
   new_agency = PublicEntity.create(name: agency[:name], authority_level: 'city', address: agency[:address], phone: agency[:phone], description: agency[:description], entity_type: 'agency', website: agency[:website], superior: mayor)
 end
