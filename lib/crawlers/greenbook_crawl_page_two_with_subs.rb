@@ -83,8 +83,6 @@ catg = Category.find_or_create_by(name: "Political Officer")
 mayor.push(catg)
 mayor.push(incumbent)
 
-=begin
-
 #get subordinates table
 subordinates = nokofile.css('table')
 
