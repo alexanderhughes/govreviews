@@ -11,5 +11,7 @@ class Chief
   field :salary
   field :election_info
   field :public_entity_id
+  field :source
+  field :source_accessed
   belongs_to :public_entity
 end

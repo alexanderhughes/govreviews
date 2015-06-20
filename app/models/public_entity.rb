@@ -16,6 +16,8 @@ class PublicEntity
   field :superior_id
   field :phone
   field :coordinates, :type => Array
+  field :source
+  field :source_accessed
   has_many :chiefs
   has_and_belongs_to_many :categories
   has_many :posts

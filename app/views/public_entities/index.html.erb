@@ -1,4 +1,4 @@
-<% provide(:title, "Home") %>
+<% provide(:title, "Get info and leave reviews about government services and agencies!") %>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -39,8 +39,6 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 	  google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-<div id="map-canvas" style="width: 300px; height: 400px"></div>
-
 <div>
 	<h3>Most Recent Posts</h3>
 	<ol>
@@ -55,6 +53,8 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 		<% end %>
 	</ol>
 </div>
+
+<div id="map-canvas" style="width: 100%; height: 400px; display:inline-block"></div>
 
 <h3 class="categories">Browse by Category</h3>
 <ul>
