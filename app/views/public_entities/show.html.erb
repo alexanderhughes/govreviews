@@ -18,19 +18,23 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 <div id="map-canvas" style="width: 300px; height: 400px"></div>
 
 <body>
-	<h3><%= link_to @public_entity.name, @public_entity.website %></h3>
-		<div><%= @public_entity.description %></div>
-		<div><%= @public_entity.address %></div>
+	<h3><%= link_to @public_entity.name, @public_entity %></h3>
 		<div><%= @public_entity.phone %></div>
+		<div><%= @public_entity.address %></div>
+		<div><%= link_to @public_entity.website[7..-1], @public_entity.website %></div>
 		<div><%= @public_entity.to_coordinates %></div>
-		<p></p>
-		<div><% if @public_entity.superior != nil %>
-			This entity reports to <%= link_to @public_entity.superior.name, @public_entity.superior, 'data-no-turbolink' => true %>
+		<br>
+		<div><%= @public_entity.description %></div>
+		<br>
+		<div><% @public_entity.chiefs.each do |chief| %>
+			<ul><li><strong><%= chief.title %>: <%= chief.name %></strong></li>
+			<li>Salary: $<%= chief.salary %></li>
+			<li><%= chief.election_info %></li></ul>
 			<% end %>
 		</div>
-		<div><% @public_entity.chiefs.each do |chief| %>
-			<%= chief.name %>
-			<%= chief.salary %>
+		<br>
+		<div><% if @public_entity.superior != nil %>
+			This entity reports to <%= link_to @public_entity.superior.name, @public_entity.superior, 'data-no-turbolink' => true %>
 			<% end %>
 		</div>
 		<div>
