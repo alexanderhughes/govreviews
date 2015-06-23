@@ -29,7 +29,7 @@ namespace :govreviews do
     
     all_results.each do |entity|
       governor = PublicEntity.where(name: "The Governor of New York")[0]
-      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], superior: governor)
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], superior: governor, source: "NY.gov", source_accessed: Time.now )
       entity[:category].each do |catg|
         c = Category.find_or_create_by(name: catg)
         pe.categories.push(c)
@@ -65,7 +65,7 @@ namespace :govreviews do
     end
     
     all_results.each do |entity|
-      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: 'agency', superior: mayor )
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: 'agency', superior: mayor, source: "NYC.gov", source_accessed: Time.now )
       entity[:category].each do |catg|
         catg = catg.capitalize.gsub('-',' ')
         if catg.index(' ') != nil
@@ -111,7 +111,7 @@ namespace :govreviews do
     
     all_results.each do |entity|
       state_park_authority = PublicEntity.find_by(name: "Office of Parks, Recreation and Historic Preservation")
-      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], superior: state_park_authority)
+      pe = PublicEntity.create(name: entity[:name], address: entity[:address], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], superior: state_park_authority, source: "data.ny.gov", source_accessed: Time.now )
       pe.categories.push(c)
     end
   end
@@ -133,16 +133,17 @@ namespace :govreviews do
 
     page.each do |office|
       name = office[9] + ' ' + 'Post Office'
+      address = office[8] + ' ' + office[10].split.map(&:capitalize).join(' ') + ', ' + office[11] + ', NY, ' + office[12] 
       description = "Post Office"
       website = "http://www.usps.com"
-      results = { name: name, description: description, website: website, authority_level: 'federal', entity_type: 'post_office' }
+      results = { name: name, address: address, description: description, website: website, authority_level: 'federal', entity_type: 'post_office' }
       all_results.push(results)
     end
 
     c = Category.create(name: 'Post Offices')
 
     all_results.each do |entity|
-      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type])
+      pe = PublicEntity.create(name: entity[:name], address: entity[:address], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], source: "NYCOpenData", source_accessed: Time.now )
       pe.categories.push(c)
     end
   end
@@ -173,7 +174,7 @@ namespace :govreviews do
 
     all_results.each do |entity|
       #mta_nycta = create Public Entity!
-      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type])
+      pe = PublicEntity.create(name: entity[:name], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], source: "NYCOpenData", source_accessed: Time.now)
       entity[:category].each do |catg|
         c = Category.find_or_create_by(name: catg)
         pe.categories.push(c)
@@ -262,7 +263,7 @@ namespace :govreviews do
 
     #add mayor to database
     agency = {}
-    agency = { name: entity_name, address: address, phone: phone, website: website, email: email, description: description, authority_level: "city", entity_type: "city executive" }
+    agency = { name: entity_name, address: address, phone: phone, website: website, email: email, description: description, authority_level: "city", entity_type: "city executive", source: "NYC Greenbook", source_accessed: Time.now }
     mayor = PublicEntity.create(name: agency[:name], authority_level: agency[:authority_level], address: agency[:address], description: agency[:description], website: agency[:website], entity_type: agency[:entity_type], phone: agency[:phone])
     catg = Category.find_or_create_by(name: "Political Officer")
     mayor.categories.push(catg)
@@ -396,7 +397,7 @@ namespace :govreviews do
 
     subordinates_array.each do |subordinate_hash|
       mayor = PublicEntity.find_by(name: "Mayor, Office of the (OTM)")
-      pe = PublicEntity.create(name: subordinate_hash[:name], website: subordinate_hash[:website], address: subordinate_hash[:address], phone: subordinate_hash[:phone], description: subordinate_hash[:description], authority_level: "city", entity_type: "agency", superior: mayor)
+      pe = PublicEntity.create(name: subordinate_hash[:name], website: subordinate_hash[:website], address: subordinate_hash[:address], phone: subordinate_hash[:phone], description: subordinate_hash[:description], authority_level: "city", entity_type: "agency", superior: mayor, source: "NYC Greenbook", source_accessed: Time.now)
       subordinate_hash[:chiefs].each do |chief|
         c = Chief.find_or_create_by(name: chief[:name], title: chief[:title], salary: chief[:salary])
         pe.chiefs.push(c)
@@ -493,8 +494,8 @@ namespace :govreviews do
     #create Public Entity for each item on the main page
     all_agencies.each do |agency|
       mayor = PublicEntity.find_by(name: "Mayor, Office of the (OTM)")
-      new_agency = PublicEntity.create(name: agency[:name], authority_level: 'city', address: agency[:address], phone: agency[:phone], description: agency[:description], entity_type: 'agency', website: agency[:website], superior: mayor)
-      sleep(1)
+      new_agency = PublicEntity.create(name: agency[:name], authority_level: 'city', address: agency[:address], phone: agency[:phone], description: agency[:description], entity_type: 'agency', website: agency[:website], superior: mayor, source: "NYC Greenbook", source_accessed: Time.now)
+      sleep(0.5)
     end
   end
   
