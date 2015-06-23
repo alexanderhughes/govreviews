@@ -93,14 +93,21 @@ namespace :govreviews do
     all_results = []
 
     page.each do |park|
-      name = park[8] + ' ' + park[9]
-      description = park[9]
+      name = park[8] + ' State Park'
+      if park[9] = "Other"
+        description = nil
+      else
+        description = park[9]
+      end
+      county = park[10]
+      state = "New York"
+      address = name + ', ' + county + ', ' + state
       website = park[17][0]
-      results = { name: name, description: description, website: website, authority_level: 'state', entity_type: 'park' }
+      results = { name: name, address: address, description: description, website: website, authority_level: 'state', entity_type: 'park' }
       all_results.push(results)
     end
     
-    c = Category.create(name: 'Parks')
+    c = Category.create(name: 'Park')
     
     all_results.each do |entity|
       state_park_authority = PublicEntity.find_by(name: "Office of Parks, Recreation and Historic Preservation")
@@ -509,24 +516,17 @@ namespace :govreviews do
       phone = office[10]
       office_type = office[9]
       if office_type == 'CO'
-        office_description = 'County-run.'
+        office_description = 'County-run DMV office.'
       elsif office_type == 'DO'
-        office_descripton = 'State-run.'
+        office_descripton = 'State-run DMV office.'
       elsif office_type == 'MO'
-        office_description = 'County-run mobile office.'
+        office_description = 'County-run mobile DMV office.'
       elsif office_type == 'TV'
-        office_description = 'Traffic violations office.'
+        office_description = 'Traffic violations DMV office.'
       elsif office_type == 'VS'
-        office_description = 'Vehicle safety office.'
+        office_description = 'Vehicle safety DMV office.'
       end
-      name = office[8].to_s
-      name = name.downcase
-      name[0] = name[0].capitalize
-      if office_description == nil
-        full_description = name.to_s + ' Department of Motor Vehicle.'
-      else
-        full_description = name.to_s + ' Department of Motor Vehicle.' + ' ' + office_type.to_s
-      end
+      name = office[8].split.map(&:capitalize).join(' ') + ' DMV'
       street_address = office[12]
       zip = office[16]
       city = office[14]
@@ -572,14 +572,14 @@ namespace :govreviews do
       hours = { monday: monday, tuesday: tuesday, wednesday: wednesday, thursday: thursday, friday: friday, saturday: saturday }
       
       dmv = {}
-      dmv = { name: name, description: full_description, phone: phone, address: full_address, hours: hours, source: "data.ny.gov", source_accessed: Time.now }
+      dmv = { name: name, description: office_description, phone: phone, address: full_address, hours: hours, source: "data.ny.gov", source_accessed: Time.now }
       ### add description / office type!
       all_ny_state_dmv_offices.push(dmv)
     end
     
     state_dmv = PublicEntity.find_by(name: "Department of Motor Vehicles")
     all_ny_state_dmv_offices.each do |dmv|
-      pe = PublicEntity.create(name: dmv[:name], description: dmv[:description], phone: dmv[:phone], address: dmv[:address], hours: dmv[:hours], source: dmv[:source], source_accessed: dmv[:source_accessed], website: "http://dmv.ny.gov/", entity_type: "DMV", superior: state_dmv )
+      pe = PublicEntity.create(name: dmv[:name], description: dmv[:description], phone: dmv[:phone], address: dmv[:address], hours: dmv[:hours], source: dmv[:source], source_accessed: dmv[:source_accessed], website: "http://dmv.ny.gov/", entity_type: "DMV", superior: state_dmv, authority_level: "state" )
       cat = Category.find_or_create_by(name: 'DMV')
       cat2 = Category.find_or_create_by(name: 'Transportation')
       pe.categories.push(cat, cat2)
