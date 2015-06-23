@@ -83,7 +83,9 @@ namespace :govreviews do
     require 'rubygems'
     require 'json'
     require 'open-uri'
+    require 'openssl'
     
+    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
     url = 'https://data.ny.gov/api/views/9uuk-x7vh/rows.json?accessType=DOWNLOAD'
     file = open(url) { |f| f.read }
     output = JSON.parse(file)
@@ -112,7 +114,9 @@ namespace :govreviews do
     require 'rubygems'
     require 'json'
     require 'open-uri'
+    require 'openssl'
     
+    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
     url = 'https://data.cityofnewyork.us/api/views/bdha-6eqy/rows.json?accessType=DOWNLOAD'
     file = open(url) { |f| f.read }
     output = JSON.parse(file)
@@ -141,7 +145,9 @@ namespace :govreviews do
     require 'json'
     require 'rubygems'
     require 'open-uri'
+    require 'openssl'
     
+    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
     url = 'https://data.cityofnewyork.us/api/views/kk4q-3rt2/rows.json?accessType=DOWNLOAD'
     page = open(url) { |f| f.read }
     output = JSON.parse(page)
@@ -482,6 +488,102 @@ namespace :govreviews do
       mayor = PublicEntity.find_by(name: "Mayor, Office of the (OTM)")
       new_agency = PublicEntity.create(name: agency[:name], authority_level: 'city', address: agency[:address], phone: agency[:phone], description: agency[:description], entity_type: 'agency', website: agency[:website], superior: mayor)
       sleep(1)
+    end
+  end
+  
+  desc "Crawl DMV Offices"
+  task crawl_dmv_offices: :environment do
+    require 'JSON'
+    require 'rubygems'
+    require 'open-uri'
+    require 'openssl'
+
+    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+    url = 'https://data.ny.gov/api/views/9upz-c7xg/rows.json?accessType=DOWNLOAD'
+    output = open(url) { |f| f.read }
+    json_data = JSON.parse(output)
+
+    all_ny_state_dmv_offices = []
+    
+    json_data['data'].each do |office|
+      phone = office[10]
+      office_type = office[9]
+      if office_type == 'CO'
+        office_description = 'County-run.'
+      elsif office_type == 'DO'
+        office_descripton = 'State-run.'
+      elsif office_type == 'MO'
+        office_description = 'County-run mobile office.'
+      elsif office_type == 'TV'
+        office_description = 'Traffic violations office.'
+      elsif office_type == 'VS'
+        office_description = 'Vehicle safety office.'
+      end
+      name = office[8].to_s
+      name = name.downcase
+      name[0] = name[0].capitalize
+      if office_description == nil
+        full_description = name.to_s + ' Department of Motor Vehicle.'
+      else
+        full_description = name.to_s + ' Department of Motor Vehicle.' + ' ' + office_type.to_s
+      end
+      street_address = office[12]
+      zip = office[16]
+      city = office[14]
+      state = office[15]
+      full_address = street_address + ', ' + city + ', ' + state + ', ' + zip
+      monday = []
+      if office[17] !~ /[^[:space:]]/
+        monday = nil
+      else
+        monday.push(office[17], office[18])
+      end
+      tuesday = []
+      if office[19] !~ /[^[:space:]]/
+        tuesday = nil
+      else
+        tuesday.push(office[19], office[20])
+      end
+      wednesday = []
+      if office[21] !~ /[^[:space:]]/
+        wednesday = nil
+      else
+        wednesday.push(office[21], office[22])
+      end
+      thursday = []
+      if office[23] !~ /[^[:space:]]/
+        thursday = nil
+      else
+        thursday.push(office[23], office[24])
+      end
+      friday = []
+      if office[25] !~ /[^[:space:]]/
+        fiday = nil
+      else 
+        friday.push(office[25], office[26])
+      end
+      saturday = []
+      if office[27] !~ /[^[:space:]]/
+        saturday = nil
+      else
+        saturday.push(office[27], office[28])
+      end
+      hours = {}
+      hours = { monday: monday, tuesday: tuesday, wednesday: wednesday, thursday: thursday, friday: friday, saturday: saturday }
+      
+      dmv = {}
+      dmv = { name: name, description: full_description, phone: phone, address: full_address, hours: hours, source: "data.ny.gov", source_accessed: Time.now }
+      ### add description / office type!
+      all_ny_state_dmv_offices.push(dmv)
+    end
+    
+    state_dmv = PublicEntity.find_by(name: "Department of Motor Vehicles")
+    all_ny_state_dmv_offices.each do |dmv|
+      pe = PublicEntity.create(name: dmv[:name], description: dmv[:description], phone: dmv[:phone], address: dmv[:address], hours: dmv[:hours], source: dmv[:source], source_accessed: dmv[:source_accessed], website: "http://dmv.ny.gov/", entity_type: "DMV", superior: state_dmv )
+      cat = Category.find_or_create_by(name: 'DMV')
+      cat2 = Category.find_or_create_by(name: 'Transportation')
+      pe.categories.push(cat, cat2)
+      sleep(0.5)
     end
   end
   

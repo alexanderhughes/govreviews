@@ -18,6 +18,7 @@ class PublicEntity
   field :coordinates, :type => Array
   field :source
   field :source_accessed
+  field :hours, :type => Hash
   has_many :chiefs
   has_and_belongs_to_many :categories
   has_many :posts
