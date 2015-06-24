@@ -8,7 +8,7 @@ class PublicEntitiesController < ApplicationController
     @nyc_subway_stations = PublicEntity.where(entity_type: 'subway_station')
     @nyc_post_offices = PublicEntity.where(entity_type: 'post_office')
     @nystate_agencies = PublicEntity.where(authority_level: 'state', entity_type: 'agency')
-    @nystate_parks = PublicEntity.where(authrority_level: 'state', entity_type: 'park')
+    @nystate_parks = PublicEntity.where(entity_type: 'park')
     @ten_most_recent_posts = Post.order_by(:created_at => 'desc').limit(10)
   end
   

@@ -99,7 +99,7 @@ namespace :govreviews do
       else
         description = park[9]
       end
-      county = park[10]
+      county = park[11]
       state = "New York"
       address = name + ', ' + county + ', ' + state
       website = park[17][0]
@@ -145,6 +145,7 @@ namespace :govreviews do
     all_results.each do |entity|
       pe = PublicEntity.create(name: entity[:name], address: entity[:address], description: entity[:description], website: entity[:website], authority_level: entity[:authority_level], entity_type: entity[:entity_type], source: "NYCOpenData", source_accessed: Time.now )
       pe.categories.push(c)
+      sleep(0.5)
     end
   end
   
@@ -402,7 +403,7 @@ namespace :govreviews do
         c = Chief.find_or_create_by(name: chief[:name], title: chief[:title], salary: chief[:salary])
         pe.chiefs.push(c)
       end
-      sleep(2)
+      sleep(0.5)
     end
   end
   
