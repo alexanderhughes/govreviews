@@ -27,6 +27,7 @@ textarea {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
+  font-family: "Verdana";
 }
 
 h1 {
@@ -47,7 +48,20 @@ h2 {
 
 p {
   font-size: 1.1em;
-  line-height: 1.7em;
+  line-height: 1.0em;
+}
+
+a:link {
+	text-decoration: none;
+	color:#B22400;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+li {
+	text-decoration: none;
 }
 
 ol {

@@ -38,14 +38,15 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 	  }
 	  google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-
+<%= @ip_address %>
 <div>
 	<h3>Most Recent Posts</h3>
 	<ol>
 		<% @ten_most_recent_posts.each do |post| %>
 				<li>
 				<% if post.review != nil %>
-				<%= post.updated_at.time.strftime("%m/%d/%y %l:%M %p") %>
+				At <%= post.updated_at.time.strftime("%m/%d/%y %l:%M %p") %>
+				<%= post.user.email %> wrote
 				<strong><%= link_to post.public_entity.name, post.public_entity,  'data-no-turbolink' => true%></strong>,
 				<%= link_to post.review[0..50], post.public_entity, 'data-no-turbolink' => true %>
 				<% end %>

@@ -10,6 +10,10 @@ class User
   field :encrypted_password, type: String, default: ""
   field :first_name, type: String, default: ""
   field :last_name, type: String, default: ""
+  field :name
+  validates_presence_of :name
+  validates_uniqueness_of :name, :email, :case_sensitive => false
+  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
 
   ## Recoverable
   field :reset_password_token,   type: String
