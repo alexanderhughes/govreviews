@@ -164,8 +164,8 @@ namespace :govreviews do
     all_results = []
 
     info.each do |station|
-      name = station[9]
-      description = "Subway station servicing lines" + " " + station[10]
+      name = station[9] + " Subway Station"
+      description = "Subway station servicing lines" + " " + station[10] + "."
       website = station[8]
       results = {}
       results = { name: name, description: description, website: website, authority_level: "city", entity_type: "subway_station", category: ["Transportation", "Subway Stations"] }
@@ -501,7 +501,7 @@ namespace :govreviews do
   
   desc "Crawl DMV Offices"
   task crawl_dmv_offices: :environment do
-    require 'JSON'
+    require 'json'
     require 'rubygems'
     require 'open-uri'
     require 'openssl'
