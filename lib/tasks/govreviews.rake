@@ -588,5 +588,62 @@ namespace :govreviews do
       sleep(0.5)
     end
   end
+
+  desc "Crawl Fire Commissioner"
+  task crawl_fire_commissioner: :environment do
+    require 'open-uri'
+    require 'nokogiri'
+
+    url = 'http://www.nyc.gov/html/fdny/html/general/commissioner/33/biography.shtml'
+    page = open(url) { |f| f.read }
+    output = Nokogiri::HTML(page)
+
+    name = output.css('h1').children[0].text.strip
+    title = output.css('h1').children[2].text.strip
+    election_info = "Appointed by the Mayor of the City of New York"
+    source = "http://www.nyc.gov/html/fdny/html/general/commissioner/33/biography.shtml"
+    source_accessed = Time.now
+
+    fire_commissioner = Chief.create(name: name, title: title, election_info: election_info, source: source, source_accessed: source_accessed)
+
+    fdny = PublicEntity.find_by(name: "Fire Department, New York City (FDNY)")
+    fdny.chiefs.push(fire_commissioner)
+    mayor = PublicEntity.find_by(name: "Mayor, Office of the (OTM)")
+    fdny.superior = mayor
+    fdny.superior.save
+  end
+  
+  desc "Crawl Fire Stations"
+  task crawl_fire_stations: :environment do
+    require 'open-uri'
+    require 'json'
+    require 'openssl'
+
+    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+    url = 'https://nycopendata.socrata.com/api/views/hc8x-tcnd/rows.json?accessType=DOWNLOAD'
+    page = open(url) { |f| f.read }
+    output = JSON.parse(page)
+    data = output['data']
+
+    all_stations = []
+
+    data[1..-1].each do |fire_station|
+      name = fire_station[8] + " Fire Station"
+      street = fire_station[9]
+      borrough = fire_station[10]
+      address = street + ', ' + borrough + ', ' + 'New York'
+      station = {}
+      station = {name: name, address: address }
+      all_stations.push(station)
+    end  
+  
+    all_stations.each do |station|
+      fdny = PublicEntity.find_by(name: "Fire Department, New York City (FDNY)")
+      c = Category.find_or_create_by(name: "Fire Station")
+      fire_station = PublicEntity.create(name: station[:name], address: station[:address], authority_level: 'city', description: 'Fire Station.', website: 'www.nyc.gov/fdny', entity_type: 'Fire Station', source: 'NYCOpenData', source_accessed: Time.now, superior: fdny )
+      fire_station.categories.push(c)
+      sleep(0.5)
+    end
+  end
   
 end
