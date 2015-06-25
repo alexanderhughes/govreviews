@@ -1,5 +1,5 @@
 <% provide(:title, @categories.name) %>
 
 <% @categories.public_entities.each do |entity| %>
-	<li><%= link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></li> 	<em><%= entity.description[0..100] %>...</em>
+	<p><%= link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %> <em><%= entity.description[0..100] %>...</em></p>
 <% end %>

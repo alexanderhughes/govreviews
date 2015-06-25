@@ -43,7 +43,6 @@ class User
   
   include Geocoder::Model::Mongoid
   field :coordinates, :type => Array
-  field :ip_address
-  geocoded_by :ip_address
-  after_validation :geocode
+  geocoded_by :current_sign_in_ip
+  after_validation :geocode, :if => :current_sign_in_ip_changed?
 end
