@@ -1,0 +1,39 @@
+<% provide(:title, "Sign up for an account!") %>
+<body>
+<h2>Create an account to leave reviews!</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email address" %>
+  </div>
+	<br>
+  <div class="field">
+    <%= f.text_field :first_name, class: "form-control", placeholder: "First name" %>
+  </div>
+	<br>
+  <div class="field">
+    <%= f.text_field :last_name, class: "form-control", placeholder: "Last name" %>
+	<em>Only the first letter of your last name will be displayed to other users</em>
+  </div>
+  	<br>
+  <div class="field">
+    <%= f.password_field :password, class: "form-control", placeholder: "Create a password", autocomplete: "off" %>
+    <% if @validatable %>
+    <em>Passwords must be at least <%= @minimum_password_length %> characters</em>
+    <% end %><br />
+  </div>
+	<br>
+  <div class="field">
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm your password", autocomplete: "off" %>
+  </div>
+	<br>
+  <div class="actions">
+    <%= f.submit "Sign up", class: "btn btn-lg" %>
+  </div>
+<% end %>
+<br>
+Already have an account?
+<%= render "devise/shared/links" %>
+</body>

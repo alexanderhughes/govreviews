@@ -10,10 +10,9 @@ class User
   field :encrypted_password, type: String, default: ""
   field :first_name, type: String, default: ""
   field :last_name, type: String, default: ""
-  field :name
-  validates_presence_of :name
-  validates_uniqueness_of :name, :email, :case_sensitive => false
-  attr_accessible :name, :email, :password, :password_confirmation, :remember_me
+  validates_presence_of :first_name
+  validates_presence_of :last_name
+  validates_uniqueness_of :email, :case_sensitive => false
 
   ## Recoverable
   field :reset_password_token,   type: String
@@ -39,6 +38,7 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+  
   has_many :posts
   
   include Geocoder::Model::Mongoid
