@@ -23,7 +23,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 		<div><%= @public_entity.phone %></div>
 		<div><%= @public_entity.address %></div>
 		<div><% if @public_entity.website != nil %>
-			<%= link_to @public_entity.website %>
+			<%= link_to @public_entity.website[0..40] %>...
 			<% end %>
 		</div>
 		<div>
@@ -48,21 +48,27 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 		<br>
 		<div>There are <strong><%= @posts.count %></strong> reviews.</div><br>
 		<br>
-		<div class="reviews"><% @posts.each do |post| %>
-			<div><%= post.created_at.time.strftime("%m/%d/%y") %></div>
-			<div><%= post.user.email %> left a review:</div>
-			<div><%= post.rating %></div>
-			<div><%= post.review %></div>
+		<div class="review"><% @posts.each do |post| %>
+			<div id="review-date">On <%= post.created_at.time.strftime("%m/%d/%y") %></div>
+			<div id="review-name"> <%= post.user.first_name + ' ' + post.user.last_name[0] %>.</div>
+			<div id="review-text">left a review:</div>
+			<div id="review-rating"><%= post.rating %> Stars!</div>
+			<br>
+			<div id="review-content"><%= post.review %></div>
 			<p></p>
 		<% end %>
 		</div>
-		<h4>Write a review!</h4>
-		<div class="form-group">
-			<%= form_for @post, :url => {:controller => "posts", :action => "create" } do |f| %>
-			<%= f.hidden_field :public_entity_id, value: @public_entity.id %>
-			<%= f.text_field :rating, class: "form-control", placeholder: "Please give a rating on a scale from 1-5" %><br>
-			<%= f.text_area :review, class: "form-control", rows: 5, placeholder: "Start your review..." %><br>
-			<%= f.submit "Submit your review", class: "btn btn-default"%>
-			<% end %>
+		<br>
+		<div class="leave-review">
+			<h4>Write a review!</h4>
+			<div class="form-group">
+				<%= form_for @post, :url => {:controller => "posts", :action => "create" } do |f| %>
+				<%= f.hidden_field :public_entity_id, value: @public_entity.id %>
+				<%= f.text_field :rating, class: "form-control", placeholder: "Please give a rating on a scale from 1-5" %>
+				<%= f.text_area :review, class: "form-control", rows: 4, placeholder: "Start your review..." %>
+				<br>
+				<%= f.submit "Submit your review", class: "btn btn-default"%>
+				<% end %>
+			</div>
 		</div>
 </body>

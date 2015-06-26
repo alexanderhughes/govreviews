@@ -4,7 +4,7 @@
 /* universal */
 
 body {
-  padding-top: 60px;
+  padding-top: 40px;
 }
 
 section {
@@ -21,6 +21,51 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+}
+
+a {
+	text-decoration: none;
+	color:blue;
+}
+
+a:hover {
+	text-decoration: none;
+	color:black;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+.review {
+	width: 50%;
+	border-style: solid;
+	border-color: #D8D8DC;
+	border-width: 1px;
+	padding: 8px;
+	border-left:0;
+	border-right:0;
+	//border-radius:10px;
+	#review-name {
+		display:inline;
+	}
+	#review-date {
+		display:inline;
+	}
+	#review-text {
+		display:inline;
+	}
+	#review-rating {
+		float:right;
+		display:inline;
+	}
+	#review-content {
+		margin-left:5%;;
+	}
+}
+
+.leave-review {
+	width: 50%;
 }
 
 /* typography */
@@ -51,15 +96,6 @@ p {
   line-height: 1.0em;
 }
 
-a:link {
-	text-decoration: none;
-	color:#B22400;
-}
-
-a:visited {
-	text-decoration: none;
-}
-
 li {
 	text-decoration: none;
 }
@@ -73,7 +109,6 @@ ul {
     list-style:none;
     padding-left:0;
 }​​
-
 
 /* header */
 
