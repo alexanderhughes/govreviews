@@ -50,7 +50,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 		<br>
 		<div class="review"><% @posts.each do |post| %>
 			<div id="review-date">On <%= post.created_at.time.strftime("%m/%d/%y") %></div>
-			<div id="review-name"> <%= post.user.first_name + ' ' + post.user.last_name[0] %>.</div>
+			<div id="review-name"> <%= post.user.first_name.to_s + ' ' + post.user.last_name[0].to_s %>.</div>
 			<div id="review-text">left a review:</div>
 			<div id="review-rating"><%= post.rating %> Stars!</div>
 			<br>
