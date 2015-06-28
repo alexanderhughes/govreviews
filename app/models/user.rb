@@ -8,10 +8,8 @@ class User
   ## Database authenticatable
   field :email,              type: String, default: ""
   field :encrypted_password, type: String, default: ""
-  field :first_name, type: String, default: ""
-  field :last_name, type: String, default: ""
-  validates_presence_of :first_name
-  validates_presence_of :last_name
+  field :first_name
+  field :last_name
   validates_uniqueness_of :email, :case_sensitive => false
 
   ## Recoverable
@@ -45,4 +43,7 @@ class User
   field :coordinates, :type => Array
   geocoded_by :current_sign_in_ip
   after_validation :geocode, :if => :current_sign_in_ip_changed?
+  field :address
+  reverse_geocoded_by :coordinates
+  after_validation :reverse_geocode
 end

@@ -7,7 +7,7 @@ header {
 	font-size:1.75em;
 	color:white;
 	margin-top:-65px;
-	margin-bottom:0;
+	margin-bottom:5px;
 	padding:20px;
 	background-color:#E7E7EF;
 	.header-text {
@@ -41,6 +41,11 @@ textarea {
 
 .center h1 {
   margin-bottom: 10px;
+}
+
+.sign-up-form {
+	width:50%;
+	margin-left:25%;
 }
 
 a {
