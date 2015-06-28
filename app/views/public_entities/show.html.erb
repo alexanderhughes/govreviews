@@ -19,11 +19,11 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 <div><%= @public_entity.to_coordinates %></div>
 
 <body>
-	<h3><%= link_to @public_entity.name, @public_entity %></h3>
+	<h3><%= link_to @public_entity.name, @public_entity, 'data-no-turbolink' => true %></h3>
 		<div><%= @public_entity.phone %></div>
 		<div><%= @public_entity.address %></div>
 		<div><% if @public_entity.website != nil %>
-			<%= link_to @public_entity.website[0..40] %>...
+			<%= link_to @public_entity.website[0..40], @public_entity.website, 'data-no-turbolink' => true %>...
 			<% end %>
 		</div>
 		<div>
