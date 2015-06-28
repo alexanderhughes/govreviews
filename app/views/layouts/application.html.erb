@@ -10,22 +10,16 @@
   <meta name="google-site-verification" content="Gjnmxpi2oydlsvES38PLp7THr3JZmJcAM57XB_O_mVc" />
 </head>
 	<body>
-		<header class="navbar navbar-default navbar-fixed-top">
-		  <div class="container">
-		    <nav>
-		      <ul class="nav navbar-nav navbar-right">
-				<li><%= link_to "Home", public_entities_path, 'data-no-turbolink' => true %></li>
-				<% if user_signed_in? == false %>
-				<li><%= link_to "Sign Up", new_user_registration_path %></li>
-				<li><%= link_to "Log In", new_user_session_path %></li>
-				<% end %>
-				<% if user_signed_in? == true %>
-				<li><%= link_to "Profile", edit_user_registration_path %></li>
-				<li><%= link_to "Log Out", destroy_user_session_path, :method => :delete %></li>
-				<% end %>
-		      </ul>
-		    </nav>
-		  </div>
+		<header class="header">
+			<div class="header-text"><%= link_to "Home", public_entities_path, 'data-no-turbolink' => true %>
+			<% if user_signed_in? == false %>
+			&nbsp<%= link_to "Sign Up", new_user_registration_path %>
+			&nbsp<%= link_to "Log In", new_user_session_path %>
+			<% end %>
+			<% if user_signed_in? == true %>
+			&nbsp<%= link_to "Profile", edit_user_registration_path %>
+			&nbsp<%= link_to "Log Out", destroy_user_session_path, :method => :delete %>
+			<% end %></div>
 		</header>
 		<div class="container">
 			<%= yield %>

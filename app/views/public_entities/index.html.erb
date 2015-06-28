@@ -1,5 +1,21 @@
 <% provide(:title, "Get info and leave reviews about government services and agencies!") %>
 
+<div class="searchbar">
+	<script>
+	  (function() {
+	    var cx = '005827720271794702134:ft3mpiyihqa';
+	    var gcse = document.createElement('script');
+	    gcse.type = 'text/javascript';
+	    gcse.async = true;
+	    gcse.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') +
+	        '//cse.google.com/cse.js?cx=' + cx;
+	    var s = document.getElementsByTagName('script')[0];
+	    s.parentNode.insertBefore(gcse, s);
+	  })();
+	</script>
+	<gcse:search></gcse:search>
+</div>
+
 <script type="text/javascript">
 $(document).ready(function(){
 	$.each(['categories', 'nyc_executives', 'city_agencies', 'subways', 'post_offices', 'state_agencies', 'state_parks'], function(index, cssName){
@@ -38,7 +54,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 	  }
 	  google.maps.event.addDomListener(window, 'load', initialize);
 </script>
-<%= @ip_address %>
+	  
 <div>
 	<h3>Most Recent Posts</h3>
 	<ol>
