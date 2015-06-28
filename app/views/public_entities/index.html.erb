@@ -62,7 +62,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 				<li>
 				<% if post.review != nil %>
 				At <%= post.updated_at.time.strftime("%m/%d/%y %l:%M %p") %>
-				<%= post.user.first_name + ' ' + post.user.last_name[0] + ". "%> reviewed
+				<%= post.user.first_name.to_s + ' ' + post.user.last_name[0].to_s + ". "%> reviewed
 				<strong><%= link_to post.public_entity.name, post.public_entity,  'data-no-turbolink' => true%></strong>:
 				<%= link_to post.review[0..50], post.public_entity, 'data-no-turbolink' => true %>
 				<% end %>
