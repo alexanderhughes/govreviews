@@ -19,32 +19,34 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 <div><%= @public_entity.to_coordinates %></div>
 
 <body>
-	<h3><%= link_to @public_entity.name, @public_entity, 'data-no-turbolink' => true %></h3>
-		<div><%= @public_entity.phone %></div>
-		<div><%= @public_entity.address %></div>
-		<div><% if @public_entity.website != nil %>
-			<%= link_to @public_entity.website[0..40], @public_entity.website, 'data-no-turbolink' => true %>...
-			<% end %>
-		</div>
-		<div>
-			<%= @categories.map { |category| link_to(category.name, category_path(category)) }.join(' | ').html_safe %>
-		</div>
-		<br>
-		<div><% @public_entity.chiefs.each do |chief| %>
-			<ul><li><%= chief.title %>: <strong><%= chief.name %></strong></li>
-			<% if chief.salary != nil %>
-			<li>Salary: <strong>$<%= chief.salary %></strong></li>
-			<% end %>
-			<li><%= chief.election_info %></li></ul>
-			<% end %>
-		</div>
-		<br>
-		<div><%= @public_entity.description %></div>
-		<br>
-		<div><% if @public_entity.superior != nil %>
-			This entity reports to the <%= link_to @public_entity.superior.name, @public_entity.superior, 'data-no-turbolink' => true %>
-			<% end %>
-		</div>
+	<div class="entity-info">
+		<h3><%= link_to @public_entity.name, @public_entity, 'data-no-turbolink' => true %></h3>
+			<div><%= @public_entity.phone %></div>
+			<div><%= @public_entity.address %></div>
+			<div><% if @public_entity.website != nil %>
+				<%= link_to @public_entity.website[0..40], @public_entity.website, 'data-no-turbolink' => true %>...
+				<% end %>
+			</div>
+			<div>
+				<%= @categories.map { |category| link_to(category.name, category_path(category)) }.join(' | ').html_safe %>
+			</div>
+			<br>
+			<div><% @public_entity.chiefs.each do |chief| %>
+				<ul><li><%= chief.title %>: <strong><%= chief.name %></strong></li>
+				<% if chief.salary != nil %>
+				<li>Salary: <strong>$<%= chief.salary %></strong></li>
+				<% end %>
+				<li><%= chief.election_info %></li></ul>
+				<% end %>
+			</div>
+			<br>
+			<div><%= @public_entity.description %></div>
+			<br>
+			<div><% if @public_entity.superior != nil %>
+				This entity reports to the <%= link_to @public_entity.superior.name, @public_entity.superior, 'data-no-turbolink' => true %>
+				<% end %>
+			</div>
+	</div>
 		<br>
 		<div>There are <strong><%= @posts.count %></strong> reviews.</div><br>
 		<br>
