@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'public_entities/user_location'
+  get 'public_entities/entity_location/:public_entity_id', to: 'public_entities#entity_location'
+  
   resources :public_entities
   root 'public_entities#index'
   
@@ -6,7 +9,7 @@ Rails.application.routes.draw do
   get 'posts/new'
   
   resources :categories
-  get 'categories/index'  
+  get 'categories/index'
   
   devise_for :users
   devise_for :installs

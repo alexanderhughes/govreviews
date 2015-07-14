@@ -16,7 +16,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 </script>
 
 <div id="map-canvas" style="width: 300px; height: 350px; display:inline-block; float:right"></div>
-<div><%= @public_entity.to_coordinates %></div>
+<div>Entity lat/lng: <%= @public_entity.to_coordinates %></div>
 
 <body>
 	<div class="entity-info">
@@ -28,7 +28,7 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 				<% end %>
 			</div>
 			<div>
-				<%= @categories.map { |category| link_to(category.name, category_path(category)) }.join(' | ').html_safe %>
+				<%= @categories.map { |category| link_to(category.name, category_path(category), 'data-no-turbolink' => true) }.join(' | ').html_safe %>
 			</div>
 			<br>
 			<div><% @public_entity.chiefs.each do |chief| %>
@@ -44,6 +44,11 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 			<br>
 			<div><% if @public_entity.superior != nil %>
 				This entity reports to the <%= link_to @public_entity.superior.name, @public_entity.superior, 'data-no-turbolink' => true %>
+				<% end %>
+			</div>
+			<div><% if @subordinates.empty? == false %>
+				The following entities report to this office:
+				<%= @subordinates.map { |subordinate| link_to(subordinate.name, public_entity_path(subordinate), 'data-no-turbolink' => true) }.join(' | ').html_safe %>
 				<% end %>
 			</div>
 	</div>
