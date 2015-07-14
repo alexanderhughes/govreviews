@@ -51,6 +51,13 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 	      map: map,
 	      title: 'My old house!'
 	  	});
+		var userLocUrl = 'http://govrate.co/public_entities/user_location'+'&callback=?'
+		var userLatLng = $.getJSON(userLocUrl, { format: 'json' })
+		var marker = new google.maps.Marker({
+	      position: new google.maps.LatLng(userLatLng[0], userLatLng[1]),
+	      map: map,
+	      title: 'User!'
+	  	});
 	  }
 	  google.maps.event.addDomListener(window, 'load', initialize);
 </script>
