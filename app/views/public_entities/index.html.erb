@@ -39,25 +39,52 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 </style>
 
 <script type="text/javascript">
+  function test() {
+    console.log('test() called');
+  }
+
 	function initialize() {
+		//var marker = new google.maps.Marker({
+	  //    position: new google.maps.LatLng(40.716593, -74.010593),
+	  //    map: map,
+	  //    title: 'My old house!'
+    //});
+    var map;
+
+    $.get('public_entities/user_location', test);
+
+    $.get('public_entities/user_location', function(data) {
+      var userLatLng = data;
+      console.log(userLatLng);
+
+      // setup the map options (center it according to the user lat lng)
 	    var mapOptions = {
-			center: { lat: 40.725968, lng: -73.997667}, zoom: 12
+        //center: { lat: 40.725968, lng: -73.997667},
+        center: { lat: userLatLng[0], lng: userLatLng[1]},
+        zoom: 12
 	    };
-	    var map = new google.maps.Map(document.getElementById('map-canvas'),
-	        mapOptions);
+
+      // create the map
+	    map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 	
-		var marker = new google.maps.Marker({
-	      position: new google.maps.LatLng(40.716593, -74.010593),
-	      map: map,
-	      title: 'My old house!'
-	  	});
-		var userLocUrl = 'http://govrate.co/public_entities/user_location'+'&callback=?'
-		var userLatLng = $.getJSON(userLocUrl, { format: 'json' })
-		var marker = new google.maps.Marker({
-	      position: new google.maps.LatLng(userLatLng[0], userLatLng[1]),
-	      map: map,
-	      title: 'User!'
-	  	});
+      // add a marker for our current location
+      var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(userLatLng[0], userLatLng[1]),
+        map: map,
+        title: 'User!'
+      });
+    });
+
+    //$.ajax(
+    //  url: userLocUrl,
+    //  success: function(res){
+    //    console.log(res);
+    //  },
+    //  complete: function(){
+    //    console.log("complete");
+    //  }
+    //);
+		//var userLatLng = $.getJSON(userLocUrl, { format: 'json' })
 	  }
 	  google.maps.event.addDomListener(window, 'load', initialize);
 </script>
