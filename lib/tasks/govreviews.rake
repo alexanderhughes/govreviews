@@ -15,11 +15,11 @@ namespace :govreviews do
 
     page.each do |get_markup|
       markup = Nokogiri::HTML(get_markup['markup'])
-      agency_name = markup.css('h3')[0].text
-      description = markup.css('p')[0].text
+      agency_name = markup.css('h3')[0].text.strip
+      description = markup.css('p')[0].text.strip
         period_position = description.index('.')
         description = description[3..period_position]
-      website = markup.css('p').css("a")[0].text
+      website = markup.css('p').css("a")[0].text.strip
       category = []
       category.push(markup.css("div[class='category']").text)
       results = { }
@@ -50,15 +50,15 @@ namespace :govreviews do
     agency_section = giri_file.css("ul[class=alpha-list]").css('li')
 
     all_results = []
-    mayor = PublicEntity.where(name: "The Mayor of New York City").first
+    mayor = PublicEntity.where(name: "Mayor, Office of the (OTM)").first
 
     agency_section.each do |agency|
-      name = agency.text
+      name = agency.text.strip
         name = name[1..-2]
-      description = agency["data-desc"]
+      description = agency["data-desc"].strip
       cat_info = agency["data-topic"]
       cat_json = JSON.parse(cat_info)
-      website = agency["data-social-email"]
+      website = agency["data-social-email"].strip
       superior_id = mayor.id
       results = { name: name, description: description, website: website, authority_level: 'city', category: cat_json['topics'], superior_id: superior_id }
       all_results.push(results)
@@ -93,16 +93,16 @@ namespace :govreviews do
     all_results = []
 
     page.each do |park|
-      name = park[8] + ' State Park'
+      name = park[8].strip + ' State Park'
       if park[9] = "Other"
         description = nil
       else
         description = park[9]
       end
-      county = park[11]
+      county = park[11].strip
       state = "New York"
       address = name + ', ' + county + ', ' + state
-      website = park[17][0]
+      website = park[17][0].strip
       results = { name: name, address: address, description: description, website: website, authority_level: 'state', entity_type: 'park' }
       all_results.push(results)
     end
@@ -132,8 +132,8 @@ namespace :govreviews do
     all_results = []
 
     page.each do |office|
-      name = office[9] + ' ' + 'Post Office'
-      address = office[8] + ' ' + office[10].split.map(&:capitalize).join(' ') + ', ' + office[11] + ', NY, ' + office[12] 
+      name = office[9].strip + ' ' + 'Post Office'
+      address = office[8].strip + ' ' + office[10].split.map(&:capitalize).join(' ') + ', ' + office[11].strip + ', NY, ' + office[12].strip
       description = "Post Office"
       website = "http://www.usps.com"
       results = { name: name, address: address, description: description, website: website, authority_level: 'federal', entity_type: 'post_office' }
@@ -165,9 +165,9 @@ namespace :govreviews do
     all_results = []
 
     info.each do |station|
-      name = station[9] + " Subway Station"
-      description = "Subway station servicing lines" + " " + station[10] + "."
-      website = station[8]
+      name = station[9].strip + " Subway Station"
+      description = "Subway station servicing lines" + " " + station[10].strip + "."
+      website = station[8].strip
       results = {}
       results = { name: name, description: description, website: website, authority_level: "city", entity_type: "subway_station", category: ["Transportation", "Subway Stations"] }
       all_results.push(results)
@@ -209,7 +209,7 @@ namespace :govreviews do
     end
     #get website 
     if nokofile.css('#ContentPlaceHolder1_lblAgencyWebAddress').css('a')[0] != nil
-      website = nokofile.css('#ContentPlaceHolder1_lblAgencyWebAddress').css('a')[0].attributes['href'].value
+      website = nokofile.css('#ContentPlaceHolder1_lblAgencyWebAddress').css('a')[0].attributes['href'].value.strip
     else
       website = nil
     end
@@ -221,7 +221,7 @@ namespace :govreviews do
     end
     # get mission
     if nokofile.css('#ContentPlaceHolder1_lblMission').text != nil
-      mission = nokofile.css('#ContentPlaceHolder1_lblMission').text
+      mission = nokofile.css('#ContentPlaceHolder1_lblMission').text.strip
     else
       mission = nil
     end
@@ -244,15 +244,15 @@ namespace :govreviews do
     #Get incumbent mayor info
 
     if nokofile.css('.tel')[0] != nil
-      mayor_info = nokofile.css('.tel')[0].text
+      mayor_info = nokofile.css('.tel')[0].text.strip
       find_first_space = mayor_info.index(' ')
       title = mayor_info[0..find_first_space-1]
       salary_string_index = mayor_info.index('Salary: $')
-      name = mayor_info[find_first_space+4..salary_string_index-3]
+      name = mayor_info[find_first_space+4..salary_string_index-3].strip
       dollar_sign_index = mayor_info.index('$')
       period_index = mayor_info.index('.')
-      salary = mayor_info[dollar_sign_index+1..period_index-1]
-      election_info = mayor_info[period_index+2..-1]
+      salary = mayor_info[dollar_sign_index+1..period_index-1].strip
+      election_info = mayor_info[period_index+2..-1].strip
     else
       title = nil
       name = nil
@@ -367,18 +367,18 @@ namespace :govreviews do
               else
                 chief_name_endpoint = salary_string_index-3
               end
-              chief_name = chief_full[dash_index+3..chief_name_endpoint]
+              chief_name = chief_full[dash_index+3..chief_name_endpoint].strip
               if chief_name.index("Vacant") != nil
                 chief_name = nil
                 vacant = true
               end
               if salary_string_index != nil
-                salary = chief_full[salary_string_index+9..-1]
+                salary = chief_full[salary_string_index+9..-1].strip
               else
                 salary = nil
               end
             else
-              chief_title = chief_full[0..-1]
+              chief_title = chief_full[0..-1].strip
               chief_name = nil
               salary = nil
             end
@@ -455,7 +455,7 @@ namespace :govreviews do
       end
       #get website 
       if nokofile.css('#ContentPlaceHolder1_lblAgencyWebAddress').css('a')[0] != nil
-        website = nokofile.css('#ContentPlaceHolder1_lblAgencyWebAddress').css('a')[0].attributes['href'].value
+        website = nokofile.css('#ContentPlaceHolder1_lblAgencyWebAddress').css('a')[0].attributes['href'].value.strip
       else
         website = nil
       end
@@ -467,7 +467,7 @@ namespace :govreviews do
       end
       # get mission
       if nokofile.css('#ContentPlaceHolder1_lblMission').text != nil
-        mission = nokofile.css('#ContentPlaceHolder1_lblMission').text
+        mission = nokofile.css('#ContentPlaceHolder1_lblMission').text.strip
       else
         mission = nil
       end
@@ -515,8 +515,8 @@ namespace :govreviews do
     all_ny_state_dmv_offices = []
     
     json_data['data'].each do |office|
-      phone = office[10]
-      office_type = office[9]
+      phone = office[10].strip
+      office_type = office[9].strip
       if office_type == 'CO'
         office_description = 'County-run DMV office.'
       elsif office_type == 'DO'
@@ -529,10 +529,10 @@ namespace :govreviews do
         office_description = 'Vehicle safety DMV office.'
       end
       name = office[8].split.map(&:capitalize).join(' ') + ' DMV'
-      street_address = office[12]
-      zip = office[16]
-      city = office[14]
-      state = office[15]
+      street_address = office[12].strip
+      zip = office[16].strip
+      city = office[14].strip
+      state = office[15].strip
       full_address = street_address + ', ' + city + ', ' + state + ', ' + zip
       monday = []
       if office[17] !~ /[^[:space:]]/
@@ -628,9 +628,9 @@ namespace :govreviews do
     all_stations = []
 
     data[1..-1].each do |fire_station|
-      name = fire_station[8] + " Fire Station"
-      street = fire_station[9]
-      borrough = fire_station[10]
+      name = fire_station[8].strip + " Fire Station"
+      street = fire_station[9].strip
+      borrough = fire_station[10].strip
       address = street + ', ' + borrough + ', ' + 'New York'
       station = {}
       station = {name: name, address: address }
