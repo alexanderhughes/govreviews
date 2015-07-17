@@ -703,7 +703,7 @@ namespace :govreviews do
     ocdv2 = PublicEntity.find_by(name: "Domestic Violence, Mayor's Office to Combat (OCDV)")
     ocme = PublicEntity.find_by(name: "Medical Examiner, Office of the Chief (OCME)")
     ocme2 = PublicEntity.find_by(name: "Chief Medical Examiner, NYC Office of (OCME)")
-    ofpcidi = PublicEntity.find_by(name: "Center for Innovation through Data Intelligence (CIDI)\t\t\t")
+    ofpcidi = PublicEntity.find_by(name: /^Center for Innovation/)
     deputy_hhs.subordinates.push(dfa, dfa2, acs, dhmh, dhmh2, hradss, hradss2, dhs, dhs2, dycd1, dycd2, ocdv, ocdv2, ocme, ocme2, ofpcidi)
     deputy_hhs.save
   end
@@ -714,7 +714,7 @@ namespace :govreviews do
     ecd = PublicEntity.find_by(name: "Economic Development Corporation (EDC)")
     ecd2 = PublicEntity.find_by(name: "Economic Development Corporation, NYC (NYCEDC)")
     dhpd = PublicEntity.find_by(name: "Housing Preservation & Development (HPD)")
-    dhpd2 = PublicEntity.find_by(name: "Housing Preservation and Development, Department of (HPD)")
+    dhpd2 = PublicEntity.find_by(name: /^Housing Preservation and Development/)
     nycha = PublicEntity.find_by(name: "Housing Authority, NYC (NYCHA)")
     nycha2 = PublicEntity.find_by(name: "Housing Authority, New York City (NYCHA)")
     dcp = PublicEntity.find_by(name: "City Planning, Department of (DCP)")
@@ -750,7 +750,7 @@ namespace :govreviews do
   end
 
   desc "Assign Chief of Staff"
-  task assign_counsel_to_mayor: :environment do
+  task assign_chief_of_staff: :environment do
     chief_of_staff = PublicEntity.find_by(name: "Chief of Staff")
     ooa = PublicEntity.find_by(name: "Mayor's Office of Appointments")
     oospce = PublicEntity.find_by(name: "Mayor's Office of Special Projects & Community Events (MOSPCE)")
@@ -769,24 +769,44 @@ namespace :govreviews do
   desc "Assign Senior Advisor to the Mayor"
   task assign_senior_advisor: :environment do  
     senior_advisor = PublicEntity.find_by(name: "Senior Advisor to the Mayor")
-    presssec = PublicEntity.find_by(name: "Press Secretary")
-    senior_advisor.subordinates.push(pressec)
+    press_sec = PublicEntity.find_by(name: "Press Secretary")
+    senior_advisor.subordinates.push(press_sec)
     senior_advisor.save
   end
 
   desc "Assign Office of Intergovernmental Affairs"
   task assign_oiga: :environment do
-    oiga = PublicEntity.find_by("Office of Intergovernmental Affairs")
-    cau = PublicEntity.find_by("Community Affairs Unit (CAU)")
-    cau2 = PublicEntity.find_by("Mayor's Community Affairs Unit (CAU)")
+    oiga = PublicEntity.find_by(name: "Office of Intergovernmental Affairs")
+    cau = PublicEntity.find_by(name: "Community Affairs Unit (CAU)")
+    cau2 = PublicEntity.find_by(name: "Mayor's Community Affairs Unit (CAU)")
     oiga.subordinates.push(cau, cau2)
     oiga.save
+  end
+  
+  desc "Assign Senior Advisor to the Mayor for RRI"
+  task assign_advisor_rri: :environment do
+    senior_advisor_rri = PublicEntity.find_by(name: "Senior Advisor to the Mayor for Recovery, Resiliency, & Infrastructure")
+    morr = PublicEntity.find_by(name: "Mayor's Office of Recovery & Resiliency (ORR)")
+    mos = PublicEntity.find_by(name: "Mayor's Office of Sustainability (OLTPS)")
+    mos2 = PublicEntity.find_by(name: "Long-Term Planning & Sustainability, Office of (OLTPS)")
+    hro = PublicEntity.find_by(name: "Housing Recovery Office (HRO)")
+    hro2 = PublicEntity.find_by(name: "Housing Recovery Operations (HRO)")
+    senior_advisor_rri.subordinates.push(morr, mos, mos2, hro, hro2)
+    senior_advisor_rri.save
+  end
+  
+  desc "Assign Mayor's Office of Media & Entertainment"
+  task assign_mome: :environment do
+    mome = PublicEntity.find_by(name: "Mayor's Office of Media & Entertainment (MOME)")
+    ooftb = PublicEntity.find_by(name: "Office of Film Theatre & Broadcasting")
+    nycm = PublicEntity.find_by(name: "NYC Media")
+    mome.subordinates.push(ooftb, nycm)
+    mome.save
   end
   
   desc "Remove duplicate Governor of NYS entry"
   task remove_duplicate_governor: :environment do
     governor_duplicate = PublicEntity.find_by(name: 'Office of the Governor')
-    governor_duplicate.delete
-    governor_duplicate.save
+    governor_duplicate.delete!
   end
 end

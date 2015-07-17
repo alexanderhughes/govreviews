@@ -32,7 +32,6 @@ oath = PublicEntity.find_by(name: "Administrative Trials & Hearings, Office of (
 oorri = PublicEntity.find_by(name: "Senior Advisor to the Mayor for Recovery, Resiliency, & Infrastructure")
 ooec = PublicEntity.find_by(name: "Environmental Coordination, NYC Office of (OEC)")
 ooer = PublicEntity.find_by(name: "Environmental Remediation, Office of (OER)")
-
 first_deputy.subordinates.push(nypd, fdny, fdny2, edu1, edu2, sani, oem, dot, dob, ddc, ddf, dop, cult, dep, ditt, dcas, dris, bic, tlc, moo, mocj, oltps, olr, opd, oia, ova, ocs, oath, oorri, ooec, ooer)
 first_deputy.save
 # add the Chief Technology Officer
@@ -128,6 +127,7 @@ oiga.save
 #The Audit Services Unit oversees agency activity with respect to audits conducted by governmental and non-governmental entities, including the City Comptroller and the State and Federal governments.
 #In addition, the Office of Operations oversees 311, the City's one-stop hotline and online shop for information about City government
 #the Office of Data Analytics (MODA)
+moda = PublicEntity.find_by(name: "Data Analytics, Mayor's Office of (MODA)")
 #the City's civic intelligence center, allowing the City to aggregate and analyze data from across City agencies
 #and the Center for Economic Opportunity which fights the cycle of poverty in New York City through innovative programs that build human capital and improve financial security.
 
@@ -167,3 +167,5 @@ mome.subordinates.push(ooftb, nycm)
 governor_duplicate = PublicEntity.find_by(name: 'Office of the Governor')
 governor_duplicate.delete
 governor_duplicate.save
+
+#Create new offices
