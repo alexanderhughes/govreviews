@@ -13,5 +13,8 @@ class Chief
   field :public_entity_id
   field :source
   field :source_accessed
+  field :image_link
+  field :political_party
+  field :email_address
   belongs_to :public_entity
 end

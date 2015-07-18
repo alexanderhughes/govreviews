@@ -12,6 +12,7 @@ class PublicEntity
   field :address
   field :description
   field :website
+  field :email_address
   field :entity_type
   field :superior_id
   field :phone

@@ -265,7 +265,7 @@ namespace :govreviews do
     #add mayor to database
     agency = {}
     agency = { name: entity_name, address: address, phone: phone, website: website, email: email, description: description, authority_level: "city", entity_type: "city executive", source: "NYC Greenbook", source_accessed: Time.now }
-    mayor = PublicEntity.create(name: agency[:name], authority_level: agency[:authority_level], address: agency[:address], description: agency[:description], website: agency[:website], entity_type: agency[:entity_type], phone: agency[:phone])
+    mayor = PublicEntity.create(name: agency[:name], authority_level: agency[:authority_level], address: agency[:address], description: agency[:description], website: agency[:website], email_address: agency[:email], entity_type: agency[:entity_type], phone: agency[:phone])
     catg = Category.find_or_create_by(name: "Political Officer")
     mayor.categories.push(catg)
     mayor.chiefs.push(incumbent)
@@ -808,5 +808,133 @@ namespace :govreviews do
   task remove_duplicate_governor: :environment do
     governor_duplicate = PublicEntity.find_by(name: 'Office of the Governor')
     governor_duplicate.delete!
+  end
+  
+  desc "Merge and remove City Council Duplicate"
+  task remove_duplicate_city_council: :environment do
+    city_council_1 = PublicEntity.find_by(name: "City Council (NYCC)")
+    city_council_2 = PublicEntity.find_by(name: "City Council, New York")
+    city_council_1.superior = nil
+    city_council_1.website = city_council_2.website
+    cc_categories = city_council_2.categories
+    city_council_1.categories.push(cc_categories)
+    city_council_1.description = city_council_1.description + " " + city_council_2.description
+    city_council_1.source = "NYC.gov, NYC Greenbook"
+    city_council_1.save
+    city_council_2.delete
+  end
+  
+  desc "Crawl City Council"
+  task crawl_city_council: :environment do
+    require 'open-uri'
+    require 'Nokogiri'
+    city_council_1 = PublicEntity.find_by(name: "City Council (NYCC)")
+    #source
+    source = "http://council.nyc.gov/"
+    source_accessed = Time.now
+    
+    url = 'http://council.nyc.gov/html/members/members.shtml'
+    content = open(url) { |f| f.read }
+    #parse with Nokogiri
+    parsed_content = Nokogiri::HTML(content)
+    #Pull out nodeset of link elements
+    member_page_links = parsed_content.css('td').css('.list_entry').css('a')
+    #initialize empty array
+    all_links = []
+    
+    member_page_links.each do |member|
+      short_link = member.attributes['href'].value
+      link = 'http://council.nyc.gov' + short_link
+      all_links.push(link)
+    end
+    #initialize empty chief hash
+    chief = {}
+    #initialize empty entity hash
+    council_member_offices = {}
+    #initialize empty array for all offices
+    all_council_member_offices = []
+    
+    all_links.each do |member_page_link|
+      member_page_content = open(member_page_link) { |f| f.read }
+      parsed_page_content = Nokogiri::HTML(member_page_content)
+      top_box = parsed_page_content.css('td').css('.inside_top_text')
+      #council member info
+      if top_box[0] != nil
+        council_member_name = top_box[0].children.css('h1').text.strip
+        council_member_desc = top_box[0].children[2].text.strip
+        if council_member_desc.empty? == false
+          if council_member_desc.index("Council Speaker") != nil
+            title = "Council Speaker"
+          else
+            title = "Council Member"
+          end
+          dash_index = council_member_desc.index("-")
+          if dash_index != nil
+            district = council_member_desc[9..dash_index-2]
+            dash_2_index = council_member_desc[dash_index+1..-1].index("-")
+            if dash_2_index != nil
+              political_party = council_member_desc[(dash_2_index+dash_index)+3..-1]
+            end
+          end
+        end
+        image_extension = parsed_page_content.css(".inside_top_image").children[0].attributes['src'].value[6..-1]
+        image_link = member_page_link.gsub('html/members/home.shtml', image_extension)
+      else
+        council_member_name = "Vacant"
+      end
+      chief = { name: council_member_name, title: title, salary: "112,500", election_info: "Elected at the general election held November 5, 2013", source:source, source_accessed: source_accessed, image_link:image_link, political_party:political_party }
+  
+      #contact info
+      contact_box = parsed_page_content.css('td').css('.nav_section')
+      contact_info_section = contact_box.children[0].children[3].children[1].children
+      district_office_address = contact_info_section[3].text.strip
+      d_o_a_stripped = district_office_address.gsub("\n", " ")
+      district_office_phone = contact_info_section[9].text.strip
+      district_office_fax = contact_info_section[15].text.strip
+      legislative_office_address = contact_info_section[21].text.strip
+      legislative_office_phone = contact_info_section[27].text.strip
+      legislative_office_fax = contact_info_section[33].text.strip
+      email_string = contact_info_section.css('a')[0]['href'][7..-1]
+      description = "Members of the New York City Council are elected political officials who, together as the Council, monitor city agencies, make land use decision, and approve the city budget."
+      if district == nil
+        office_name = "City Council Member Office"
+      else
+        office_name = "Office of the City Council Member for District " + district.to_s
+      end
+      council_member_office = { name: office_name, authority_level: "city", address: d_o_a_stripped, description: description, website:member_page_link, email_address: email_string, phone: district_office_phone, chief: chief }
+      all_council_member_offices.push(council_member_office)
+    end
+
+    all_council_member_offices.each do |office|
+      new_council_office = PublicEntity.create(name: office[:name], authority_level: office[:authority_level], address: office[:address], description: office[:description], website: office[:website], email_address: office[:email_address], entity_type:"city executive", superior: city_council_1, phone: office[:phone], source:"http://council.nyc.gov/", source_accessed: Time.now )
+      sleep(0.5)
+      #chief_info = council_member_office[:chief]
+      new_council_member = Chief.create(name: office[:chief][:name], title: office[:chief][:title], salary: office[:chief][:salary], election_info: office[:chief][:election_info], image_link: office[:chief][:image_link], political_party: office[:chief][:political_party],source:source, source:"http://council.nyc.gov/", source_accessed: Time.now )
+      sleep(0.5)
+      new_council_office.chiefs.push(new_council_member)
+      category = Category.find_or_create_by(name: "Political Officer")
+      new_council_office.categories.push(category)
+    end
+  end
+  
+  desc "Update City Council Member blanks"
+  task update_council_members: :environment do
+    cdeutsch_offie = PublicEntity.find_by(email_address: "cdeutsch@council.nyc.gov")
+    cdeutsch_office.name = "Office of the City Council Member for District 48"
+    cdeutsch_office.save
+    dmiller_office = PublicEntity.find_by(email_address: "District27@council.nyc.gov")
+    dmiller_office.name = "Office of the City Council Member for District 27"
+    dmiller_office.save
+    district_23 = PublicEntity.find_by(website: "http://council.nyc.gov/d23/html/members/home.shtml")
+    district_23.name = "Office of the City Council Member for District 23"
+    district_23.save
+    hrosenthal_office = PublicEntity.find_by(website: "http://council.nyc.gov/d6/html/members/home.shtml")
+    hrosenthal_office.name = "Office of the City Council Member for District 6"
+    hrosenthal_office.save
+    hrosenthal = hrosenthal_office.chiefs[0]
+    hrosenthal.name = "Helen Rosenthal"
+    hrosenthal.title = "Council Member"
+    hrosenthal.political_party = "Democrat"
+    hrosenthal.save
   end
 end
