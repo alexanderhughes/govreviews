@@ -9,6 +9,7 @@ class Chief
   field :name
   field :title
   field :bio
+  field :bio_link
   field :salary
   field :election_info
   field :public_entity_id
