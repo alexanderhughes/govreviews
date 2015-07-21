@@ -1,4 +1,4 @@
-mta_board = PublicEntity.find_or_create_by(name: "MTA Board", authority_level: "state", address: "2 Broadway, New York, NY 10004", description: "A public-benefit corporation chartered by the New York State Legislature in 1968, the MTA is governed by a 17-member Board. Members are nominated by the Governor, with four recommended by New York City's mayor and one each by the county executives of Nassau, Suffolk, Westchester, Dutchess, Orange, Rockland, and Putnam counties. (Members representing the latter four cast one collective vote.) All Board members are confirmed by the New York State Senate.", website: "www.mta.info", entity_type: "public-benefit corporation", phone: "(646) 252-7006", source:"www.mta.info", source_accessed: Time.now )
+mta_board = PublicEntity.find_or_create_by(name: "MTA Board", authority_level: "state", address: "2 Broadway, New York, NY 10004", description: "A public-benefit corporation chartered by the New York State Legislature in 1968, the MTA is governed by a 17-member Board. Members are nominated by the Governor, with four recommended by New York City's mayor and one each by the county executives of Nassau, Suffolk, Westchester, Dutchess, Orange, Rockland, and Putnam counties. (Members representing the latter four cast one collective vote.) All Board members are confirmed by the New York State Senate. Terms are six years. The Board comprises the following standing committees: Audit Committee; Bridges & Tunnel Committee; CPOC Committee; Finance Committee; Metro-North Committee; LIRR Committee; NYCT & Bus Committee; Governance Committee; Diversity Committee; Safety Committee.", website: "www.mta.info", entity_type: "public-benefit corporation", phone: "(646) 252-7006", source:"www.mta.info", source_accessed: Time.now )
 catg_transportation = Categories.find(name: "Transportation" )
 catg_local_and_reg = Categories.find(name: "Local and Regional Authorities")
 mta_board.categories.push(catg_transportation, catg_local_and_reg)
@@ -53,6 +53,8 @@ mta_bat = PublicEntity.create(name: "MTA Bridges and Tunnels", authority_level: 
 mta_bc = PublicEntity.create(name: "MTA Bus Company", authority_level: "state", address: "2 Broadyway, New York, NY 10004", description: "The MTA Bus Company was created in September 2004 to assume the operations of seven bus companies that operated under franchises granted by the New York City Department of Transportation. The takeover of the lines began in 2005 and was completed early in 2006. MTA Bus is responsible for both the local and express bus operations of the seven companies, consolidating operations, maintaining current buses, and purchasing new buses to replace the aging fleet currently in service. MTA Bus operates 47 local routes in the Bronx, Brooklyn, and Queens, and 35 express bus routes between Manhattan and the Bronx, Brooklyn, or Queens. It has a fleet of more than 1,200 buses, the 11th largest bus fleet in the United States and Canada.", website: "www.mta.info", entity_type: "Public-Benefit Corporation", phone: "(646) 252-5872", source:"www.mta.info", source_accessed: Time.now) 
 mta_bsc = PublicEntity.create(name: "MTA Business Service Center", authority_level: "state", address: "333 W. 34th Street, 9th Floor, New York, NY 10001", website: "https://www.mtabsc.info/", entity_type: "Public-Benefit Corporation", phone: "(646) 376-0677", source:"www.mta.info", source_accessed: Time.now)
 mta_cc = PublicEntity.create(name: "MTA Capital Construction Company", authority_level: "state", address: "2 Broadway, New York, NY 10014" description: "MTA Capital Construction Company was formed in July 2003 to serve as the construction management company for MTA expansion projects, downtown mobility projects, and MTA-wide security projects. Capital Construction has a core group of employees and draws on the expertise of construction and other professionals at the MTA agencies as well as on the nation's leading construction consulting firms. It recently completed the award-winning Fulton Center project and will open the 7 line extension later this year.", website: "www.mta.info", entity_type: "Public-Benefit Corporation", phone: "(646) 252-4277", source:"www.mta.info", source_accessed: Time.now)
+#create and crawl Permanent Citizens Advisory Committee to the MTA
+pcac_mta = PublicEntity.create(name: "Permanent Citizens Advisory Committee to the MTA", authority_level: "state", address: "2 Broadway, 16th Fl., New York, NY, 10004", phone: "(212) 878-7087", website: "www.pcac.org", email_address: "mail@pcac.org", description: "The coordinating body and funding mechanism for the three riders councils created by the New York State Legislature in 1981: the Long Island Rail Road Commuter Council (LIRRCC); the Metro-North Railroad Commuter Council (NYCTRC); and the New York City Transit Riders Council (NYCTRC). The PCAC and Councils serve to give users of MTA public transportation services a voice in the formulation and implementation of MTA policy and to hold the MTA Board and management accountable to riders." source: "NYC Greenbook", source_accessed: Time.now)
 
 mta_nyct.categories.push(catg_transportation)
 mta_lirr.categories.push(catg_transportation)
@@ -61,3 +63,116 @@ mta_bat.categories.push(catg_transportation)
 mta_bc.categories.push(catg_transportation)
 mta_bsc.categories.push(catg_transportation)
 mta_cc.categories.push(catg_transportation)
+pcac_mta.categories.push(catg_transportation)
+
+#scrape Greenbok for NYCTA Chiefs
+url = "http://a856-gbol.nyc.gov/gbolwebsite/323.html"
+content = open(url) { |f| f.read }
+mta_greenbook = Nokogiri::HTML(content)
+
+nycta_greenbook = mta_greenbook.css('table')[5]
+nycta_greenbook_chiefs = nycta_greenbook.css('tr')
+
+nycta_greenbook_chiefs[5..16].each do |chief|
+  title_and_name = chief.css('p')[0].text.strip
+  dash_index = title_and_name.index('-')
+  title = title_and_name[0..dash_index-2]
+  name = title_and_name[dash_index+3..-1].gsub("  "," ")
+  phone = chief.css('p')[2].text.strip
+  new_chief = Chief.create(name: name, title: title, phone: phone, source: "NYC Greenbook", source_accessed: Time.now )
+  nycta = PublicEntity.find_by(name: "MTA New York City Transit")
+  nycta.chiefs.push(new_chief)
+end
+
+lirr_greenbook = mta_greenbook.css('table')[6]
+lirr_greenbook_chiefs = lirr_greenbook.css('tr')
+
+lirr_greenbook_chiefs[4..17].each do |chief|
+  title_and_name = chief.css('p')[0].text.strip
+  dash_index = title_and_name.index('-')
+  title = title_and_name[0..dash_index-2]
+  name = title_and_name[dash_index+3..-1]
+  name = name.gsub("  ", " ")
+  phone = chief.css('p')[2].text.strip
+  new_chief = Chief.create(name: name, title: title, phone: phone, source: "NYC Greenbook", source_accessed: Time.now )
+  lirr = PublicEntity.find_by(name: "MTA Long Island Rail Road")
+  lirr.chiefs.push(new_chief)
+end
+
+metro_north_greenbook = mta_greenbook.css('table')[7]
+metro_north_greenbook_chiefs = metro_north_greenbook.css('tr')
+
+metro_north_greenbook_chiefs[5..16].each do |chief|
+  title_and_name = chief.css('p')[0].text.strip
+  if title_and_name.index("Metro-North") != nil
+    title = "Metro-North President"
+    title_index = title_and_name.index(title)
+    name = title_and_name[title_index+25..-1]
+    name = name.gsub("  ", " ")
+  else
+    dash_index = title_and_name.index('-')
+    title = title_and_name[0..dash_index-2]
+    name = title_and_name[dash_index+3..-1]
+    name = name.gsub("  ", " ")
+  end
+  phone = chief.css('p')[2].text.strip
+  new_chief = Chief.create(name: name, title: title, phone: phone, source: "NYC Greenbook", source_accessed: Time.now )
+  metro_north = PublicEntity.find_by(name: "MTA Metro-North Railroad")
+  metro_north.chiefs.push(new_chief)
+end
+
+bridges_tunnels_greenbook = mta_greenbook.css('table')[8]
+bridges_tunnels_greenbook_chiefs = bridges_tunnels_greenbook.css('tr')
+
+bridges_tunnels_greenbook_chiefs[5..16].each do |chief|
+  title_and_name = chief.css('p')[0].text.strip
+  dash_index = title_and_name.index('-')
+  title = title_and_name[0..dash_index-2]
+  name = title_and_name[dash_index+3..-1].gsub("  ", " ")
+  phone = chief.css('p')[2].text.strip
+  new_chief = Chief.create(name: name, title: title, phone: phone, source: "NYC Greenbook", source_accessed: Time.now )
+  b_and_t = PublicEntity.find_by(name: "MTA Bridges and Tunnels")
+  b_and_t.chiefs.push(new_chief)
+end
+
+pcac_greenbook = mta_greenbook.css('table')[19]
+pcac_greenbook_chiefs = pcac_greenbook.css('tr')
+
+pcac_greenbook_chiefs[6..12].each do |chief|
+  title_and_name = chief.text.strip
+  dash_index = title_and_name.index('-')
+  title = title_and_name[0..dash_index-2]
+  name = title_and_name[dash_index+3..-1].gsub("  ", " ")
+  new_chief = Chief.create(name: name, title: title, source: "NYC Greenbook", source_accessed: Time.now )
+  pcac = PublicEntity.find_by(name: "Permanent Citizens Advisory Committee to the MTA")
+  pcac.chiefs.push(new_chief)
+end
+
+cap_construction_greenbook = mta_greenbook.css('table')[22]
+cap_construction_greenbook_chiefs = cap_construction_greenbook.css('tr')
+
+cap_construction_greenbook_chiefs[5..17].each do |chief|
+  title_and_name = chief.css('p')[0].text.strip
+  dash_index = title_and_name.index('-')
+  title = title_and_name[0..dash_index-2]
+  name = title_and_name[dash_index+3..-1]
+  name = name.gsub("  ", " ")
+  phone = chief.css('p')[2].text.strip
+  new_chief = Chief.create(name: name, title: title, source: "NYC Greenbook", source_accessed: Time.now )
+  cc = PublicEntity.find_by(name: "MTA Capital Construction Company")
+  cc.chiefs.push(new_chief)
+end
+
+bus_co_greenbook = mta_greenbook.css('table')[23]
+bus_co_greenbook_chiefs = bus_co_greenbook.css('tr')
+
+bus_co_greenbook_chiefs[5..14].each do |chief|
+  title_and_name = chief.css('p')[0].text.strip
+  dash_index = title_and_name.index('-')
+  title = title_and_name[0..dash_index-2]
+  name = title_and_name[dash_index+3..-1].gsub("  ", " ")
+  phone = chief.css('p')[2].text.strip
+  new_chief = Chief.create(name: name, title: title, source: "NYC Greenbook", source_accessed: Time.now )
+  bus_co = PublicEntity.find_by(name: "MTA Bus Company")
+  bus_co.chiefs.push(new_chief)
+end
