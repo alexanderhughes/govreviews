@@ -20,6 +20,7 @@ class PublicEntity
   field :source
   field :source_accessed
   field :hours, :type => Hash
+  field :twitter_account
   has_many :chiefs
   has_and_belongs_to_many :categories
   has_many :posts

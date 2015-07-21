@@ -8,6 +8,7 @@ class Chief
   include Mongoid::Timestamps
   field :name
   field :title
+  field :bio
   field :salary
   field :election_info
   field :public_entity_id

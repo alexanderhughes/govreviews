@@ -10,4 +10,8 @@ class Post
   field :review
   field :public_entity_id
   field :user_id
+  field :use_it_again
+  field :recommend_to_friend
+  field :satisfaction
+  field :value_for_money
 end
