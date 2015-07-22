@@ -967,6 +967,8 @@ namespace :govreviews do
     ctg_civic_services = Category.find_or_create_by(name: "Civic Services")
     ctg_political_officer = Category.find_or_create_by(name: "Political Officer")
     pub_adv_1.categories.push(ctg_civic_services, ctg_political_officer)
+    pub_adv_1.entity_type = "city executive"
+    pub_adv_1.save
   end
   
   desc "Create MTA Board"
@@ -1169,6 +1171,46 @@ namespace :govreviews do
       new_chief = Chief.create(name: name, title: title, source: "NYC Greenbook", source_accessed: Time.now )
       bus_co = PublicEntity.find_by(name: "MTA Bus Company")
       bus_co.chiefs.push(new_chief)
+    end
+  end
+  
+  desc "Crawl Greenbook for Incumbent Public Advocate"
+  task crawl_greenbook_pub_adv_incumbent_staff: :environment do
+    require 'open-uri'
+    require 'Nokogiri'
+    url = "http://a856-gbol.nyc.gov/gbolwebsite/72.html"
+    content = open(url) { |f| f.read }
+    pub_adv_grnbk = Nokogiri::HTML(content)
+    
+    pub_adv = PublicEntity.find_by(name: "Public Advocate for the City of New York")
+    
+    incumbent_staff = pub_adv_grnbk.css('table')[2]
+    pub_adv_name_title_salary = incumbent_staff.css('tr')[0].css('p')[0].text.strip
+    title = "Public Advocate"
+    dash_index = pub_adv_name_title_salary.index('-')
+    salary_index = pub_adv_name_title_salary.index('$')
+    period_index = pub_adv_name_title_salary.index('.')
+    name = pub_adv_name_title_salary[dash_index+3..salary_index-11].gsub("  ", " ")
+    salary = pub_adv_name_title_salary[salary_index+1..period_index-1]
+    election_info = pub_adv_name_title_salary[period_index+6..-1]
+    if pub_adv_name_title_salary.index("(D)") != nil
+      political_party = "Democrat"
+    elsif pub_adv_name_title_salary.index("(R)") != nil
+      political_party = "Republican"
+    end
+    pub_adv_inc = Chief.create(name: name, title: title, salary: salary, election_info: election_info, political_party: political_party, phone: "(212) 669-7200", source: "NYC Greenbook", source_accessed: Time.now )
+    pub_adv.chiefs.push(pub_adv_inc)
+    
+    incumbent_staff_list = incumbent_staff.css('tr')
+    incumbent_staff_list[1..5].each do |chief|
+      title_and_name = chief.css('p')[0].text.strip
+      dash_index = title_and_name.index('-')
+      title = title_and_name[0..dash_index-2]
+      name = title_and_name[dash_index+3..-1].gsub("  ", " ")
+      email = chief.css('p')[1].text.strip
+      phone = chief.css('p')[2].text.strip
+      new_chief = Chief.create(name: name, title: title, email_address: email, phone: phone, source: "NYC Greenbook", source_accessed: Time.now )
+      pub_adv.chiefs.push(new_chief)
     end
   end
 end
