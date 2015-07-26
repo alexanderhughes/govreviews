@@ -8,6 +8,11 @@
 	  <p class="notice"><%= notice %></p>
 	  <p class="alert"><%= alert %></p>
 	  <meta name="google-site-verification" content="Gjnmxpi2oydlsvES38PLp7THr3JZmJcAM57XB_O_mVc" />
+	  <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+	  <script>
+	    var client = algoliasearch("75W7HLBU2C", "ae0d5cd176b28df1789768374f4e74b1"); // public credentials
+	    var index = client.initIndex('Category');
+	  </script>
 	</head>
 	<body>
 		<header class="header">

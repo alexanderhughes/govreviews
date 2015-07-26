@@ -17,6 +17,41 @@
 	<gcse:search></gcse:search>
 </div>
 -->
+<div class="search">
+    <h1>Search me!</h1>
+    <input type="text">
+  </div>
+  <div class="results">
+    <ul id="users"></ul>
+  </div>
+<script src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
+<script>
+$(document).ready(function() {
+  var $input = $('input');
+  $input.keyup(function() {
+	  console.log("keyup event");
+    index.search($input.val(), {
+      hitsPerPage: 10,
+      facets: '*'
+    }, searchCallback);
+  }).focus();
+});
+
+function searchCallback(err, content) {
+  if (err) {
+    console.error(err);
+    return;
+  }
+
+  var $users = $('#users');
+  $users.empty();
+
+  for (var i = 0; i < content.hits.length; i++) {
+    $users.append('<li>' + content.hits[i].name + '</li>');
+  }
+};
+</script>
 
 <script type="text/javascript">
 $(document).ready(function(){
@@ -108,6 +143,29 @@ src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCg5IL7HUJaguYdgp5RIAAKblS
 </div>
 
 <div id="map-canvas" style="width: 100%; height: 400px; display:inline-block"></div>
+
+<table class="nav_buttons">
+	<tr class="row">
+		<td>DMV
+		</td>
+		<td>Post Offices
+		</td>
+		<td>Parks & Rec
+		</td>
+		<td>Police & Fire Services
+		</td>
+	</tr>
+	<tr class="row">
+		<td>City & State Agencies
+		</td>
+		<td>Subways & MTA
+		</td>
+		<td>Public Officials
+		</td>
+		<td>Schools
+		</td>
+	</tr>
+</table>
 
 <h3 class="categories">Browse by Category</h3>
 <ul>
