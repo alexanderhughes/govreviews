@@ -46,4 +46,7 @@ class User
   field :address
   reverse_geocoded_by :coordinates
   after_validation :reverse_geocode
+  field :provider, type: String
+  field :uid, type: String
+  devise :omniauthable, :omniauth_providers => [:facebook]
 end
