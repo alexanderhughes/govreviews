@@ -32,7 +32,7 @@ gem "mongoid", "~> 4.0.0"
 gem 'geocoder', git: "git://github.com/alexreisner/geocoder.git"
 
 gem "algoliasearch-rails", "~> 1.13"
-
+gem 'dotenv-rails', :groups => [:development, :test]
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
