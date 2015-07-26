@@ -7,6 +7,10 @@ class PublicEntity
   include Mongoid::Document
   include Mongoid::Timestamps
   include Geocoder::Model::Mongoid
+  include ::AlgoliaSearch
+  algoliasearch do
+    attribute :name, :description, :address
+  end
   field :name
   field :authority_level
   field :address

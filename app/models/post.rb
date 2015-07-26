@@ -4,6 +4,10 @@ class Post
   #belongs_to :user
   include Mongoid::Document
   include Mongoid::Timestamps
+  include AlgoliaSearch
+  algoliasearch do
+    attribute :review
+  end
   belongs_to :public_entity
   belongs_to :user
   field :rating

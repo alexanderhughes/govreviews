@@ -6,6 +6,10 @@ class Chief
   #belongs_to :superior, class_name: "PublicEntity"
   include Mongoid::Document
   include Mongoid::Timestamps
+  include AlgoliaSearch
+  algoliasearch do
+    attributes :name, :title, :bio
+  end
   field :name
   field :title
   field :bio

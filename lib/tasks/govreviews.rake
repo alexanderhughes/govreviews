@@ -1281,4 +1281,12 @@ namespace :govreviews do
       pe.save
     end
   end
+  
+  desc "Push data to Algolia"
+  task push_to_algolia: :environment do
+    PublicEntity.reindex!
+    Chief.reindex!
+    Category.reindex!
+    Post.reindex!
+  end
 end

@@ -42,6 +42,12 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    algoliasearch (1.6.0)
+      httpclient (~> 2.4)
+      json (>= 1.5.1)
+    algoliasearch-rails (1.13.1)
+      algoliasearch (>= 1.2.14)
+      json (>= 1.5.1)
     arel (6.0.0)
     bcrypt (3.1.10)
     binding_of_caller (0.7.2)
@@ -75,6 +81,7 @@ GEM
     globalid (0.3.3)
       activesupport (>= 4.1.0)
     hike (1.2.3)
+    httpclient (2.6.0.1)
     i18n (0.7.0)
     jbuilder (2.2.12)
       activesupport (>= 3.0.0, < 5)
@@ -192,6 +199,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  algoliasearch-rails (~> 1.13)
   bootstrap-sass (= 3.2.0.0)
   byebug
   coffee-rails (~> 4.1.0)
