@@ -99,15 +99,16 @@ test:
         # low amounts for fast failures.
         max_retries: 1
         retry_interval: 0
+<% if ENV['MONGOLAB_URI'] %>
+  <% uri = URI.parse(ENV['MONGOLAB_URI']) %>
 production:
+  <<: *defaults
   sessions:
     default:
-      database: admin
+      <<: *default_session
+      database: <%= uri.path.sub('/','') %>
+      username: <%= uri.user %>
+      password: <%= uri.password %>
       hosts:
-        - localhost:27017
-      options:
-        read: primary
-        # In the test environment we lower the retries and retry interval to
-        # low amounts for fast failures.
-        max_retries: 1
-        retry_interval: 0
+        - <%= uri.host %>:<%= uri.port %>
+<% end %>
