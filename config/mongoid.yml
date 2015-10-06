@@ -102,7 +102,7 @@ test:
 production:
   sessions:
     default:
-      database: govreviews_production
+      database: admin
       hosts:
         - localhost:27017
       options:
