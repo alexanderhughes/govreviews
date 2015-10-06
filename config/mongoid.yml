@@ -100,7 +100,21 @@ test:
         max_retries: 1
         retry_interval: 0
 production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
-  max_retries_on_connection_failure: 20
-  persist_in_safe_mode: true
-  skip_version_check: true
+  # This starts the session configuration settings. You may have as
+  # many sessions as you like, but you must have at least 1 named
+  # 'default'.
+  sessions:
+    # Define the default session.
+    default:
+      # A session can have any number of hosts. Usually 1 for a single
+      # server setup, and at least 3 for a replica set. Hosts must be
+      # an array of host:port pairs. This session is single server.
+      uri: <%= ENV['MONGOHQ_URL'] %>
+      hosts:
+        - 172.17.0.98:27017
+      # Define the default database name.
+      database: production-production
+      # Since this database points at a session connected to MongoHQ, we must
+      # provide the authentication details.
+      username: govreviews
+      password: RVlCMnZzRGlXNlY3ZWNGRWpaeUdxdUU5YmEyb0hNV3lHOEt4TG9hTzlDYz0K
