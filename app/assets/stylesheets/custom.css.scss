@@ -1,13 +1,11 @@
-/* universal */
+/* header */
 header {
 	display:block;
 	font-family:"Verdana";
 	font-size:1.75em;
 	color:white;
-	margin-bottom:5px;
-	margin-top:none;
-	padding:20px;
 	background-color:#EF5C5C;
+  top:0px;
 	.header-text {
 		display:inline;
 		padding:0;
@@ -28,6 +26,7 @@ header {
 	}
 }
 
+/* universal */
 body {
   background-color:#F8FAFF;
   font-family:"Verdana";
@@ -44,7 +43,6 @@ textarea {
 .searchbar {
 	width:50%;
 	float:center;
-	margin-left:25%;
 }
 
 .center {
@@ -52,7 +50,6 @@ textarea {
 }
 
 .center h1 {
-  margin-bottom: 10px;
 }
 
 .sign-up-form {
@@ -145,14 +142,12 @@ h1, h2, h3, h4, h5, h6 {
 h1 {
   font-size: 3em;
   letter-spacing: -2px;
-  margin-bottom: 30px;
   text-align: left;
 }
 
 h2 {
   font-size: 1.2em;
   letter-spacing: -1px;
-  margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
   color: #777;
@@ -179,17 +174,4 @@ ol {
 ul {
     list-style:none;
     padding-left:0;
-}​​
-
-/* header */
-
-#logo {
-  float: left;
-  margin-right: 10px;
-  font-size: 1.7em;
-  color: #fff;
-  text-transform: uppercase;
-  letter-spacing: -1px;
-  padding-top: 9px;
-  font-weight: bold;
-}
+  }

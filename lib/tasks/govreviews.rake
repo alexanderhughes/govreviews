@@ -2,7 +2,7 @@ namespace :govreviews do
   desc "Crawl NY State agencies and load them into PublicEntity table"
   task crawl_state_agencies: :environment do
     require 'rubygems'
-    require 'nokogiri'
+    
     require 'json'
     require 'open-uri'
     
@@ -40,7 +40,7 @@ namespace :govreviews do
   desc "Crawl NY City agencies and load them into PublicEntity table"
   task crawl_city_agencies: :environment do
     require 'rubygems'
-    require 'nokogiri'
+    
     require 'json'
     require 'open-uri'
     
@@ -186,7 +186,7 @@ namespace :govreviews do
   
   desc "Crawl Greenbook for Mayor and Incumbent"
   task crawl_greenbook_for_mayor: :environment do
-    require 'nokogiri'
+    
     require 'open-uri'
 
     mayor_page_link = 'http://a856-gbol.nyc.gov/gbolwebsite/390.html'
@@ -274,7 +274,7 @@ namespace :govreviews do
 
   desc "Crawl Greenbook for Sub Agencies and Chiefs"
   task crawl_greenbook_mayor_sub_agencies: :environment do
-    require 'nokogiri'
+    
     require 'open-uri'
 
     mayor_page_link = 'http://a856-gbol.nyc.gov/gbolwebsite/390.html'
@@ -410,7 +410,7 @@ namespace :govreviews do
   
   desc "Crawl Greenbook Main Page for Agencies"
   task crawl_greenbook_main_page: :environment do
-    require 'nokogiri'
+    
     require 'open-uri'
     
     url = 'http://a856-gbol.nyc.gov/gbolwebsite/CityAgencies.aspx'
@@ -593,7 +593,7 @@ namespace :govreviews do
   desc "Crawl Fire Commissioner"
   task crawl_fire_commissioner: :environment do
     require 'open-uri'
-    require 'nokogiri'
+    
 
     url = 'http://www.nyc.gov/html/fdny/html/general/commissioner/33/biography.shtml'
     page = open(url) { |f| f.read }
@@ -1061,7 +1061,7 @@ namespace :govreviews do
   desc "Crawl Greenbook for MTA subagency chiefs"
   task crawl_greenbook_mta_subagency_chiefs: :environment do
     require "open-uri"
-    require "Nokogiri"
+    require "nokogiri"
     url = "http://a856-gbol.nyc.gov/gbolwebsite/323.html"
     content = open(url) { |f| f.read }
     mta_greenbook = Nokogiri::HTML(content)
