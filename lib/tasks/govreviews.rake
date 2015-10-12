@@ -607,7 +607,7 @@ namespace :govreviews do
 
     fire_commissioner = Chief.create(name: name, title: title, election_info: election_info, source: source, source_accessed: source_accessed)
 
-    fdny = PublicEntity.find_by(name: "Fire Department, New York City (FDNY)")
+    fdny = PublicEntity.find_by(name: "Fire Department (FDNY)")
     fdny.chiefs.push(fire_commissioner)
     mayor = PublicEntity.find_by(name: "Mayor, Office of the (OTM)")
     fdny.superior = mayor
@@ -639,7 +639,7 @@ namespace :govreviews do
     end  
   
     all_stations.each do |station|
-      fdny = PublicEntity.find_by(name: "Fire Department, New York City (FDNY)")
+      fdny = PublicEntity.find_by(name: "Fire Department (FDNY)")
       c = Category.find_or_create_by(name: "Fire Station")
       fire_station = PublicEntity.create(name: station[:name], address: station[:address], authority_level: 'city', description: 'Fire Station.', website: 'www.nyc.gov/fdny', entity_type: 'Fire Station', source: 'NYCOpenData', source_accessed: Time.now, superior: fdny )
       fire_station.categories.push(c)
@@ -652,7 +652,7 @@ namespace :govreviews do
     first_deputy = PublicEntity.find_by(name: 'First Deputy Mayor')
     nypd = PublicEntity.find_by(name: 'Police Department (NYPD)')
     fdny = PublicEntity.find_by(name: 'Fire Department (FDNY)')
-    fdny2 = PublicEntity.find_by(name: 'Fire Department, New York City (FDNY)')
+    fdny2 = PublicEntity.find_by(name: 'Fire Department (FDNY)')
     edu1 = PublicEntity.find_by(name: 'Education, Department of (DOE)')
     edu2 = PublicEntity.find_by(name: 'Education')
     sani = PublicEntity.find_by(name: 'Sanitation (DSNY)')
