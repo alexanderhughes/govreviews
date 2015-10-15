@@ -54,7 +54,6 @@ namespace :govreviews do
 
     agency_section.each do |agency|
       name = agency.text.strip
-        name = name[1..-2]
       description = agency["data-desc"].strip
       cat_info = agency["data-topic"]
       cat_json = JSON.parse(cat_info)
