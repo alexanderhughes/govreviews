@@ -981,7 +981,7 @@ namespace :govreviews do
   desc "Crawl MTA Board Members"
   task crawl_mta_board_members: :environment do
     require 'open-uri'
-    require 'Nokogiri'
+    require 'nokogiri'
 
     url = "http://web.mta.info/mta/leadership/board.htm"
     content = open(url) { |f| f.read }
