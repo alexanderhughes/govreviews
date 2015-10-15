@@ -517,7 +517,9 @@ namespace :govreviews do
     all_ny_state_dmv_offices = []
     
     json_data['data'].each do |office|
-      phone = office[10].strip
+      if office[10] != nil
+        phone = office[10].strip
+      end
       office_type = office[9].strip
       if office_type == 'CO'
         office_description = 'County-run DMV office.'
