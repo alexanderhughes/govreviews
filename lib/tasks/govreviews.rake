@@ -84,6 +84,7 @@ namespace :govreviews do
     require 'open-uri'
     require 'openssl'
     
+    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
     url = 'https://data.ny.gov/api/views/9uuk-x7vh/rows.json?accessType=DOWNLOAD'
     file = open(url) { |f| f.read }
     output = JSON.parse(file)
@@ -100,7 +101,9 @@ namespace :govreviews do
       county = park[11].strip
       state = "New York"
       address = name + ', ' + county + ', ' + state
-      website = park[17][0].strip
+      if park[17][0] != nil
+        website = park[17][0].strip
+      end
       results = { name: name, address: address, description: description, website: website, authority_level: 'state', entity_type: 'park' }
       all_results.push(results)
     end
