@@ -84,7 +84,9 @@ namespace :govreviews do
     require 'open-uri'
     require 'openssl'
     
-    OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+    if Rails.env.production != true
+      OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+    end
     url = 'https://data.ny.gov/api/views/9uuk-x7vh/rows.json?accessType=DOWNLOAD'
     file = open(url) { |f| f.read }
     output = JSON.parse(file)
