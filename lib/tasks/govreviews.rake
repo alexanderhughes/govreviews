@@ -701,7 +701,7 @@ namespace :govreviews do
     dycd2 = PublicEntity.find_by(name: "Youth & Community Development (DYCD)")
     ocdv = PublicEntity.find_by(name: "Mayor's Office to Combat Domestic Violence")
     ocdv2 = PublicEntity.find_by(name: "Domestic Violence, Mayor's Office to Combat (OCDV)")
-    ocme = PublicEntity.find_by(name: "Medical Examiner, Office of the Chief (OCME)")
+    ocme = PublicEntity.find_by(name: /^Medical Examiner, Office of the Chief/)
     ocme2 = PublicEntity.find_by(name: "Chief Medical Examiner, NYC Office of (OCME)")
     ofpcidi = PublicEntity.find_by(name: /^Center for Innovation/)
     deputy_hhs.subordinates.push(dfa, dfa2, acs, dhmh, dhmh2, hradss, hradss2, dhs, dhs2, dycd1, dycd2, ocdv, ocdv2, ocme, ocme2, ofpcidi)
