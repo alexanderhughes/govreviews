@@ -827,7 +827,7 @@ namespace :govreviews do
   desc "Crawl City Council"
   task crawl_city_council: :environment do
     require 'open-uri'
-    require 'Nokogiri'
+    require 'nokogiri'
     city_council_1 = PublicEntity.find_by(name: "City Council (NYCC)")
     #source
     source = "http://council.nyc.gov/"
@@ -1176,7 +1176,7 @@ namespace :govreviews do
   desc "Crawl Greenbook for Incumbent Public Advocate"
   task crawl_greenbook_pub_adv_incumbent_staff: :environment do
     require 'open-uri'
-    require 'Nokogiri'
+    require 'nokogiri'
     url = "http://a856-gbol.nyc.gov/gbolwebsite/72.html"
     content = open(url) { |f| f.read }
     pub_adv_grnbk = Nokogiri::HTML(content)
