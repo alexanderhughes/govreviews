@@ -944,12 +944,15 @@ namespace :govreviews do
   task remove_duplicate_comptroller: :environment do
     comptroller_1 = PublicEntity.find_by(name: "Comptroller")
     comptroller_2 = PublicEntity.find_by(name: "Comptroller (COMP)")
+    comptroller_3 = PublicEntity.find_by(name: "New York City Comptroller")
     desc_length = comptroller_1.description.length
     desc_stop_point = (desc_length / 2) - 1
     comptroller_1.description = comptroller_1.description[0..desc_stop_point] + ' ' + comptroller_2.description
     comptroller_1.superior = nil
+    comptroller_1.entity_type = "city executive"
     comptroller_1.save
     comptroller_2.delete
+    comptroller_3.delete
     ctg_civic_services = Category.find_or_create_by(name: "Civic Services")
     ctg_political_officer = Category.find_or_create_by(name: "Political Officer")
     comptroller_1.categories.push(ctg_civic_services, ctg_political_officer)
@@ -959,12 +962,14 @@ namespace :govreviews do
   task remove_duplicate_pub_adv: :environment do
     pub_adv_1 = PublicEntity.find_by(name: "Public Advocate for the City of New York")
     pub_adv_2 = PublicEntity.find_by(name: "Public Advocate (PUB ADV)")
+    pub_adv_3 = PublicEntity.find_by(name: "New York City Public Advocate")
     desc_length = pub_adv_1.description.length
     desc_stop_point = (desc_length / 2 ) - 1
     pub_adv_1.description = pub_adv_2.description + " " + pub_adv_1.description[0..desc_stop_point]
     pub_adv_1.superior = nil
     pub_adv_1.save
     pub_adv_2.delete
+    pub_adv_3.delete
     ctg_civic_services = Category.find_or_create_by(name: "Civic Services")
     ctg_political_officer = Category.find_or_create_by(name: "Political Officer")
     pub_adv_1.categories.push(ctg_civic_services, ctg_political_officer)

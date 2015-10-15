@@ -54,7 +54,7 @@ function searchCallback(err, content) {
 
 <script type="text/javascript">
 $(document).ready(function(){
-	$.each(['categories', 'nyc_executives', 'city_agencies', 'subways', 'post_offices', 'state_agencies', 'state_parks'], function(index, cssName){
+	$.each(['categories', 'nyc_executives', 'city_agencies', 'subways', 'post_offices', 'state_agencies', 'state_parks', 'dmv'], function(index, cssName){
 		var list = $('.'+cssName+'_list');
 		$(list).hide();
 		$('.'+cssName).click(function(){
@@ -207,5 +207,11 @@ $(document).ready(function(){
 <h3 class="state_parks">NY State Parks</h3>
 <ul><% @nystate_parks.each do |entity| %>
 	<div class="state_parks_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
+	<%end%>
+</ul>
+
+<h3 class="dmv">DMVs</h3>
+<ul><% @dmvs.each do |entity| %>
+	<div class="dmv_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
 	<%end%>
 </ul>

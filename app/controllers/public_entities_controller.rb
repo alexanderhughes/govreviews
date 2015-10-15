@@ -10,6 +10,7 @@ class PublicEntitiesController < ApplicationController
     @nystate_agencies = PublicEntity.where(authority_level: 'state', entity_type: 'agency')
     @nystate_parks = PublicEntity.where(entity_type: 'park')
     @ten_most_recent_posts = Post.order_by(:created_at => 'desc').limit(10)
+    @dmvs = PublicEntity.where(entity_type: 'DMV')
   end
   
   def user_location
