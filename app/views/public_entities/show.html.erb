@@ -20,7 +20,7 @@
 			<div><%= @public_entity.phone %></div>
 			<div><%= @public_entity.address %></div>
 			<div><% if @public_entity.website != nil %>
-				<%= link_to @public_entity.website[0..40], @public_entity.website, 'data-no-turbolink' => true %>...
+				<%= link_to @public_entity.website, @public_entity.website, 'data-no-turbolink' => true %>...
 				<% end %>
 			</div>
 			<div>
@@ -42,6 +42,7 @@
 				This entity reports to the <%= link_to @public_entity.superior.name, @public_entity.superior, 'data-no-turbolink' => true %>
 				<% end %>
 			</div>
+      <br>
 			<div><% if @subordinates.empty? == false %>
 				The following entities report to this office:
 				<%= @subordinates.map { |subordinate| link_to(subordinate.name, public_entity_path(subordinate), 'data-no-turbolink' => true) }.join(' | ').html_safe %>

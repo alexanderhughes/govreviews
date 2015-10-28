@@ -1003,6 +1003,9 @@ namespace :govreviews do
       name = member.css('a').text.strip
       if member.children[1].children[2] != nil
         title = member.children[1].children[2].text.strip
+        if member.children[1].children[2].text.strip.length <= 1
+          title = "MTA Board Member"
+        end
       else
         title = "MTA Board Member"
       end
