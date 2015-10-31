@@ -48,14 +48,112 @@ header {
 .entity-info {
   .entity-name {
     font-size:1.4em;
-    padding: 0% 0% 0.5% 0%;
+    padding: 0% 0% 1.5% 0%;
+  }
+  .entity-categories {
+    font-size:0.9em;
+    color:gray;
   }
   .entity-basic-info {
     padding: 0% 0% 1% 0%;
     font-size:0.9em;
     color:gray;
+    display:inline-block;
+  }
+  .entity-description {
+    padding: 0% 0% 1% 0%;
+    font-size:0.9em;
+    color:gray;
+    display:inline-block;
+    width:80%;
   }
   line-height:1.2em;
+}
+
+.superior {
+  padding: 0% 0% 1% 0%;
+  font-size:0.9em;
+  color:gray;
+  float:right;
+  display:inline-block;
+}
+
+.subordinates {
+  font-size:0.9em;
+  color:gray;
+  width:82%;
+  float:right;
+  display:inline;
+}
+
+.incumbents-info {
+  font-size:0.9em;
+  color:gray;
+}
+
+.leave-review {
+  margin-left:18%;
+  display:inline-block;
+}
+
+.form-group {
+  width:100%;
+  display:inline-block;
+}
+
+.form-control {
+  display:inline-block;
+}
+
+.submit-button {
+  font-size:2em;
+  height:auto;
+  width:200px;
+}.leave-review {
+  margin-left:18%;
+  display:inline-block;
+}
+
+.form-group {
+  width:100%;
+  display:inline-block;
+}
+
+.form-control {
+  display:inline-block;
+}
+
+.submit-button {
+  font-size:2em;
+  height:auto;
+  width:200px;
+}
+
+.review {
+  padding:2.5% 0 0 2%;
+  display:inline-block;
+  width: 82%;
+  float:right;
+	#review-name {
+    float:left;
+	}
+	#review-date {
+    float:right;
+	}
+	#review-text {
+	}
+	#review-rating {
+	}
+	#review-content {
+	}
+}
+
+.nav_buttons {
+	text-align:center;
+	margin-left:auto;
+	margin-right:auto;
+	float-left:auto;
+	float-right:auto;
 }
 
 section {
@@ -71,10 +169,6 @@ section {
   padding-bottom:1.2%;
   font-size:0.9em;
   color:gray;
-}
-
-.superior, .subordinates {
-  font-size:0.9em;
 }
 
 .search-box {
@@ -119,47 +213,6 @@ a:hover {
 
 a:visited {
 	text-decoration: none;
-}
-
-.review {
-	width: 80%;
-	border-style: solid;
-	border-color: #D8D8DC;
-	border-width: 1px;
-	padding: 8px;
-	border-left:0;
-	border-right:0;
-	border-top:0;
-	//border-radius:10px;
-	#review-name {
-		display:inline;
-	}
-	#review-date {
-		display:inline;
-	}
-	#review-text {
-		display:inline;
-	}
-	#review-rating {
-		float:right;
-		display:inline;
-	}
-	#review-content {
-		margin-left:5%;;
-	}
-}
-
-.leave-review {
-	width: 80%;
-}
-
-.nav_buttons {
-	width: 80%;
-	text-align:center;
-	margin-left:auto;
-	margin-right:auto;
-	float-left:auto;
-	float-right:auto;
 }
 
 /* typography */

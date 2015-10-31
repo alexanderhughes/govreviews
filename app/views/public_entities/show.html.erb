@@ -11,33 +11,32 @@
 	  google.maps.event.addDomListener(window, 'load', initialize);
 </script>
 
-<div id="map-canvas" style="width: 250px; height: 250px; display:inline-block; float:right; margin:2% 2% 2% 2%"></div>
+<div id="map-canvas" style="width: 200px; height: 200px; display:inline-block; float:left; margin:3.2% 2% 2% 3%"></div>
 
 <body>
   <div class="entity-show-page">
 	<div class="entity-info">
 		<div class="entity-name"><%= link_to @public_entity.name, @public_entity, 'data-no-turbolink' => true %></div>
+		<div class="entity-categories"><%= @categories.map { |category| link_to(category.name, category_path(category), 'data-no-turbolink' => true) }.join(' | ').html_safe %>
+		</div>
 			<div class="entity-basic-info">
         <div><%= @public_entity.phone %></div>
   			<div><%= @public_entity.address %></div>
   			<div><% if @public_entity.website != nil %>
-  				<%= link_to @public_entity.website, @public_entity.website, 'data-no-turbolink' => true %>...
+  				<%= link_to @public_entity.website, @public_entity.website, 'data-no-turbolink' => true %>
   				<% end %>
   			</div>
       </div>
-      <div>[ Entity lat/lng: <%= @public_entity.to_coordinates %> ]</div>
 			<div class="superior"><% if @public_entity.superior != nil %>
 				This entity reports to the <%= link_to @public_entity.superior.name, @public_entity.superior, 'data-no-turbolink' => true %>
 				<% end %>
 			</div>
+      <div class="entity-description"><%= @public_entity.description %></div>
 			<div class="subordinates"><% if @subordinates.empty? == false %>
-				The following entities report to this office:
+				<div>The following entities report to this office:</div>
 				<%= @subordinates.map { |subordinate| link_to(subordinate.name, public_entity_path(subordinate), 'data-no-turbolink' => true) }.join(' | ').html_safe %>
 				<% end %>
 			</div>
-			<div class="entity-categories"><%= @categories.map { |category| link_to(category.name, category_path(category), 'data-no-turbolink' => true) }.join(' | ').html_safe %>
-			</div>
-			<div class="entity-description"><%= @public_entity.description %></div>
 			</div>
   		<div class="incumbents-info"><% @public_entity.chiefs.each do |chief| %>
   			<div><%= chief.title %>: <%= chief.name %></div>
@@ -47,32 +46,32 @@
   			<div><%= chief.election_info %></div>
   			<% end %>
   		</div>
-    </div>
 
 		<div>There are <strong><%= @posts.count %></strong> reviews.</div><br>
 
-		<div class="review"><% @posts.each do |post| %>
-			<div id="review-date">On <%= post.created_at.time.strftime("%m/%d/%y") %></div>
-			<div id="review-name"> <%= post.user.first_name.to_s + ' ' + post.user.last_name[0].to_s %>.</div>
-			<div id="review-text">left a review:</div>
-			<div id="review-rating"><%= post.rating %> Stars!</div>
-			<br>
-			<div id="review-content"><%= post.review %></div>
-			<p></p>
-		<% end %>
-		</div>
-		<br>
 		<div class="leave-review">
-			<h4>Write a review!</h4>
+			<div>Write a review!</div>
 			<div class="form-group">
 				<%= form_for @post, :url => {:controller => "posts", :action => "create" } do |f| %>
 				<%= f.hidden_field :public_entity_id, value: @public_entity.id %>
 				<%= f.text_field :rating, class: "form-control", placeholder: "Please give a rating on a scale from 1-5" %>
 				<%= f.text_area :review, class: "form-control", rows: 4, placeholder: "Start your review..." %>
 				<br>
-				<%= f.submit "Submit your review", class: "btn btn-default"%>
+				<%= f.submit "Submit your review", class: "submit-button"%>
 				<% end %>
 			</div>
 		</div>
+
+		<div class="review"><% @posts.each do |post| %>
+			<div id="review-date">On <%= post.created_at.time.strftime("%m/%d/%y") %></div>
+			<div id="review-name"> <%= post.user.first_name.to_s + ' ' + post.user.last_name[0].to_s %>.</div>
+			<div id="review-text">left a review:</div>
+			<div id="review-rating"><%= post.rating %> Stars!</div>
+			<div id="review-content"><%= post.review %></div>
+			<p></p>
+		<% end %>
+		</div>
+
   </div>
+<div>[ Entity lat/lng: <%= @public_entity.to_coordinates %> ]</div>
 </body>
