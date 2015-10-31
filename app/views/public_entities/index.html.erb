@@ -1,5 +1,5 @@
 <% provide(:title, "Our Government | Our Experiences") %>
-
+<span class="logo"><%= link_to (image_tag "OurGov_Logo3.png", height: 'auto', width: '100%'), "http://ourgov.io" %></span>
 <!--
 <div class="searchbar">
 	<script>
@@ -17,6 +17,7 @@
 	<gcse:search></gcse:search>
 </div>
 -->
+
 <div class="search">
 	<input type="text">
 </div>
@@ -144,6 +145,8 @@ $(document).ready(function(){
 <div id="map-canvas" style="width: 100%; height: 400px; display:inline-block"></div>
 -->
 
+<body>
+
 <table class="nav_buttons">
 	<tr class="row">
 		<td>DMV
@@ -215,3 +218,4 @@ $(document).ready(function(){
 	<div class="dmv_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
 	<%end%>
 </ul>
+</body>

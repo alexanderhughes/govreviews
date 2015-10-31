@@ -1,43 +1,33 @@
-/* header */
-header {
-	display:block;
-	font-family:"Verdana";
-	font-size:1.75em;
-	color:white;
-	background-color:#EF5C5C;
-  top:0px;
-	.header-text {
-		display:inline;
-		padding:0;
-		text-align:right;
-		font-size:.75em;
-		float:right;
-		a {
-			color:white;
-		}
-		a:hover {
-			text-decoration:underline;
-		}
-	}
-	.searchbar {
-		display:inline-block;
-		width:35%;
-		text-align:left;
-	}
-}
-
 /* universal */
 body {
-  background-color:#F8FAFF;
-  font-family:"Verdana";
+  background-color:#FAFAFA;
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
+  padding:0;
+  margin:0;
+}
+
+header {
+  margin:0;
+	display:block;
+	font-size:2em;
+	color:black;
+	background-color:white;
+	.header-name {
+		margin-left:1%;
+    display:inline-block;
+	}
+  .header-text {
+    font-size:0.5em;
+    color:white;
+    margin-top:1%;
+    margin-right:5%;
+    display:inline-block;
+    float:right;
+  }
 }
 
 section {
   overflow: auto;
-}
-
-textarea {
-  resize: vertical;
 }
 
 .searchbar {
@@ -54,33 +44,31 @@ textarea {
 
 .sign-up-form {
 	width:40%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .edit-user-form {
 	width:50%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .log-in {
 	width:35%;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
 	text-decoration: none;
-	color:blue;
 }
 
 a:hover {
 	text-decoration: none;
-	color:black;
 }
 
 a:visited {
@@ -135,11 +123,13 @@ a:visited {
 /* typography */
 
 h1, h2, h3, h4, h5, h6 {
+  margin:0;
   line-height: 1;
   font-family: "Verdana";
 }
 
 h1 {
+  margin:0;
   font-size: 3em;
   letter-spacing: -2px;
   text-align: left;
@@ -167,11 +157,11 @@ li {
 }
 
 ol {
-    list-style:none;
-    padding-left:0;
+  list-style:none;
+  padding-left:0;
 }
 
 ul {
-    list-style:none;
-    padding-left:0;
-  }
+  list-style:none;
+  padding-left:0;
+}
