@@ -1,5 +1,5 @@
 <% provide(:title, "Our Government | Our Experiences") %>
-<span class="logo"><%= link_to (image_tag "OurGov_Logo3.png", height: 'auto', width: '100%'), "http://ourgov.io" %></span>
+<span class="logo"><%= link_to (image_tag "OurGov_Logo3.png", height: 'auto', width: '100%'), "/" %></span>
 <!--
 <div class="searchbar">
 	<script>
@@ -149,32 +149,32 @@ $(document).ready(function(){
 -->
 
 <body>
-  <div class="home-page-description">OurGov is a digital platform to leave feedback and report problems to government services and agencies.</div>
+  <div class="home-page-description">OurGov is a digital platform to report problems to and leave feedback for government services and agencies.</div>
 
 <table class="nav_buttons">
 	<tr class="row">
-		<td>DMVs
+		<td><span class="bracket">[ </span><%= link_to "DMVs", category_path('DMV'), 'data-no-turbolink' => true %><span class="bracket"> ]</span>
 		</td>
-		<td>Post Offices
+		<td><span class="bracket">[ </span><%= link_to "Post Offices", category_path("Post Office"), 'data-no-turbolink' => true %><span class="bracket"> ]
 		</td>
-		<td>Parks & Rec
+		<td><span class="bracket">[ </span>Parks & Rec<span class="bracket"> ]
 		</td>
-		<td>Police & Fire Services
+		<td><span class="bracket">[ </span>Police & Fire Services<span class="bracket"> ]
 		</td>
 	</tr>
 	<tr class="row">
-		<td>City & State Agencies
+		<td><span class="bracket">[ </span>City & State Agencies<span class="bracket"> ]
 		</td>
-		<td>Subways & MTA
+		<td><span class="bracket">[ </span><%= link_to "Subways & MTA", category_path("Subway Stations"), 'data-no-turbolink' => true %><span class="bracket"> ]
 		</td>
-		<td>Public Officials
+		<td><span class="bracket">[ </span>Public Officials<span class="bracket"> ]
 		</td>
-		<td>Schools
+		<td><span class="bracket">[ </span>Schools<span class="bracket"> ]
 		</td>
 	</tr>
 </table>
 
-<h3 class="categories">Browse by Category</h3>
+<!--<h3 class="categories">Browse by Category</h3>
 <ul>
 	<% @categories.each do |category| %>
 		<li class="categories_list"><%= link_to category.name, category_path(category) %></li>
@@ -222,4 +222,5 @@ $(document).ready(function(){
 	<div class="dmv_list"><%=link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
 	<%end%>
 </ul>
+-->
 </body>

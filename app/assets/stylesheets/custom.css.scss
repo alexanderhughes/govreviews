@@ -37,6 +37,27 @@ header {
   color:gray;
 }
 
+.bracket {
+  font-size:1.5em;
+}
+
+.entity-show-page {
+  margin: 2% 3% 2% 3%;
+}
+
+.entity-info {
+  .entity-name {
+    font-size:1.4em;
+    padding: 0% 0% 0.5% 0%;
+  }
+  .entity-basic-info {
+    padding: 0% 0% 1% 0%;
+    font-size:0.9em;
+    color:gray;
+  }
+  line-height:1.2em;
+}
+
 section {
   overflow: auto;
 }
@@ -52,11 +73,12 @@ section {
   color:gray;
 }
 
+.superior, .subordinates {
+  font-size:0.9em;
+}
+
 .search-box {
 	text-align:center;
-  .text {
-    width:1000px;
-  }
 }
 
 .center {
@@ -97,10 +119,6 @@ a:hover {
 
 a:visited {
 	text-decoration: none;
-}
-
-.entity-info {
-	width:80%;
 }
 
 .review {
