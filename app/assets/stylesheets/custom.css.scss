@@ -30,7 +30,18 @@ section {
   overflow: auto;
 }
 
-.searchbar {
+.categories-show-page {
+  padding:2% 3% 0% 4%;
+}
+
+.categories-entity-description {
+  line-height:20px;
+  padding-bottom:1.2%;
+  font-size:0.9em;
+  color:gray;
+}
+
+.search {
 	width:50%;
 	float:center;
 }
