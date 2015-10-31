@@ -15,6 +15,9 @@ header {
 	.header-name {
 		margin-left:1%;
     display:inline-block;
+    a.header-name {
+      text-decoration:none;
+    }
 	}
   .header-text {
     font-size:0.5em;
@@ -24,6 +27,14 @@ header {
     display:inline-block;
     float:right;
   }
+}
+
+.home-page-description {
+  text-align:center;
+  padding:1% 5% 2% 5%;
+  font-family: "helvetica neue","times new roman",times,serif;
+  font-size:1.3em;
+  color:gray;
 }
 
 section {
@@ -41,9 +52,11 @@ section {
   color:gray;
 }
 
-.search {
-	width:50%;
-	float:center;
+.search-box {
+	text-align:center;
+  .text {
+    width:1000px;
+  }
 }
 
 .center {

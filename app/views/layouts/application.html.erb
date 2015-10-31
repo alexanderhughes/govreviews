@@ -19,7 +19,7 @@
 	</head>
 	<body>
 		<header class="header">
-			<span class="header-name">OurGov</span>
+			<span class="header-name"><%= link_to "OurGov", public_entities_path, 'data-no-turbolink' => true %></span>
 			<span class="header-text"><%= link_to "Home", public_entities_path, 'data-no-turbolink' => true %>
 			<% if user_signed_in? == false %>
 			&nbsp<%= link_to "Sign Up", new_user_registration_path %>
