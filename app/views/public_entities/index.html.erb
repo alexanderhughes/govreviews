@@ -151,11 +151,21 @@ $(document).ready(function(){
 <body>
   <div class="home-page-description">OurGov is a digital platform to report problems to and leave feedback for government services and agencies.</div>
 
+<div class="index-category-links">
+  <% #category_names = ['DMV', 'Post Offices', 'Park', 'Fire Station',]%>
+	<% @categories.each do |category| %>
+    <% #if category_names.include? category.name %>
+		  <span class="bracket">[ </span><%= link_to category.name, category_path(category) %><span class="bracket"> ]</span>
+    <% #end%>
+	<% end %>
+</div>
+
+<!--
 <table class="nav_buttons">
 	<tr class="row">
-		<td><span class="bracket">[ </span><%= link_to "DMVs", category_path('DMV'), 'data-no-turbolink' => true %><span class="bracket"> ]</span>
+		<td><span class="bracket">[ </span><%= link_to "DMVs", category_path(Category.find_by(name:'DMV')), 'data-no-turbolink' => true %><span class="bracket"> ]</span>
 		</td>
-		<td><span class="bracket">[ </span><%= link_to "Post Offices", category_path("Post Office"), 'data-no-turbolink' => true %><span class="bracket"> ]
+		<td><span class="bracket">[ </span><%= link_to "Post Offices", category_path('Post Office'), 'data-no-turbolink' => true %><span class="bracket"> ]
 		</td>
 		<td><span class="bracket">[ </span>Parks & Rec<span class="bracket"> ]
 		</td>
@@ -173,6 +183,7 @@ $(document).ready(function(){
 		</td>
 	</tr>
 </table>
+--!>
 
 <!--<h3 class="categories">Browse by Category</h3>
 <ul>
