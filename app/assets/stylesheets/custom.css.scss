@@ -56,109 +56,77 @@ header {
 
 .entity-show-page {
   margin: 2% 3% 2% 3%;
-}
-
-.entity-info {
-  .entity-name {
-    font-size:1.4em;
-    padding: 0% 0% 1.5% 0%;
-  }
-  .entity-categories {
-    font-size:0.9em;
-    color:gray;
-  }
-  .entity-basic-info {
-    padding: 0% 0% 1% 0%;
-    font-size:0.9em;
-    color:gray;
-    display:inline-block;
-  }
-  .entity-description {
-    padding: 0% 0% 1% 0%;
-    font-size:0.9em;
-    color:gray;
-    display:inline-block;
-    width:80%;
-  }
   line-height:1.2em;
+  #map-canvas {
+    width:200px;
+    height:200px;
+    display:inline-block;
+  }
+  .show-page-sidebar {
+    float:left;
+    width: 20%;
+  }
+  .entity-info {
+    float:right;
+    width: 80%;
+    .entity-name {
+      font-size:1.4em;
+    }
+    .entity-categories {
+    }
+    .entity-basic-info {
+      display:inline-block;
+    }
+    .entity-description {
+      display:inline-block;
+    }
+  }
 }
 
 .superior {
-  padding: 0% 0% 1% 0%;
-  font-size:0.9em;
-  color:gray;
   float:right;
   display:inline-block;
 }
 
 .subordinates {
-  font-size:0.9em;
-  color:gray;
-  width:82%;
-  float:right;
-  display:inline;
 }
 
 .incumbents-info {
-  font-size:0.9em;
-  color:gray;
+  padding:5% 5% 0 0;
 }
 
 .leave-review {
-  margin-left:18%;
-  display:inline-block;
-}
-
-.form-group {
-  width:100%;
-  display:inline-block;
-}
-
-.form-control {
-  display:inline-block;
-}
-
-.submit-button {
-  font-size:2em;
-  height:auto;
-  width:200px;
-}
-.leave-review {
-  margin-left:18%;
-  display:inline-block;
-}
-
-.form-group {
-  width:100%;
-  display:inline-block;
-}
-
-.form-control {
-  display:inline-block;
-}
-
-.submit-button {
-  font-size:2em;
-  height:auto;
-  width:200px;
+  display:inline;
+  margin:0;
+  .form-inputs {
+    margin:0 0 0 20%;
+  }
+  .form-field {
+    margin:1% 0;
+    width:100%;
+    border-radius:0.5em;
+    font-size:1.2em;
+  }
+  .submit-button {
+    font-size:2em;
+    width:20%;
+    height:auto;
+  }
 }
 
 .review {
-  padding:2.5% 0 0 2%;
-  display:inline-block;
-  width: 82%;
-  float:right;
-	#review-name {
-    float:left;
+  margin:0 0 0 20%;
+	.review-name {
+    margin:20px 0 0 0;
 	}
-	#review-date {
+	.review-date {
     float:right;
 	}
-	#review-text {
+	.review-text {
 	}
-	#review-rating {
+	.review-rating {
 	}
-	#review-content {
+	.review-content {
 	}
 }
 
