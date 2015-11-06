@@ -2,9 +2,10 @@
 
 <div class="categories-show-page">
 <% @category.public_entities.each do |entity| %>
-	<p><%= link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></p>
+	<div class="categories-category-links"><%= link_to entity.name, public_entity_url(entity), 'data-no-turbolink' => true %></div>
   <% if entity.description.nil? == false && entity.description.length > 150 %>
     <div class="categories-entity-description"><%= entity.description[0..150] %>...</div>
-	<% end %></p>
+  <% else %><div class=categories-entity-description></div>
+	<% end %>
 <% end %>
 </div>

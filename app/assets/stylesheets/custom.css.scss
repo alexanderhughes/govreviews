@@ -39,18 +39,12 @@ header {
 
 .index-category-links {
   font-family: "helvetica neue","times new roman",times,serif;
-  width:80%;
   text-align:center;
-  font-size:1.0em;
-  margin: 0 auto 100px auto;
-  .bracket {
-    font-size:2em;
-    white-space:normal;
-    padding: 0;
-  }
-  .cat-no-wrap: {
-    white-space:nowrap;
-  }
+  font-size:1em;
+  line-height:2em;
+  display:inline-block;
+  margin: 0 100px 0 100px;
+  text-decoration:none;
 }
 
 .entity-show-page {
@@ -142,22 +136,27 @@ section {
 }
 
 .categories-show-page {
-  padding:2% 3% 0% 4%;
-}
-
-.categories-entity-description {
-  line-height:20px;
-  padding-bottom:1.2%;
-  font-size:0.9em;
-  color:gray;
+  margin:5% 5%;
+  .categories-category-links {
+    font-size:1.3em;
+    line-height:1.5em;
+  }
+  .categories-entity-description {
+    line-height:20px;
+    font-size:1.1em;
+    color:gray;
+    padding:0 0 3% 0;
+  }
 }
 
 .search {
   input[type="text"] {
     width:40%;
-    height:40px;
-    font-size:1.8em;
+    height:30px;
+    font-size:1.7em;
     border-radius:0.4em;
+    border-width:0.15em;
+    padding:8px 12px;
   }
 }
 
@@ -196,10 +195,13 @@ section {
 
 a {
 	text-decoration: none;
+  color:gray;
 }
 
 a:hover {
 	text-decoration: none;
+  color:black;
+  font-weight:600;
 }
 
 a:visited {

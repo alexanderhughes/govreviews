@@ -152,12 +152,7 @@ $(document).ready(function(){
   <div class="home-page-description">OurGov is a digital platform to report problems to and leave feedback for government services and agencies.</div>
 
 <div class="index-category-links">
-  <% #category_names = ['DMV', 'Post Offices', 'Park', 'Fire Station',]%>
-	<% @categories.each do |category| %>
-    <% #if category_names.include? category.name %>
-		  <span class="bracket">[ </span><%= link_to category.name, category_path(category) %><span class="bracket"> ]</span>
-    <% #end%>
-	<% end %>
+  <%= @categories.map { |category| link_to(category.name, category_path(category), 'data-no-turbolink' => true) }.join(' | ').html_safe %>
 </div>
 
 <!--
