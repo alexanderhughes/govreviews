@@ -46,11 +46,12 @@ header {
   font-size:1em;
   line-height:2em;
   display:inline-block;
-  margin: 0 100px 0 100px;
+  margin: 0 100px 100px 100px;
   text-decoration:none;
 }
 
 .entity-show-page {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
   margin: 2% 3% 2% 3%;
   line-height:1.2em;
   #map-canvas {
@@ -71,12 +72,15 @@ header {
       line-height:1.2em;
     }
     .entity-categories {
+      font-family: "helvetica neue", helvetica, arial, sans-serif;
     }
     .entity-basic-info {
+      font-family: "helvetica neue", helvetica, arial, sans-serif;
       display:inline-block;
       margin: 0 0 20px 0;
     }
-    .entity-description {;
+    .entity-description {
+      font-family: "helvetica neue", helvetica, arial, sans-serif;
       margin: 0 0 20px 0;
       font-size:1.3em;
       line-height:1.3em;
@@ -118,6 +122,7 @@ header {
 }
 
 .review {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
   margin:0 0 0 20%;
   .review-count {
     margin:20px 0;
@@ -149,6 +154,7 @@ section {
 }
 
 .categories-show-page {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
   margin:5% 5%;
   .categories-category-links {
     font-size:1.3em;
@@ -186,6 +192,7 @@ section {
 }
 
 .sign-up-form {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
 	width:40%;
   display: block;
   margin-left: auto;
@@ -193,6 +200,7 @@ section {
 }
 
 .edit-user-form {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
 	width:50%;
   display: block;
   margin-left: auto;
@@ -200,6 +208,7 @@ section {
 }
 
 .log-in {
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
 	width:35%;
   display: block;
   margin-left: auto;
@@ -224,7 +233,7 @@ a:visited {
 h1, h2, h3, h4, h5, h6 {
   margin:0;
   line-height: 1;
-  font-family: "Verdana";
+  font-family: "helvetica neue", helvetica, arial, sans-serif;
 }
 
 h1 {
