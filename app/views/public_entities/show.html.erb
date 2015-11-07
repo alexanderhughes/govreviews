@@ -63,7 +63,7 @@
 		</div>
 
 		<div class="review">
-      <div>There are <strong><%= @posts.count %></strong> reviews.</div>
+      <div class="review-count">There are <strong><%= @posts.count %></strong> reviews.</div>
       <% @posts.each do |post| %>
 			  <div class="review-date">On <%= post.created_at.time.strftime("%m/%d/%y") %></div>
 			  <div class="review-name"> <%= post.user.first_name.to_s + ' ' + post.user.last_name[0].to_s %>.</div>

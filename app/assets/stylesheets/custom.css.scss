@@ -62,16 +62,21 @@ header {
   .entity-info {
     float:right;
     width: 80%;
+    margin: 0 0 0 0;;
     .entity-name {
-      font-size:1.4em;
+      font-size:1.9em;
+      line-height:1.2em;
     }
     .entity-categories {
     }
     .entity-basic-info {
       display:inline-block;
+      margin: 0 0 20px 0;
     }
-    .entity-description {
-      display:inline-block;
+    .entity-description {;
+      margin: 0 0 20px 0;
+      font-size:1.3em;
+      line-height:1.3em;
     }
   }
 }
@@ -85,7 +90,7 @@ header {
 }
 
 .incumbents-info {
-  padding:5% 5% 0 0;
+  margin:5% 5% 0 0;
 }
 
 .leave-review {
@@ -96,9 +101,11 @@ header {
   }
   .form-field {
     margin:1% 0;
-    width:100%;
-    border-radius:0.5em;
+    padding:7px 10px;
+    width:80%;
+    border-radius:0.4em;
     font-size:1.2em;
+    border-color:white;
   }
   .submit-button {
     font-size:2em;
@@ -109,6 +116,9 @@ header {
 
 .review {
   margin:0 0 0 20%;
+  .review-count {
+    margin:20px 0;
+  }
 	.review-name {
     margin:20px 0 0 0;
 	}
@@ -195,13 +205,11 @@ section {
 
 a {
 	text-decoration: none;
-  color:gray;
+  color:black;
 }
 
 a:hover {
-	text-decoration: none;
-  color:black;
-  font-weight:600;
+	text-decoration: underline;
 }
 
 a:visited {
