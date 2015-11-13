@@ -13,7 +13,6 @@ $(document).ready(function(){
 });
 </script>
 
-
 <style type="text/css">
   html { height: 100% }
   body { height: 100%; margin: 0; padding: 0 }
@@ -101,10 +100,11 @@ $(document).ready(function(){
 
 <div class="search-box">
   <div class="search">
-  	<input type="text">
+   	<input id="searchInput" type="text" />
+    
     <script>
     $(document).ready(function() {
-      var $input = $('input');
+      var $input = $('input#searchInput');
       $input.keyup(function() {
     	  console.log("keyup event");
         index.search($input.val(), {
@@ -119,18 +119,23 @@ $(document).ready(function(){
         console.error(err);
         return;
       }
-
-      var $users = $('#users');
-      $users.empty();
+      console.log(content);
+      
+      var $results = $('#results');
+      $results.empty();
 
       for (var i = 0; i < content.hits.length; i++) {
-        $users.append('<li>' + content.hits[i].name + '</li>');
+        console.log(content.hits[i].objectID)
+        $link = $('<a href="/public_entities/' + content.hits[i].objectID + '">' + content.hits[i].name + '</a>');
+        $li = $('<li></li>');
+        $li.append($link);
+        $results.append($li);
       }
     };
     </script>
   </div>
   <div class="results">
-  	<ul id="users"></ul>
+    <ul id="results"></ul>
   </div>
 </div>
 
