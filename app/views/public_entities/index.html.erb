@@ -106,8 +106,7 @@ $(document).ready(function(){
     $(document).ready(function() {
       var $input = $('input#searchInput');
       $input.keyup(function() {
-    	  console.log("keyup event");
-        index.search($input.val(), {
+        PublicEntityIndex.search($input.val(), {
           hitsPerPage: 10,
           facets: '*'
         }, searchCallback);
@@ -119,13 +118,11 @@ $(document).ready(function(){
         console.error(err);
         return;
       }
-      console.log(content);
       
       var $results = $('#results');
       $results.empty();
 
       for (var i = 0; i < content.hits.length; i++) {
-        console.log(content.hits[i].objectID)
         $link = $('<a href="/public_entities/' + content.hits[i].objectID + '">' + content.hits[i].name + '</a>');
         $li = $('<li></li>');
         $li.append($link);

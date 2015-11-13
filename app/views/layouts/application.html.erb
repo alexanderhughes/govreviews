@@ -14,7 +14,9 @@
 	  <script src="//cdn.jsdelivr.net/algoliasearch/3/algoliasearch.min.js"></script>
 	  <script>
 	    var client = algoliasearch("75W7HLBU2C", "ae0d5cd176b28df1789768374f4e74b1"); // public credentials
-	    var index = client.initIndex('PublicEntity');
+	    var PublicEntityIndex = client.initIndex('PublicEntity');
+      var CategoriesIndex = client.initIndex('Category');
+      var ChiefsIndex = client.initIndex('Chief');
 	  </script>
 	</head>
 	<body>
