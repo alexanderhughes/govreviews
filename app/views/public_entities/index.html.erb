@@ -105,6 +105,7 @@ $(document).ready(function(){
     <script>
     $(document).ready(function() {
       var $input = $('input#searchInput');
+      $input.focus();
       $input.keyup(function() {
         PublicEntityIndex.search($input.val(), {
           hitsPerPage: 10,
