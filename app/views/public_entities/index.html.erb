@@ -71,24 +71,6 @@ $(document).ready(function(){
 </script>
 
 <!--
-<div>
-	<h3>Most Recent Posts</h3>
-	<ol>
-		<% @ten_most_recent_posts.each do |post| %>
-				<li>
-				<% if post.review != nil %>
-				At <%= post.updated_at.time.strftime("%m/%d/%y %l:%M %p") %>
-				<%= post.user.first_name.to_s + ' ' + post.user.last_name[0].to_s + ". "%> reviewed
-				<strong><%= link_to post.public_entity.name, post.public_entity,  'data-no-turbolink' => true%></strong>:
-				<%= link_to post.review[0..50], post.public_entity, 'data-no-turbolink' => true %>...
-				<% end %>
-			</li>
-		<% end %>
-	</ol>
-</div>
--->
-
-<!--
 <div id="map-canvas" style="width: 100%; height: 400px; display:inline-block"></div>
 -->
 
